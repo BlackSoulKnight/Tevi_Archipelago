@@ -1,0 +1,3968 @@
+{
+    "Map00": [
+        {
+            "Name": "Desert Base Main",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Desert Base Upper Half",
+                    "Method": "ITEM_HIJUMP && ITEM_DOUBLEJUMP && ITEM_WALLJUMP"
+                },
+                {
+                    "Exit": "Desert Base Upper Half",
+                    "Method": "ITEM_JETPACK && ITEM_WALLJUMP"
+                },
+                {
+                    "Exit": "Desert Base Upper Half",
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_WALLJUMP 2"
+                }
+            ]
+        },
+        {
+            "Name": "Desert Base Entrance",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0000",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Desert Base Main",
+                    "Method": "ChargeShot || ITEM_JETPACK || ITEM_AirDash || ITEM_JETPACK || ITEM_DOUBLEJUMP || ITEM_HIJUMP || (ITEM_LINEBOMB && ITEM_AREABOMB) || RabbitJump || (BackFlip && ITEM_SPEEDUP)"
+                },
+                {
+                    "Exit": "Desert Base Main",
+                    "Method": "BackFlip && Hard"
+                },
+                {
+                    "Exit": "Desert Base Upper Half",
+                    "Method": "(BackFlip || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_AirDash) && ITEM_SLIDE && ITEM_LINEBOMB && ITEM_KNIFE"
+                }
+            ]
+        },
+        {
+            "Name": "Desert Base Upper Half",
+            "Money": [
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Desert Base Main",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map01": [
+        {
+            "Name": "Thanatara Canyon",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3500
+                },
+                {
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_JETPACK",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_SLIDE || ITEM_WALLJUMP 3",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0101",
+                    "Method": "ChargeShot || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_AirDash"
+                },
+                {
+                    "Exit": "Thanatara Canyon Lower",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon - Heavens Valley West",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Morose City",
+                    "Method": "OpenMorose"
+                },
+                {
+                    "Exit": "Crafting",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Item Upgrade",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Memine All",
+                    "Method": "AllMemine"
+                }
+            ]
+        },
+        {
+            "Name": "Thanatara Canyon Lower",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3500
+                },
+                {
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_JETPACK",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_SLIDE || ITEM_WALLJUMP 3",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0106",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0107",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gurun Desert",
+                    "Method": "ITEM_LINEBOMB || OpenMorose"
+                },
+                {
+                    "Exit": "0100",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon",
+                    "Method": "ITEM_LINEBOMB || ITEM_SLIDE"
+                }
+            ]
+        },
+        {
+            "Name": "Thanatara Canyon - Heavens Valley West",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0105",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Memine All",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Crafting",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Item Upgrade",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Gurun Desert",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": " ITEM_WALLJUMP",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0102",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Thanatara Canyon",
+                    "Method": "OpenMorose"
+                }
+            ]
+        }
+    ],
+    "Map02": [
+        {
+            "Name": "Oasis",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 4500
+                },
+                {
+                    "Method": "ITEM_OrbTypeS3 || ITEM_OrbTypeS2 || ITEM_OrbTypeC3",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0201",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map03": [
+        {
+            "Name": "Morose City",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0302",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0303",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0301",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0300",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Valhalla City",
+                    "Method": "EVENT_AnathemaVisited && ITEM_AirshipPass"
+                },
+                {
+                    "Exit": "Tartarus",
+                    "Method": "EVENT_AnathemaVisited && ITEM_RailPass"
+                }
+            ]
+        }
+    ],
+    "Map04": [
+        {
+            "Name": "Forest",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 8000
+                },
+                {
+                    "Method": "ITEM_AREABOMB || ITEM_SLIDE",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0400",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0401",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0409",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0404",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0408",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forest Maze",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Forest Maze",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 4000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Forest",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forest Maze boss",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Forest Maze boss",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 4000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Forest Maze extended",
+                    "Method": "ITEM_JETPACK"
+                },
+                {
+                    "Exit": "Forest Maze extended",
+                    "Method": "ITEM_DOUBLEJUMP"
+                },
+                {
+                    "Exit": "Forest Maze extended",
+                    "Method": "ITEM_AirDash"
+                }
+            ]
+        },
+        {
+            "Name": "Forest Maze extended",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map05": [
+        {
+            "Name": "Travoll Mines East Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "0501",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines",
+                    "Method": "ITEM_LINEBOMB && ITEM_BOMBFUEL"
+                },
+                {
+                    "Exit": "Travoll Mines West Exit",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Travoll Mines West Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "0507",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines",
+                    "Method": "ITEM_LINEBOMB && ITEM_BOMBFUEL"
+                },
+                {
+                    "Exit": "Travoll Mines East Exit",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Travoll Mines",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "ITEM_BOMBFUEL",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Travoll Mines East Exit",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines Forest Exit",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "0503",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines Swamp Exit",
+                    "Method": "ITEM_SLIDE && ITEM_BOMBFUEL"
+                }
+            ]
+        },
+        {
+            "Name": "Travoll Mines Forest Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 7500
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Travoll Mines",
+                    "Method": "ITEM_LINEBOMB && (ITEM_KNIFE || EVENT_FreeStrongAttack)"
+                },
+                {
+                    "Exit": "0509",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Travoll Mines Swamp Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 7500
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Travoll Mines",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0500",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map06": [
+        {
+            "Name": "Travoll Industrie",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Travoll Industrie East Exit",
+                    "Method": "ITEM_LINEBOMB || ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Heavens Valley West",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0603",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0600",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Travoll Industrie East Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0605",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Industrie",
+                    "Method": "ITEM_LINEBOMB || ITEM_SLIDE"
+                }
+            ]
+        }
+    ],
+    "Map07": [
+        {
+            "Name": "CopperWood Industry Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "((ITEM_JETPACK 3 || (ITEM_JETPACK&& ITEM_AirDash)) && ITEM_WALLJUMP && ITEM_DOUBLEJUMP)",
+                    "Amount": 2500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "CopperWood",
+                    "Method": "ITEM_LINEBOMB || ITEM_SLIDE"
+                },
+                {
+                    "Exit": "CopperWood EP Pot",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "0705",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "CopperWood EP Pot",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "CopperWood",
+                    "Method": ""
+                },
+                {
+                    "Exit": "CopperWood Industry Exit",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "CopperWood",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "((ITEM_JETPACK 3 || (ITEM_JETPACK&& ITEM_AirDash)) && ITEM_WALLJUMP && ITEM_DOUBLEJUMP)",
+                    "Amount": 2500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "0701",
+                    "Method": ""
+                },
+                {
+                    "Exit": "CopperWood EP Pot",
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_JETPACK"
+                },
+                {
+                    "Exit": "0704",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0700",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        }
+    ],
+    "Map08": [
+        {
+            "Name": "Ana Thema",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 5000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Ana Thema Gallery Exit",
+                    "Method": "ITEM_SLIDE && ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Vena Shop",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0805",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Valhalla City",
+                    "Method": "EVENT_MoroseVisited && ITEM_AirshipPass"
+                },
+                {
+                    "Exit": "Tartarus",
+                    "Method": "EVENT_MoroseVisited && ITEM_RailPass"
+                }
+            ]
+        },
+        {
+            "Name": "Ana Thema Gallery Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 5000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Ana Thema",
+                    "Method": "ITEM_SLIDE && ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "0806",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Vena Shop",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map09": [
+        {
+            "Name": "Gleamwood Forest Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "0908",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Bottom",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Gleamwood Copperwood Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "0900",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Middle",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Gleamwood Relicts Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "0906",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Middle",
+                    "Method": "ITEM_BombLengthExtend"
+                }
+            ]
+        },
+        {
+            "Name": "Gleamwood Blush Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "0903",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Right",
+                    "Method": "ITEM_HIJUMP || ITEM_DOUBLEJUMP || ITEM_AirDash || ITEM_JETPACK || RabbitJump"
+                }
+            ]
+        },
+        {
+            "Name": "Gleamwood Bottom",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 4000
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend",
+                    "Amount": 500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gleamwood Forest Exit",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Gleamwood Middle",
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_LINEBOMB || ITEM_JETPACK || ITEM_AirDash"
+                },
+                {
+                    "Exit": "Gleamwood Middle",
+                    "Method": "EnemyManip"
+                },
+                {
+                    "Exit": "0905",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Gleamwood Middle",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 4000
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend",
+                    "Amount": 500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gleamwood Copperwood Exit",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Gleamwood Relicts Exit",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Gleamwood Ulvosa Exit",
+                    "Method": "(ITEM_SLIDE || HiddenP) && ChargeShot"
+                },
+                {
+                    "Exit": "Gleamwood Bottom",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Right",
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_AirDash || ITEM_JETPACK || RabbitJump"
+                }
+            ]
+        },
+        {
+            "Name": "Gleamwood Ulvosa Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gleamwood Middle",
+                    "Method": ""
+                },
+                {
+                    "Exit": "0902",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Gleamwood Right",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "ITEM_SLIDE && (ITEM_AREABOMB ||  ITEM_LINEBOMB) && (ITEM_DOUBLEJUMP||ITEM_JETPACK||(ITEM_HIJUMP && ITEM_WALLJUMP))",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gleamwood Middle",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Blush Exit",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Ulskan Village Area",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Ulskan Village Area",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "Gleamwood Middle",
+                    "Method": "ITEM_KNIFE || VenaBomb || ITEM_ORB"
+                },
+                {
+                    "Exit": "0901",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Ulskan Plague Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "0904",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Ulskan Village Area",
+                    "Method": "ITEM_SLIDE && ITEM_LINEBOMB"
+                }
+            ]
+        }
+    ],
+    "Map10": [
+        {
+            "Name": "Plague Forest",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 13000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "1001",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Plague Forest Exit",
+                    "Method": "ITEM_LINEBOMB && ITEM_SLIDE"
+                }
+            ]
+        },
+        {
+            "Name": "Plague Forest Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 13000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "1004",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map11": [
+        {
+            "Name": "Ulvosa Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "Ulvosa",
+                    "Method": "ITEM_LINEBOMB && ChargeShot && (HiddenP || ITEM_SLIDE)"
+                },
+                {
+                    "Exit": "1102",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Ulvosa",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 8000
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": []
+        }
+    ],
+    "Map12": [
+        {
+            "Name": "Snowveil Entrance",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Snowveil",
+                    "Method": "ITEM_AirDash && ITEM_DOUBLEJUMP && ITEM_JETPACK 2 && ITEM_HIJUMP && WindSkip"
+                },
+                {
+                    "Exit": "Snowveil",
+                    "Method": "ITEM_AirDash && ITEM_DOUBLEJUMP && ITEM_JETPACK 3 && WindSkip"
+                },
+                {
+                    "Exit": "Snowveil",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "1202",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Snowveil",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "1204",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil Ex",
+                    "Method": "ChargeShot || ITEM_DOUBLEJUMP || ITEM_JETPACK"
+                },
+                {
+                    "Exit": "Snowveil Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Snowveil Ex",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Snowveil",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil above Verglas Village",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Snowveil above Verglas Village",
+                    "Method": "ITEM_JETPACK && ITEM_DOUBLEJUMP"
+                },
+                {
+                    "Exit": "Snowveil above Verglas Village",
+                    "Method": "ITEM_JETPACK && ITEM_HIJUMP && SpinnerBash"
+                },
+                {
+                    "Exit": "Snowveil above Verglas Village",
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_HIJUMP && ItemUse"
+                },
+                {
+                    "Exit": "Snowveil above Verglas Village",
+                    "Method": "ITEM_BombLengthExtend 3 && ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Snowveil above Verglas Village",
+            "Money": [
+                {
+                    "Method": "ITEM_AREABOMB",
+                    "Amount": 2200
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "1205",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil Ex",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        }
+    ],
+    "Map13": [
+        {
+            "Name": "Verdazure Sea West",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 5000
+                },
+                {
+                    "Method": "ITEM_WATERMOVEMENT && ITEM_LINEBOMB",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_SLIDE && (ITEM_WALLJUMP || ITEM_HIJUMP || ITEM_JETPACK || ITEM_DOUBLEJUMP)",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Verdazure Sea Forgotten Exit",
+                    "Method": "ITEM_WATERMOVEMENT && (ITEM_LINEBOMB || RabbitJump)"
+                },
+                {
+                    "Exit": "Verdazure Sea West Exit",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea East",
+                    "Method": ""
+                },
+                {
+                    "Exit": "1307",
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_JETPACK || ADCKick"
+                }
+            ]
+        },
+        {
+            "Name": "Verdazure Sea East",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "1301",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea West",
+                    "Method": "ITEM_WATERMOVEMENT"
+                },
+                {
+                    "Exit": "1300",
+                    "Method": "ITEM_SLIDE && ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Verdazure Sea West Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "1304",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea West",
+                    "Method": "ITEM_LINEBOMB || ITEM_WATERMOVEMENT"
+                }
+            ]
+        },
+        {
+            "Name": "Verdazure Sea Forgotten Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "1303",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map14": [
+        {
+            "Name": "Verdazure Ocean Sea Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "Verdazure Ocean",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "1400",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Verdazure Ocean",
+            "Money": [
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "(ITEM_WALLJUMP 2 && (ITEM_DOUBLEJUMP || ITEM_JETPACK)) || ITEM_WALLJUMP 3",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend && ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Verdazure Ocean Sea Exit",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "1402",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Swamp",
+                    "Method": "ITEM_LINEBOMB && ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Forgotten City Upper Exit",
+                    "Method": "ITEM_WATERMOVEMENT && ITEM_OrbTypeS3 && I20 && ChargeShot && ITEM_ORB 3"
+                }
+            ]
+        },
+        {
+            "Name": "Verdazure Swamp",
+            "Money": [
+                {
+                    "Method": "ITEM_JETPACK 3 || ITEM_AirDash &&(ITEM_JETPACK || ITEM_DOUBLEJUMP) || ITEM_JETPACK && ITEM_DOUBLEJUMP",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_JETPACK || ITEM_DOUBLEJUMP ",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Verdazure Swamp Lab Exit",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Verdazure Ocean",
+                    "Method": "ITEM_SLIDE && ITEM_LINEBOMB && (ITEM_HIJUMP || ITEM_DOUBLEJUMP || ITEM_JETPACK)"
+                }
+            ]
+        },
+        {
+            "Name": "Verdazure Swamp Lab Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_JETPACK 3 || ITEM_AirDash &&(ITEM_JETPACK || ITEM_DOUBLEJUMP) || ITEM_JETPACK && ITEM_DOUBLEJUMP",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_JETPACK || ITEM_DOUBLEJUMP ",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Verdazure Swamp",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "1410",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Forgotten City Upper Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 4000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Verdazure Ocean",
+                    "Method": "ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Forgotten City Entrance",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 6000
+                },
+                {
+                    "Method": "ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_WALLJUMP",
+                    "Amount": 5000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Forgotten City",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "1403",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Forgotten City",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 6000
+                },
+                {
+                    "Method": "ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_WALLJUMP",
+                    "Amount": 5000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Forgotten City Entrance",
+                    "Method": "ITEM_LINEBOMB && (ITEM_SLIDE || ITEM_WATERMOVEMENT)"
+                },
+                {
+                    "Method": "ChargeShot",
+                    "Exit": "Forgotten City Upper Exit"
+                },
+                {
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                    "Exit": "Forgotten City Upper Exit"
+                },
+                {
+                    "Method": "ITEM_WALLJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                    "Exit": "Forgotten City Upper Exit"
+                },
+                {
+                    "Method": "ITEM_HIJUMP && ITEM_JETPACK 3 && ITEM_KNIFE && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                    "Exit": "Forgotten City Upper Exit"
+                }
+            ]
+        }
+    ],
+    "Map15": [
+        {
+            "Name": "Tartarus",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Vena Shop",
+                    "Method": ""
+                },
+                {
+                    "Exit": "1502",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Tartarus Catacombs",
+                    "Method": "ITEM_SLIDE || ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Tartarus Catacombs",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Tartarus",
+                    "Method": "ITEM_SLIDE || ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "1503",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map16": [
+        {
+            "Name": "Snow City",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "1604",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil Above HQ",
+                    "Method": "ITEM_LINEBOMB && ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Golden Hands HQ",
+                    "Method": "ITEM_SLIDE && ChargeShot"
+                },
+                {
+                    "Exit": "Golden Hands HQ Sewer",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Golden Hands HQ Sewer",
+                    "Method": "ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Snowveil Above HQ",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "ITEM_AREABOMB",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "1600",
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_WALLJUMP || ITEM_JETPACK"
+                },
+                {
+                    "Exit": "Snow City",
+                    "Method": "ITEM_LINEBOMB && ITEM_AREABOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Golden Hands HQ",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend && ITEM_LINEBOMB",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_AirSlide && ITEM_SLIDE || ITEM_Rotater",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_Rotater",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Golden Hands HQ Sewer",
+                    "Method": "ITEM_LINEBOMB && ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Golden Hands HQ Sewer",
+            "Money": [
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Snow City",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Golden Hands HQ Extra",
+                    "Method": "ITEM_SLIDE &&  ITEM_Rotater && ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Golden Hands HQ Extra",
+            "Money": [
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Snow City",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map17": [
+        {
+            "Name": "Magma Pits Entrance",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 5500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Magma Pits",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Pre Swamp",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "1703",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Magma Pits",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 5500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Pre Swamp",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Swamp",
+                    "Method": "ChargeShot && ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Magma Depths O",
+                    "Method": "ITEM_JETPACK && ITEM_AirSlide"
+                },
+                {
+                    "Exit": "Magma Depths O",
+                    "Method": "ITEM_AirSlide && ITEM_AirDash && ChargeShot"
+                },
+                {
+                    "Exit": "Magma Depths O",
+                    "Method": "ITEM_AirSlide &&  ITEM_DOUBLEJUMP && ChargeShot"
+                },
+                {
+                    "Exit": "Magma Depths O",
+                    "Method": "ITEM_AirSlide &&  ITEM_HIJUMP && ChargeShot"
+                },
+                {
+                    "Exit": "Magma Depths O",
+                    "Method": "ITEM_AirSlide && ITEM_DOUBLEJUMP && ITEM_JETPACK"
+                }
+            ]
+        },
+        {
+            "Name": "Magma Depths O",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_AirSlide && ITEM_SLIDE",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Magma Depths",
+                    "Method": "ITEM_AirSlide"
+                }
+            ]
+        },
+        {
+            "Name": "Magma Depths",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_AirSlide && ITEM_SLIDE",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Magma Depths Sinner Exit",
+                    "Method": "HiddenP || (ITEM_AirSlide && ITEM_Rotater && (ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_SPEEDUP 3))",
+                    "Note": "Place a block to recover from a failed jump"
+                }
+            ]
+        },
+        {
+            "Name": "Magma Depths Sinner Exit",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_AirSlide && ITEM_SLIDE",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "1701",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Swamp Entrance",
+            "Money": [
+                {
+                    "Method": "Unknown see Swamp",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Magma Pits Entrance",
+                    "Method": "ITEM_SLIDE && ITEM_AREABOMB"
+                },
+                {
+                    "Exit": "Pre Swamp",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "1700",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Pre Swamp",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "Swamp Entrance",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Swamp",
+                    "Method": "ITEM_KNIFE"
+                },
+                {
+                    "Exit": "Swamp",
+                    "Method": "ITEM_ORB"
+                },
+                {
+                    "Exit": "Swamp",
+                    "Method": "ITEM_AirDash"
+                },
+                {
+                    "Exit": "Swamp",
+                    "Method": "ITEM_LINEBOMB && ITEM_AREABOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Swamp",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "ITEM_AREABOMB || ITEM_SLIDE",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_JETPACK || (ITEM_DOUBLEJUMP && ITEM_AirDash)",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "ITEM_SLIDE && && ITEM_LINEBOMB (ITEM_AREABOMB || ITEM_BombLengthExtend)",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Pre Swamp",
+                    "Method": "ITEM_AirDash || ITEM_ORB || ITEM_KNIFE"
+                },
+                {
+                    "Exit": "Swamp Tartarus Exit",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Magma Depths",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Swamp Tartarus Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Method": " (HiddenP || ITEM_LINEBOMB) && (ITEM_JETPACK 2 || (ITEM_JETPACK && (ITEM_DOUBLEJUMP || ITEM_AirDash)) || (ITEM_AirDash && ITEM_DOUBLEJUMP))",
+                    "Exit": "Swamp"
+                },
+                {
+                    "Method": "ITEM_JETPACK && ITEM_DOUBLEJUMP",
+                    "Exit": "Swamp"
+                },
+                {
+                    "Method": "ITEM_JETPACK && ITEM_AirDash",
+                    "Exit": "Swamp"
+                },
+                {
+                    "Method": "ITEM_AirDash && ITEM_DOUBLEJUMP",
+                    "Exit": "Swamp"
+                },
+                {
+                    "Exit": "1702",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map18": [
+        {
+            "Name": "DreamKeeper Outside Right",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB && ITEM_SLIDE && (ITEM_JETPACK || ITEM_DOUBLEJUMP)",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_LINEBOMB && ITEM_AREABOMB || ITEM_BombLengthExtend 3",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_AirSlide && ITEM_SLIDE",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "DreamKeeper Outside Left",
+                    "Method": "ChargeShot && ITEM_SLIDE && ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "DreamKeeper",
+                    "Method": "ITEM_Rotater && (ChargeShot || ITEM_SLIDE) && ITEM_LINEBOMB && ITEM_SLIDE && (EVENT_SnowMechanic 2 || EarlyDream)"
+                },
+                {
+                    "Exit": "1800",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "DreamKeeper Outside Left",
+            "Money": [
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "DreamKeeper",
+                    "Method": "ITEM_Rotater && (ChargeShot || ITEM_SLIDE) && ITEM_SLIDE && (EVENT_SnowMechanic 2 || EarlyDream)"
+                },
+                {
+                    "Exit": "1801",
+                    "Method": ""
+                },
+                {
+                    "Exit": "DreamKeeper Outside Left Snow Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "DreamKeeper Outside Left Snow Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "1805",
+                    "Method": ""
+                },
+                {
+                    "Exit": "DreamKeeper Outside Left",
+                    "Method": "RabbitJump || ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_HIJUMP"
+                }
+            ]
+        },
+        {
+            "Name": "DreamKeeper",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend && ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Dreamless Depths",
+                    "Method": "ITEM_SLIDE && ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "DreamKeeper Outside Right",
+                    "Method": "ITEM_SLIDE && ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Dreamless Depths",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 500
+                },
+                {
+                    "Method": "ITEM_AirSlide && ITEM_SLIDE && ITEM_LINEBOMB",
+                    "Amount": 2500
+                },
+                {
+                    "Method": "TornadoSpin",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Dreamless Depths 2",
+                    "Method": "ITEM_HIJUMP && ITEM_KNIFE"
+                },
+                {
+                    "Exit": "Dreamless Depths 2",
+                    "Method": "ITEM_WALLJUMP"
+                },
+                {
+                    "Exit": "Dreamless Depths 2",
+                    "Method": "ITEM_JETPACK && ITEM_KNIFE"
+                },
+                {
+                    "Exit": "Dreamless Depths 2",
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_KNIFE"
+                }
+            ]
+        },
+        {
+            "Name": "Dreamless Depths 2",
+            "Note": "Could be in Trasition Rando, isnt yet",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map19": [
+        {
+            "Name": "Heavens Valley Snow Route Low",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB && (ITEM_AREABOMB && ITEM_BombLengthExtend) || Tornado Spin",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Heavens Valley Snow Route Middle",
+                    "Method": "ITEM_SLIDE &&  ITEM_Rotater"
+                },
+                {
+                    "Exit": "1901",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Heavens Valley Snow Route Middle",
+            "Money": [
+                {
+                    "Method": "ITEM_HIJUMP || ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Heavens Valley Snow Route Low",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Heavens Valley Snow Route Low",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Heavens Valley Snow Route Upper",
+                    "Method": "ITEM_LINEBOMB && ITEM_SLIDE"
+                }
+            ]
+        },
+        {
+            "Name": "Heavens Valley Snow Route Upper",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Heavens Valley Snow Route Middle",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "1900",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map20": [
+        {
+            "Name": "Valhalla City",
+            "Money": [
+                {
+                    "Method": "ITEM_AREABOMB && ITEM_LINEBOMB",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "2008",
+                    "Method": "ITEM_SLIDE && ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "2003",
+                    "Method": ""
+                },
+                {
+                    "Exit": "2001",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Vena Shop",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map21": [
+        {
+            "Name": "Valhalla Breath West",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 11000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Heavens Valley West",
+                    "Method": "ITEM_LINEBOMB && (CKick || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_AirDash)"
+                },
+                {
+                    "Exit": "2101",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Valhalla Breath West Extended",
+                    "Method": "ITEM_AirDash"
+                },
+                {
+                    "Exit": "Valhalla Breath West Extended",
+                    "Method": "ITEM_DOUBLEJUMP"
+                },
+                {
+                    "Exit": "Valhalla Breath West Extended",
+                    "Method": "ITEM_JETPACK"
+                }
+            ]
+        },
+        {
+            "Name": "Heavens Valley West",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Valhalla Breath West",
+                    "Method": "ITEM_JETPACK && (ITEM_AREABOMB || HiddenP)"
+                },
+                {
+                    "Exit": "Valhalla Breath West",
+                    "Method": "ITEM_AirDash && (ITEM_AREABOMB || HiddenP)"
+                },
+                {
+                    "Exit": "Valhalla Breath West",
+                    "Method": "ITEM_SLIDE && ITEM_AirSlide && (ITEM_AREABOMB || HiddenP)"
+                },
+                {
+                    "Exit": "Valhalla Breath West",
+                    "Method": "ITEM_DOUBLEJUMP && (ITEM_AREABOMB || HiddenP)"
+                },
+                {
+                    "Exit": "Valhalla Breath West",
+                    "Method": "ChargeShot && (ITEM_AREABOMB || HiddenP)"
+                },
+                {
+                    "Exit": "2105",
+                    "Method": ""
+                },
+                {
+                    "Exit": "2100",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Valhalla Breath West Extended",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map22": [
+        {
+            "Name": "Solennian Ruins Entrance",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Solennian Ruins",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "2206",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Solennian Ruins",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 8000
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map23": [
+        {
+            "Name": "Sinner's Oath Entrance",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Sinner's Oath",
+                    "Method": "ChargeShot && ITEM_LINEBOMB && (HiddenP || (ITEM_SLIDE && ITEM_Rotater && (ITEM_AirDash || ITEM_JETPACK || ITEM_DOUBLEJUMP)))"
+                },
+                {
+                    "Exit": "2301",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Illusion Palace Entrance",
+                    "Method": "ITEM_LINEBOMB && HiddenP"
+                }
+            ]
+        },
+        {
+            "Name": "Sinner's Oath",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Illusion Palace Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Illusion Palace Entrance",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Illusion Palace",
+                    "Method": "Goal && (ChargeShot || HiddenP)"
+                }
+            ]
+        },
+        {
+            "Name": "Illusion Palace",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": []
+        }
+    ],
+    "Map24": [
+        {
+            "Name": "Relicts",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_AREABOMB && ITEM_LINEBOMB",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "2404",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Relicts Exit",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Relicts Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "Relicts",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "2406",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        }
+    ],
+    "Map25": [
+        {
+            "Name": "Catacombs Entrance",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Catacombs Main",
+                    "Method": "ITEM_SLIDE && (ITEM_DOUBLEJUMP || ITEM_JETPACK)"
+                },
+                {
+                    "Exit": "2503",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Catacombs Main",
+            "Money": [
+                {
+                    "Method": "(ITEM_JETPACK||ITEM_DOUBLEJUMP) || ITEM_AirDash",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB && ITEM_BombLengthExtend || ITEM_AREABOMB",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Catacombs Entrance",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Catacombs Inner",
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Catacombs Inner",
+                    "Method": "ITEM_JETPACK 2 && ITEM_LINEBOMB && ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Catacombs Inner",
+                    "Method": "ITEM_JETPACK && ITEM_HIJUMP && ITEM_LINEBOMB && ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Catacombs Inner",
+                    "Method": "ITEM_JETPACK && ITEM_WALLJUMP && ITEM_AirDash && ITEM_LINEBOMB && ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Pre Lab",
+                    "Method": "ITEM_LINEBOMB && ITEM_SLIDE && (ITEM_DOUBLEJUMP || ITEM_JETPACK)"
+                }
+            ]
+        },
+        {
+            "Note": "Need 1 verctical movement option",
+            "Name": "Catacombs Inner",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend && ITEM_LINEBOMB",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": []
+        },
+        {
+            "Name": "Pre Lab",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Lab Entrance",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Catacombs Main",
+                    "Method": "(ITEM_LINEBOMB || ITEM_KNIFE) && ITEM_SLIDE && (ITEM_JETPACK || ITEM_AirDash || ITEM_DOUBLEJUMP)"
+                }
+            ]
+        },
+        {
+            "Name": "Lab Entrance",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Lab Hub",
+                    "Method": "ITEM_SLIDE"
+                }
+            ]
+        },
+        {
+            "Name": "Lab Hub",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Lab Entrance",
+                    "Method": "ITEM_DOUBLEJUMP || (ITEM_AirDash && ITEM_WALLJUMP) || ITEM_JETPACK || RabbitWalljump"
+                },
+                {
+                    "Exit": "Lab Left",
+                    "Method": "(ITEM_DOUBLEJUMP || (ITEM_AirDash && ITEM_WALLJUMP) || ITEM_JETPACK || RabbitWalljump) && ITEM_SLIDE && ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Lab Left",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Lab Hub",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Lab",
+                    "Method": "ITEM_LINEBOMB && (ITEM_DOUBLEJUMP || ITEM_JETPACK || (ITEM_WALLJUMP && ITEM_AirDash) || RabbitWalljump)"
+                }
+            ]
+        },
+        {
+            "Name": "Lab",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3500
+                },
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Lab Hub",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Lab - Verdazure Swamp Connection",
+                    "Method": "ITEM_BombLengthExtend 3 && ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Lab - Verdazure Swamp Connection",
+            "Money": [
+                {
+                    "Method": "(ITEM_JETPACK||ITEM_DOUBLEJUMP) || ITEM_AirDash",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Lab",
+                    "Method": "ITEM_BombLengthExtend 3 && ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "2510",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map26": [
+        {
+            "Name": "Cloister Entrance",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 6000
+                },
+                {
+                    "Method": "ITEM_JETPACK 2 || ITEM_DOUBLEJUMP || (ITEM_JETPACK && ITEM_WALLJUMP && ITEM_AirDash)",
+                    "Amount": 1000
+                },
+                {
+                    "Method": "ITEM_BombLengthExtend && ITEM_LINEBOMB",
+                    "Amount": 3000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "2608",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Cloister",
+                    "Method": "ITEM_SLIDE"
+                }
+            ]
+        },
+        {
+            "Name": "Cloister",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Cloister Pre Boss",
+                    "Method": "ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Cloister Pre Boss",
+            "Money": [
+                {
+                    "Method": "",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map27": [
+        {
+            "Name": "Gallery of Mirrors West",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 7000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gallery of Mirrors East",
+                    "Method": "ChargeShot"
+                },
+                {
+                    "Exit": "2706",
+                    "Method": "ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Gallery of Mirrors East",
+            "Money": [
+                {
+                    "Method": "Needs to be Recalculated",
+                    "Amount": 0
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gallery of Souls Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Gallery of Souls Entrance",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "Gallery of Souls",
+                    "Method": "ITEM_LINEBOMB"
+                }
+            ]
+        },
+        {
+            "Name": "Gallery of Souls",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gallery of Souls Boss Area",
+                    "Method": "ITEM_JETPACK 2 && ChargeShot"
+                },
+                {
+                    "Exit": "Gallery of Souls Boss Area",
+                    "Method": "ITEM_WALLJUMP && ChargeShot"
+                },
+                {
+                    "Exit": "Gallery of Souls Boss Area",
+                    "Method": "ITEM_DOUBLEJUMP && ChargeShot"
+                },
+                {
+                    "Exit": "Gallery of Souls Boss Area",
+                    "Method": "ITEM_LINEBOMB && ChargeShot"
+                }
+            ]
+        },
+        {
+            "Name": "Gallery of Souls Boss Area",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 8000
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Gallery of Souls Sea Exit",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "Gallery of Souls",
+                    "Method": "ITEM_JETPACK 2 && ITEM_LINEBOMB && BarrierSkip"
+                },
+                {
+                    "Exit": "Gallery of Souls",
+                    "Method": "ITEM_WALLJUMP && ITEM_LINEBOMB && BarrierSkip"
+                },
+                {
+                    "Exit": "Gallery of Souls",
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && BarrierSkip"
+                }
+            ]
+        },
+        {
+            "Name": "Gallery of Souls Sea Exit",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "2707",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gallery of Souls Boss Area",
+                    "Method": "ITEM_BombLengthExtend 3"
+                }
+            ]
+        }
+    ],
+    "Map28": [
+        {
+            "Name": "Blushwood",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 2000
+                },
+                {
+                    "Method": "ITEM_SLIDE",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "Blushwood Sliding",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Blushwood Sliding",
+                    "Method": "HiddenP && ((ITEM_DOUBLEJUMP && ITEM_JETPACK)|| ITEM_JETPACK 3)"
+                },
+                {
+                    "Exit": "2801",
+                    "Method": ""
+                },
+                {
+                    "Exit": "2803",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Blushwood Sliding",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Map29": [
+        {
+            "Name": "EverGarden",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 4000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "EverGarden Path to Boss",
+                    "Method": "ITEM_DOUBLEJUMP"
+                },
+                {
+                    "Exit": "EverGarden Path to Boss",
+                    "Method": "ITEM_JETPACK && ITEM_AirDash"
+                },
+                {
+                    "Exit": "EverGarden Path to Boss",
+                    "Method": "ITEM_JETPACK 3"
+                },
+                {
+                    "Exit": "EverGarden Path to Boss",
+                    "Method": "ITEM_JETPACK 2"
+                },
+                {
+                    "Exit": "EverGarden To Valley",
+                    "Method": "ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_AirDash"
+                },
+                {
+                    "Exit": "EverGarden To Valhalla",
+                    "Method": "ITEM_LINEBOMB && (HiddenP || ITEM_JETPACK || ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_SPEEDUP 3)"
+                }
+            ]
+        },
+        {
+            "Name": "EverGarden To Valley",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "EverGarden",
+                    "Method": "ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK"
+                },
+                {
+                    "Exit": "2900",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "EverGarden To Valhalla",
+            "Money": [],
+            "Connections": [
+                {
+                    "Exit": "EverGarden",
+                    "Method": "ITEM_LINEBOMB"
+                },
+                {
+                    "Exit": "2902",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "EverGarden Path to Boss",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 1500
+                },
+                {
+                    "Method": "ITEM_JETPACK 3 || ITEM_DOUBLEJUMP && (ITEM_JETPACK || ITEM_AirDash)",
+                    "Amount": 1500
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "EverGarden Boss Area",
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_AirDash"
+                },
+                {
+                    "Exit": "EverGarden Boss Area",
+                    "Method": "ITEM_JETPACK && ITEM_AirDash"
+                },
+                {
+                    "Exit": "EverGarden Boss Area",
+                    "Method": "ITEM_JETPACK 3"
+                },
+                {
+                    "Exit": "EverGarden Boss Area",
+                    "Method": "ITEM_JETPACK 2"
+                },
+                {
+                    "Exit": "EverGarden",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "EverGarden Boss Area",
+            "Money": [
+                {
+                    "Method": "ITEM_LINEBOMB",
+                    "Amount": 3000
+                },
+                {
+                    "Method": "Boss",
+                    "Amount": 1000
+                }
+            ],
+            "Connections": [
+                {
+                    "Exit": "EverGarden Path to Boss",
+                    "Method": ""
+                },
+                {
+                    "Exit": "EverGarden",
+                    "Method": ""
+                }
+            ]
+        }
+    ],
+    "Transitions": [
+        {
+            "Name": "0000",
+            "Connections": [
+                {
+                    "Exit": "0100",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Desert Base Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0100",
+            "Connections": [
+                {
+                    "Exit": "0000",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon Lower",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0101",
+            "Connections": [
+                {
+                    "Exit": "0201",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0201",
+            "Connections": [
+                {
+                    "Exit": "0101",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Oasis",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0102",
+            "Connections": [
+                {
+                    "Exit": "0302",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gurun Desert",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0302",
+            "Connections": [
+                {
+                    "Exit": "0102",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Morose City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0107",
+            "Connections": [
+                {
+                    "Exit": "0507",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon Lower",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0507",
+            "Connections": [
+                {
+                    "Exit": "0107",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines West Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0105",
+            "Connections": [
+                {
+                    "Exit": "2105",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon - Heavens Valley West",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2105",
+            "Connections": [
+                {
+                    "Exit": "0105",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Heavens Valley West",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0106",
+            "Connections": [
+                {
+                    "Exit": "2206",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Thanatara Canyon Lower",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2206",
+            "Connections": [
+                {
+                    "Exit": "0106",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Solennian Ruins Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0303",
+            "Connections": [
+                {
+                    "Exit": "0603",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Morose City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0603",
+            "Connections": [
+                {
+                    "Exit": "0303",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Industrie",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0301",
+            "Connections": [
+                {
+                    "Exit": "0501",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Morose City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0501",
+            "Connections": [
+                {
+                    "Exit": "0301",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines East Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0300",
+            "Connections": [
+                {
+                    "Exit": "0400",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Morose City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0400",
+            "Connections": [
+                {
+                    "Exit": "0300",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forest",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0409",
+            "Connections": [
+                {
+                    "Exit": "0509",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forest",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0509",
+            "Connections": [
+                {
+                    "Exit": "0409",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines Forest Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0401",
+            "Connections": [
+                {
+                    "Exit": "0701",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forest",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0701",
+            "Connections": [
+                {
+                    "Exit": "0401",
+                    "Method": ""
+                },
+                {
+                    "Exit": "CopperWood",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0408",
+            "Connections": [
+                {
+                    "Exit": "0908",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forest",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0908",
+            "Connections": [
+                {
+                    "Exit": "0408",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Forest Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0404",
+            "Connections": [
+                {
+                    "Exit": "1304",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forest",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1304",
+            "Connections": [
+                {
+                    "Exit": "0404",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea West Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0503",
+            "Connections": [
+                {
+                    "Exit": "1703",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines Swamp Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1703",
+            "Connections": [
+                {
+                    "Exit": "0503",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Swamp Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0500",
+            "Connections": [
+                {
+                    "Exit": "1700",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Mines Swamp Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1700",
+            "Connections": [
+                {
+                    "Exit": "0500",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Magma Pits Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0605",
+            "Connections": [
+                {
+                    "Exit": "0705",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Industrie East Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0705",
+            "Connections": [
+                {
+                    "Exit": "0605",
+                    "Method": ""
+                },
+                {
+                    "Exit": "CopperWood Industry Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0600",
+            "Connections": [
+                {
+                    "Exit": "2100",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Travoll Industrie",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2100",
+            "Connections": [
+                {
+                    "Exit": "0600",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Heavens Valley West",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0700",
+            "Connections": [
+                {
+                    "Exit": "0900",
+                    "Method": ""
+                },
+                {
+                    "Exit": "CopperWood",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0900",
+            "Connections": [
+                {
+                    "Exit": "0700",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Copperwood Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0704",
+            "Connections": [
+                {
+                    "Exit": "2404",
+                    "Method": ""
+                },
+                {
+                    "Exit": "CopperWood",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2404",
+            "Connections": [
+                {
+                    "Exit": "0704",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Relicts",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0805",
+            "Connections": [
+                {
+                    "Exit": "0905",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Ana Thema",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0905",
+            "Connections": [
+                {
+                    "Exit": "0805",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Bottom",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0806",
+            "Connections": [
+                {
+                    "Exit": "2706",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Ana Thema Gallery Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2706",
+            "Connections": [
+                {
+                    "Exit": "0806",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gallery of Mirrors West",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0901",
+            "Connections": [
+                {
+                    "Exit": "1001",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Ulskan Village Area",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1001",
+            "Connections": [
+                {
+                    "Exit": "0901",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Plague Forest",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0904",
+            "Connections": [
+                {
+                    "Exit": "1004",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Ulskan Plague Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1004",
+            "Connections": [
+                {
+                    "Exit": "0904",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Plague Forest Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0902",
+            "Connections": [
+                {
+                    "Exit": "1102",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Ulvosa Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1102",
+            "Connections": [
+                {
+                    "Exit": "0902",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Ulvosa Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0906",
+            "Connections": [
+                {
+                    "Exit": "2406",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Relicts Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2406",
+            "Connections": [
+                {
+                    "Exit": "0906",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Relicts Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "0903",
+            "Connections": [
+                {
+                    "Exit": "2803",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gleamwood Blush Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2803",
+            "Connections": [
+                {
+                    "Exit": "0903",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Blushwood",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1202",
+            "Connections": [
+                {
+                    "Exit": "1402",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1402",
+            "Connections": [
+                {
+                    "Exit": "1202",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Ocean",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1204",
+            "Connections": [
+                {
+                    "Exit": "1604",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1604",
+            "Connections": [
+                {
+                    "Exit": "1204",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snow City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1205",
+            "Connections": [
+                {
+                    "Exit": "1805",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil above Verglas Village",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1805",
+            "Connections": [
+                {
+                    "Exit": "1205",
+                    "Method": ""
+                },
+                {
+                    "Exit": "DreamKeeper Outside Left Snow Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1303",
+            "Connections": [
+                {
+                    "Exit": "1403",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea Forgotten Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1403",
+            "Connections": [
+                {
+                    "Exit": "1303",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Forgotten City Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1300",
+            "Connections": [
+                {
+                    "Exit": "1400",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea East",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1400",
+            "Connections": [
+                {
+                    "Exit": "1300",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Ocean Sea Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1307",
+            "Connections": [
+                {
+                    "Exit": "2707",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea West",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2707",
+            "Connections": [
+                {
+                    "Exit": "1307",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Gallery of Souls Sea Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1301",
+            "Connections": [
+                {
+                    "Exit": "2801",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Sea East",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2801",
+            "Connections": [
+                {
+                    "Exit": "1301",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Blushwood",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1410",
+            "Connections": [
+                {
+                    "Exit": "2510",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Verdazure Swamp Lab Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2510",
+            "Connections": [
+                {
+                    "Exit": "1410",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Lab - Verdazure Swamp Connection",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1502",
+            "Connections": [
+                {
+                    "Exit": "1702",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Tartarus",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1702",
+            "Connections": [
+                {
+                    "Exit": "1502",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Swamp Tartarus Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1503",
+            "Connections": [
+                {
+                    "Exit": "2503",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Tartarus Catacombs",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2503",
+            "Connections": [
+                {
+                    "Exit": "1503",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Catacombs Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1600",
+            "Connections": [
+                {
+                    "Exit": "1800",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Snowveil Above HQ",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1800",
+            "Connections": [
+                {
+                    "Exit": "1600",
+                    "Method": ""
+                },
+                {
+                    "Exit": "DreamKeeper Outside Right",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1701",
+            "Connections": [
+                {
+                    "Exit": "2301",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Magma Depths Sinner Exit",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2301",
+            "Connections": [
+                {
+                    "Exit": "1701",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Sinner's Oath Entrance",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1801",
+            "Connections": [
+                {
+                    "Exit": "1901",
+                    "Method": ""
+                },
+                {
+                    "Exit": "DreamKeeper Outside Left",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1901",
+            "Connections": [
+                {
+                    "Exit": "1801",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Heavens Valley Snow Route Low",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "1900",
+            "Connections": [
+                {
+                    "Exit": "2900",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Heavens Valley Snow Route Upper",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2900",
+            "Connections": [
+                {
+                    "Exit": "1900",
+                    "Method": ""
+                },
+                {
+                    "Exit": "EverGarden To Valley",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2001",
+            "Connections": [
+                {
+                    "Exit": "2101",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Valhalla City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2101",
+            "Connections": [
+                {
+                    "Exit": "2001",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Valhalla Breath West",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2003",
+            "Connections": [
+                {
+                    "Exit": "2902",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Valhalla City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2902",
+            "Connections": [
+                {
+                    "Exit": "2003",
+                    "Method": ""
+                },
+                {
+                    "Exit": "EverGarden To Valhalla",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2008",
+            "Connections": [
+                {
+                    "Exit": "2608",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Valhalla City",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "2608",
+            "Connections": [
+                {
+                    "Exit": "2008",
+                    "Method": ""
+                },
+                {
+                    "Exit": "Cloister Entrance",
+                    "Method": ""
+                }
+            ]
+        }
+    ]
+}
