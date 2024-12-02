@@ -555,10 +555,6 @@
                     "Method": "ITEM_LINEBOMB || ITEM_SLIDE"
                 },
                 {
-                    "Exit": "Heavens Valley West",
-                    "Method": ""
-                },
-                {
                     "Exit": "0603",
                     "Method": ""
                 },
@@ -1131,7 +1127,7 @@
             "Connections": [
                 {
                     "Exit": "Verdazure Sea Forgotten Exit",
-                    "Method": "ITEM_WATERMOVEMENT && (ITEM_LINEBOMB || RabbitJump)"
+                    "Method": "ITEM_WATERMOVEMENT && ITEM_LINEBOMB"
                 },
                 {
                     "Exit": "Verdazure Sea West Exit",
