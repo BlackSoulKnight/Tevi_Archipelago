@@ -5097,7 +5097,7 @@
     },
     {
         "Itemname": "STACKABLE_HP",
-        "Location": "Verdazure Ocean",
+        "Location": "Verdazure Ocean Sea Exit",
         "LocationName": "Verdazure Ocean - Kiwi Bunny Potion",
         "slotId": 23,
         "Requirement": [
