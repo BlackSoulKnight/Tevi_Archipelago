@@ -24,9 +24,9 @@ class RegionDef:
 
     def __init__(self, multiworld: MultiWorld, player: int, options:TeviOptions):
         self.data = {}
-        file = pkgutil.get_data(__name__, os.path.join(get_world_directory(), 'resources', 'Area.json')).decode()
+        file = pkgutil.get_data(__name__, os.path.join('resources', 'Area.json')).decode()
         self.data["Area"] = json.loads(file)
-        file = pkgutil.get_data(__name__, os.path.join(get_world_directory(), 'resources', 'Location.json')).decode()
+        file = pkgutil.get_data(__name__, os.path.join('resources', 'Location.json')).decode()
         self.data["Location"] = json.loads(file)
         self.edges = {}
         self.locations = {}
@@ -175,7 +175,7 @@ def get_all_possible_locations():
 
     :returns: A full list of location names.
     """
-    file = pkgutil.get_data(__name__, os.path.join(get_world_directory(), 'resources', 'Location.json')).decode()
+    file = pkgutil.get_data(__name__, os.path.join('resources', 'Location.json')).decode()
     data = json.loads(file)
 
     
