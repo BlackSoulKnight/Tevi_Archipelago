@@ -5,7 +5,7 @@ from typing import List, Set, Dict, Optional, Callable
 from BaseClasses import Location, Region, MultiWorld, ItemClassification
 from worlds.generic.Rules import add_rule, set_rule
 from .items import TeviItem
-from .Utility import get_world_directory,evaluate_rule,parse_expression_logic,GetAllUpgradeables
+from .Utility import evaluate_rule,parse_expression_logic,GetAllUpgradeables
 from .Options import TeviOptions
 from .TeviToApNames import TeviToApNames
 from .transitionShuffle import *

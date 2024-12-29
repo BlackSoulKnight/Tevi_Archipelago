@@ -4,8 +4,7 @@ from .logic_helper import *
 from .TeviToApNames import TeviToApNames
 from typing import Dict,List
 
-def get_world_directory():
-    return os.path.dirname(os.path.abspath(__file__))
+
 
 
 def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, Region]], options):
