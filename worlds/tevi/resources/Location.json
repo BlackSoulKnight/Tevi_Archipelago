@@ -3337,7 +3337,7 @@
     {
         "Itemname": "QUEST_RabiPillow",
         "Location": "Tartarus",
-        "LocationName": "Tartarus - Nap Pillow",
+        "LocationName": "Tartarus - Arcade",
         "slotId": 1,
         "Requirement": [
             {
@@ -5183,7 +5183,7 @@
         "slotId": 24,
         "Requirement": [
             {
-                "Method": "ITEM_OrbTypeS2 && ChargeShot && I20 && ITEM_ORB 2",
+                "Method": "ITEM_OrbTypeS2 && ChargeShot && I20 && ITEM_ORB 2 && ITEM_SLIDE && ( ITEM_BombLengthExtend && ITEM_AREABOMB )",
                 "Difficulty": 0
             }
         ]
@@ -6893,7 +6893,7 @@
         "slotId": 1,
         "Requirement": [
             {
-                "Method": "Coins 250",
+                "Method": "Coins 2500",
                 "Difficulty": 0
             }
         ]
