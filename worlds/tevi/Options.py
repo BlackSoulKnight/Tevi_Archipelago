@@ -88,9 +88,9 @@ class CKick(Toggle):
     """
     display_name = "Ceiling kick"
     
-class HiddenP(Toggle):
+class HiddenPaths(Toggle):
     """
-    Have the knowledge of all hidden Paths in Free Roam 
+    Consider Hidden Paths in Free Roam for the logic
     """
     display_name = "Hidden Paths"
 
@@ -118,5 +118,5 @@ class TeviOptions(PerGameCommonOptions):
     RWalljump:RabbitWalljump
     backflip:Backflip
     cKick:CKick
-    hiddenP:HiddenP
+    hiddenP:HiddenPaths
     earlydream: EarlyDream
