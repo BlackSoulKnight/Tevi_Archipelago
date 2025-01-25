@@ -1584,7 +1584,7 @@
         "slotId": 1,
         "Requirement": [
             {
-                "Method": "",
+                "Method": "ITEM_LINEBOMB",
                 "Difficulty": 0
             }
         ]
@@ -3786,7 +3786,7 @@
         "Itemname": "BADGE_DodgeEPBoost",
         "Location": "Lab Left",
         "LocationName": "Lab - EP Booster: Dodge",
-        "slotId": 18,
+        "slotId": 1,
         "Requirement": [
             {
                 "Method": "",
