@@ -120,3 +120,22 @@ class TeviOptions(PerGameCommonOptions):
     cKick:CKick
     hiddenP:HiddenPaths
     earlydream: EarlyDream
+    def getOptions(self):
+        return {
+            "open_morose":self.open_morose.value,
+            "randomize_knife":self.randomize_knife.value,
+            "randomize_orb":self.randomize_orb.value,
+            "randomize_item_upgrade":self.randomize_item_upgrade.value,
+            "chaos_mode":self.chaos_mode.value,
+            "celia_sable":self.celia_sable.value,
+            "free_attack_up":self.free_attack_up.value,
+            "gear_count":self.gear_count.value,
+            "goal_count":self.goal_count.value,
+            "transitionShuffle":self.transitionShuffle.value,
+            "RJump":self.RJump.value,
+            "RWalljump":self.RWalljump.value,
+            "backflip":self.backflip.value,
+            "cKick":self.cKick.value,
+            "hiddenP":self.hiddenP.value,
+            "earlydream":self.earlydream.value
+        }

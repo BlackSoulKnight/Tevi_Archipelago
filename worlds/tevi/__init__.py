@@ -135,15 +135,16 @@ class TeviWorld(World):
                 "from":v["Name"],
                 "to":v["Connections"][0]["Exit"]
                 })
-                
 
+        options = self.options.getOptions()
         return {
             "openMorose": self.options.open_morose.value,
             "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
             "GoalCount": self.options.goal_count.value,
             "locationData": locationData,
-            "transitionData":transitionData
+            "transitionData":transitionData,
+            "opstions": options
         }
 
     def set_rules(self) -> None:
