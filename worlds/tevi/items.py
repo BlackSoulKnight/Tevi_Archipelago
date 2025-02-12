@@ -117,7 +117,7 @@ item_table: Dict[str,TeviItemData] ={
     "Decay Antidote":                                          TeviItemData("Item",    44966541_040, ItemClassification.useful,                           1, 255),
     "Combustible":                                             TeviItemData("Item",    44966541_041, ItemClassification.progression,                      3, 255),
     "Slipstream Boots":                                        TeviItemData("Item",    44966541_042, ItemClassification.progression,                      3, 255),
-    "Tartarus VIP Pass ":                                      TeviItemData("Item",    44966541_043, ItemClassification.progression),
+    "Tartarus VIP Pass":                                      TeviItemData("Item",    44966541_043, ItemClassification.progression),
     "Valhalla VIP Pass":                                       TeviItemData("Item",    44966541_044, ItemClassification.progression),
     "Royal Emblem":                                            TeviItemData("Item",    44966541_045, ItemClassification.useful),
     "Grip Sole Boots":                                         TeviItemData("Item",    44966541_046, ItemClassification.useful),
