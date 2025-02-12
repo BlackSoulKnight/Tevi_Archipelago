@@ -88,6 +88,16 @@ class CKick(Toggle):
     """
     display_name = "Ceiling kick"
     
+class BarrierSkip(Choice):
+    """
+    Skip Cutscene Barriers with Airdash (easy) or Slide (hard)
+    """
+    display_name = "Barrier Skip"
+    option_disable = 0
+    option_easy = 1
+    option_hard = 2
+    default = 0
+    
 class HiddenPaths(Toggle):
     """
     Consider Hidden Paths in Free Roam for the logic
@@ -97,6 +107,14 @@ class HiddenPaths(Toggle):
 class EarlyDream(Toggle):
     "Skip Dreamkeeper wind with Dropkicks and Strong Air Up"
     display_name = "Dream Keeper entrance skip"
+
+
+class ADCKick(Toggle):
+    """
+    Enter Gallery of Souls with a a precise Airdash into Walljump from Ceiling pixel 
+    (very hard)
+    """
+    display_name = "ADCKick"
 
 
 
@@ -120,6 +138,9 @@ class TeviOptions(PerGameCommonOptions):
     cKick:CKick
     hiddenP:HiddenPaths
     earlydream: EarlyDream
+    barrierSkip: BarrierSkip
+    adcKick : ADCKick
+    
     def getOptions(self):
         return {
             "open_morose":self.open_morose.value,
@@ -137,5 +158,7 @@ class TeviOptions(PerGameCommonOptions):
             "backflip":self.backflip.value,
             "cKick":self.cKick.value,
             "hiddenP":self.hiddenP.value,
-            "earlydream":self.earlydream.value
+            "earlydream":self.earlydream.value,
+            "barrierSkip":self.barrierSkip.value,
+            "adcKick":self.adcKick.value
         }

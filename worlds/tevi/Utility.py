@@ -41,8 +41,6 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
             "False": lambda _: False,
             "Boss": lambda _: True,
             "ItemUse": lambda _: True,
-            "BarrierSkip": lambda _: False,
-            "ADCKick": lambda _: False,
             "BounceKick": lambda _: False,
             "EnemyManip": lambda _: False,
             "WindSkip": lambda _: False,
@@ -75,8 +73,11 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
             return lambda _: (options.open_morose.value > 0)
         if "VenaBomb" == literal:
             return lambda state: can_use_VenaBomb(state,player)
-        
         #tricks
+        if "BarrierSkip":
+            return lambda state: trick_barrierSkip(state,player,options)
+        if "ADCKick":
+            return lambda state: trick_ADCKick(state,player,options)
         if "BackFlip" == literal:
             return lambda state: trick_backflip(state,player,options)
         if "CKick" == literal:

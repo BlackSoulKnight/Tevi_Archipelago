@@ -124,3 +124,14 @@ def trick_ckick(state:CollectionState,player:int,options:TeviOptions):
 
 def trick_backflip(state:CollectionState,player:int,options:TeviOptions):
     return options.backflip>0 and state.has(TeviToApNames["ITEM_KNIFE"],player)
+
+def trick_barrierSkip(state:CollectionState,player:int,options:TeviOptions):
+    val = options.barrierSkip.value
+    if val >1:
+        return state.has_any([TeviToApNames["ITEM_AirDash"],TeviToApNames["ITEM_SLIDE"]],player)
+    if val >0:
+        return state.has(TeviToApNames["ITEM_AirDash"],player)
+    return lambda _ :False
+
+def trick_ADCKick(state:CollectionState,player:int,options:TeviOptions):
+    return options.adcKick >0 and state.has(TeviToApNames["ITEM_AirDash"],player)

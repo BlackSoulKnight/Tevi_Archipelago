@@ -144,7 +144,7 @@ class TeviWorld(World):
             "GoalCount": self.options.goal_count.value,
             "locationData": locationData,
             "transitionData":transitionData,
-            "opstions": options
+            "options": options
         }
 
     def set_rules(self) -> None:
