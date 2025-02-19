@@ -11,6 +11,7 @@ class TeviItem(Item):
     @staticmethod
     def is_progression_item(name: str, options):
         """
+        not used
         Defines if an item is considered a progression item.
 
         This will likely be updated as future logic changes happen.
@@ -140,7 +141,7 @@ item_table: Dict[str,TeviItemData] ={
     "Vortex Gloves":                                           TeviItemData("Item",    44966541_063, ItemClassification.progression,                      3, 255),
     "Airy Powder":                                             TeviItemData("Item",    44966541_064, ItemClassification.progression),
     "Kitty Paw Charm":                                         TeviItemData("Item",    44966541_065, ItemClassification.useful),
-    "Alembic Crystal":                                         TeviItemData("Item",    44966541_066, ItemClassification.useful),
+    "Alembic Crystal":                                         TeviItemData("Item",    44966541_066, ItemClassification.progression),
 
     #Quest Items
     "Gilded Left Hand":                                        TeviItemData("Item",    44966541_106, ItemClassification.progression),
@@ -436,6 +437,7 @@ item_table: Dict[str,TeviItemData] ={
     "Burnt Dessert":                                           TeviItemData("Consumeable",  44966541_404, ItemClassification.filler,0,999999), 
     "Pocket Biscuit":                                          TeviItemData("Consumeable",  44966541_405, ItemClassification.filler,0,999999) 
     }
+
 event_item_table: Dict[str, TeviItem] = {
 
 }
