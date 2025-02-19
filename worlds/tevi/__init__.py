@@ -82,16 +82,23 @@ class TeviWorld(World):
         total_locations = len(self.multiworld.get_unfilled_locations(self.player))
         upgradeable = GetAllUpgradeables()
         #total_locations += 2
+        start_items = self.options.start_inventory.value
+
         for name, data in item_table.items():
             data.quantity = data.default_quantity
-            
-            #Havent found a better place
-            if not self.options.randomize_knife.value and name == "Dagger":
+            start_item_amount = 0
+            if name in start_items:
+                start_item_amount = start_items[name]
+                data.quantity -= max(0,min(start_item_amount,data.quantity))
+                
+            if data.quantity <= 0:
+                pass    
+            elif not self.options.randomize_knife.value and name == "Dagger":
                 data.quantity -=1
                 total_locations -=1
-            if name == "Astral Gear":
+            elif name == "Astral Gear":
                 data.quantity = max(self.options.gear_count.value,self.options.goal_count)
-            if not self.options.randomize_orb.value and name == "Orbitars":
+            elif not self.options.randomize_orb.value and name == "Orbitars":
                 data.quantity -=1
                 total_locations -=1
             # Celia and Sable are added to the player start inventory
@@ -99,8 +106,10 @@ class TeviWorld(World):
                 #data.quantity -=1
                 #total_locations -=1
             if not self.options.randomize_item_upgrade.value and ApNamesToTevi[name] in upgradeable:
-                data.quantity -=2
-                total_locations -=2
+                amount = min(2,max(0,start_item_amount))
+                data.quantity -= 2-amount
+                total_locations -= 2-amount
+
             if self.options.chaos_mode.value and data.classification != ItemClassification.progression  \
                                              and data.classification != ItemClassification.progression_skip_balancing:
                 data.quantity = 0 
@@ -155,14 +164,18 @@ class TeviWorld(World):
             lambda state: state.can_reach_region("Illusion Palace",self.player)
 
     def pre_fill(self) -> None:
-        if not self.options.randomize_knife.value:
+        start_items = self.options.start_inventory.value
+
+        if not self.options.randomize_knife.value and not ("Dagger" in start_items and start_items["Dagger"] >= 3):
             self.multiworld.get_location("Thanatara Canyon - Dagger",self.player).place_locked_item(self.create_item("Dagger"))
-        if not self.options.randomize_orb.value:
+        if not self.options.randomize_orb.value and not ("Orbitars" in start_items and start_items["Orbitars"] >= 3):
             self.multiworld.get_location("Thanatara Canyon - Orbitars",self.player).place_locked_item(self.create_item("Orbitars"))
         if not self.options.randomize_item_upgrade.value:
             for item in GetAllUpgradeables():
-                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
-                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
+                if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 2):
+                    self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
+                if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 1):
+                    self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
 
 
     def get_chaos_item_name(self) -> str:
