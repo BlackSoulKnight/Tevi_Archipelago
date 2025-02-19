@@ -7,6 +7,10 @@ class OpenMorose(Toggle):
     """Gain access to Morose without Crossbomb"""
     display_name = "Open Morose"
 
+class SuperBosses(Toggle):
+    """Consider Tevi's Hidden Bosses in Library for the Logic"""
+    display_name = "Super Bosses"
+
 class RandomizeKnife(Toggle):
     """If set to false, the Knife is at the default location"""
     display_name = "Randomize Knife"
@@ -140,6 +144,7 @@ class TeviOptions(PerGameCommonOptions):
     earlydream: EarlyDream
     barrierSkip: BarrierSkip
     adcKick : ADCKick
+    superBosses: SuperBosses
     
     def getOptions(self):
         return {
@@ -160,5 +165,6 @@ class TeviOptions(PerGameCommonOptions):
             "hiddenP":self.hiddenP.value,
             "earlydream":self.earlydream.value,
             "barrierSkip":self.barrierSkip.value,
-            "adcKick":self.adcKick.value
+            "adcKick":self.adcKick.value,
+            "superBosses":self.superBosses.value
         }

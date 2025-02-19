@@ -2,7 +2,7 @@ import os
 import json,pkgutil
 
 from typing import List, Set, Dict, Optional, Callable
-from BaseClasses import Location, Region, MultiWorld, ItemClassification
+from BaseClasses import Location, Region, MultiWorld, ItemClassification,LocationProgressType
 from worlds.generic.Rules import add_rule, set_rule
 from .items import TeviItem
 from .Utility import evaluate_rule,parse_expression_logic,GetAllUpgradeables
@@ -114,6 +114,8 @@ class RegionDef:
                 self.event_list.append({"Location":region_name,"Event":"Boss","Rule":ap_rule})
             if("Memine" in rule and not "AllMemine" in rule):
                 self.event_list.append({"Location":region_name,"Event":"Memine","Rule":ap_rule})
+            if("LibraryExtra" in rule and not self.options.superBosses.value > 0):
+                ap_location.progress_type = LocationProgressType.EXCLUDED
             regions[region_name].locations.append(ap_location)
             total_locations += 1
         return total_locations
@@ -128,6 +130,7 @@ class RegionDef:
         for event in self.event_list:
             eventNumber+=1
             newEvent = TeviLocation(self.player,f'{event["Location"]} {event["Event"]} {eventNumber}',None,regions[event["Location"]])
+            newEvent.show_in_spoiler = False
             if event["Rule"] != "":
                 if isinstance(event["Rule"],str):
                     ap_rule = parse_expression_logic(event["Rule"])

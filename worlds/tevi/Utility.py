@@ -45,7 +45,8 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
             "EnemyManip": lambda _: False,
             "WindSkip": lambda _: False,
             "Hard": lambda _: False,
-            "Explorer": lambda _: False
+            "Explorer": lambda _: False,
+            "LibraryExtra": lambda _: True
         }
 
         if "Coins" in literal:

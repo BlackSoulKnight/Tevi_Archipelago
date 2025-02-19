@@ -2602,6 +2602,42 @@
         ]
     },
     {
+        "Itemname": "STACKABLE_COG",
+        "Location": "Ana Thema",
+        "LocationName": "Ana Thema - GemaYue",
+        "slotId": 202,
+        "Requirement": [
+            {
+                "Method": "QUEST_LibraryKey && LibraryExtra && ITEM_KNIFE && Chapter 4",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "STACKABLE_COG",
+        "Location": "Ana Thema",
+        "LocationName": "Ana Thema - EinLee",
+        "slotId": 201,
+        "Requirement": [
+            {
+                "Method": "QUEST_LibraryKey && LibraryExtra && ITEM_KNIFE && Chapter 4",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "STACKABLE_COG",
+        "Location": "Ana Thema",
+        "LocationName": "Ana Thema - Waero",
+        "slotId": 200,
+        "Requirement": [
+            {
+                "Method": "QUEST_LibraryKey && LibraryExtra && ITEM_KNIFE && Chapter 4",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
         "Itemname": "EVENT_EliteChallangeD",
         "Location": "Ana Thema",
         "LocationName": "Ana Thema - Elite",
