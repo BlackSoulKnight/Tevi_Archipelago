@@ -184,4 +184,20 @@ def get_all_possible_locations():
     
     return [location["LocationName"] for location in data]
 
-
+def get_location_group_names():
+    locations = get_all_possible_locations()
+    location_name_groups = {}
+    for v in locations:
+        if "EVENT" in v:
+            continue
+        name = v.split("-")
+        name[0] = name[0].strip()
+        if "Memine" in name[0]:
+            name[0] = "Memine"
+        if len(name) == 1:
+            continue
+        if name[0] in location_name_groups:
+            location_name_groups[name[0]].add(name[1])
+        else:
+            location_name_groups[name[0]] = {name[1]}
+    return location_name_groups

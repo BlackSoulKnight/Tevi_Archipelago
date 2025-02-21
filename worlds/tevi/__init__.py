@@ -9,7 +9,7 @@ from Fill import swap_location_item
 from worlds.AutoWorld import World, WebWorld
 from worlds.LauncherComponents import Component, components, launch_subprocess, Type
 from .items import TeviItem, item_table, event_item_table, get_items_by_category,get_potential_new_item,get_potential_new_filler_item,get_item_groups
-from .Regions import RegionDef, get_all_possible_locations
+from .Regions import RegionDef, get_all_possible_locations,get_location_group_names
 from .Options import TeviOptions
 from .Web import TeviWeb
 from .Utility import GetAllUpgradeables
@@ -37,6 +37,7 @@ class TeviWorld(World):
     }
 
     item_name_groups = get_item_groups()
+    location_name_groups = get_location_group_names()
 
             
     def __init__(self, multiworld, player):
