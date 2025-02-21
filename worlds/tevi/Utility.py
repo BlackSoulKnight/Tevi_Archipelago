@@ -75,9 +75,9 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
         if "VenaBomb" == literal:
             return lambda state: can_use_VenaBomb(state,player)
         #tricks
-        if "BarrierSkip":
+        if "BarrierSkip" in literal:
             return lambda state: trick_barrierSkip(state,player,options)
-        if "ADCKick":
+        if "ADCKick" in literal:
             return lambda state: trick_ADCKick(state,player,options)
         if "BackFlip" == literal:
             return lambda state: trick_backflip(state,player,options)
