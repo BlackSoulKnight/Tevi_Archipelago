@@ -94,7 +94,7 @@ class CKick(Toggle):
     
 class BarrierSkip(Choice):
     """
-    Skip Cutscene Barriers with Airdash (easy) or Slide (hard)
+    Skip Cutscene Barriers with Airdash (easy) or Slide (hard) and requires 60 fps lock
     """
     display_name = "Barrier Skip"
     option_disable = 0
