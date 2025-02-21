@@ -80,6 +80,14 @@ def get_potential_new_filler_item() -> Dict[str,TeviItemData]:
             item_dict.setdefault(name, data)
     return item_dict
 
+def get_item_groups():
+    item_name_groups = {}
+    for item,data in item_table.items():
+        if data.category in item_name_groups:
+            item_name_groups[data.category].add(item)
+        else:
+            item_name_groups[data.category] = {item}
+    return item_name_groups
 
 item_table: Dict[str,TeviItemData] ={
     # Goal Requiment
@@ -95,29 +103,29 @@ item_table: Dict[str,TeviItemData] ={
     "Rainbow Bunny Potion":                                    TeviItemData("Stat",    44966541_008, ItemClassification.filler,                           15, 255),
 
     #Items
-    "Celia":                                                   TeviItemData("Item",    44966541_019, ItemClassification.progression),
-    "Sable":                                                   TeviItemData("Item",    44966541_020, ItemClassification.progression),
-    "Dagger":                                                  TeviItemData("Item",    44966541_022, ItemClassification.progression,                      3, 255),
-    "Orbitars":                                                TeviItemData("Item",    44966541_023, ItemClassification.progression,                      3, 255),
-    "Cross Bomb":                                              TeviItemData("Item",    44966541_024, ItemClassification.progression,                      3, 255),
-    "Cluster Bomb":                                            TeviItemData("Item",    44966541_025, ItemClassification.progression,                      3, 255),
+    "Celia":                                                   TeviItemData("Weapon",    44966541_019, ItemClassification.progression),
+    "Sable":                                                   TeviItemData("Weapon",    44966541_020, ItemClassification.progression),
+    "Dagger":                                                  TeviItemData("Weapon",    44966541_022, ItemClassification.progression,                      3, 255),
+    "Orbitars":                                                TeviItemData("Weapon",    44966541_023, ItemClassification.progression,                      3, 255),
+    "Cross Bomb":                                              TeviItemData("Weapon",    44966541_024, ItemClassification.progression,                      3, 255),
+    "Cluster Bomb":                                            TeviItemData("Weapon",    44966541_025, ItemClassification.progression,                      3, 255),
     "Bomb Fuel":                                               TeviItemData("Item",    44966541_026, ItemClassification.progression,                      3, 255),
-    "Rabi Boots":                                              TeviItemData("Item",    44966541_027, ItemClassification.progression,                      1, 255),
-    "Running Boots":                                           TeviItemData("Item",    44966541_028, ItemClassification.progression,                      3, 255),
-    "Slick Boots":                                             TeviItemData("Item",    44966541_029, ItemClassification.progression,                      1, 255),
-    "Parkour Boots":                                           TeviItemData("Item",    44966541_030, ItemClassification.progression,                      3, 255),
-    "Double Rabi Boots":                                       TeviItemData("Item",    44966541_031, ItemClassification.progression,                      1, 1),
-    "Jetpack":                                                 TeviItemData("Item",    44966541_032, ItemClassification.progression,                      3, 255),
-    "Hydrodynamo":                                             TeviItemData("Item",    44966541_033, ItemClassification.progression,                      1, 255),
+    "Rabi Boots":                                              TeviItemData("Movement",    44966541_027, ItemClassification.progression,                      1, 255),
+    "Running Boots":                                           TeviItemData("Movement",    44966541_028, ItemClassification.progression,                      3, 255),
+    "Slick Boots":                                             TeviItemData("Movement",    44966541_029, ItemClassification.progression,                      1, 255),
+    "Parkour Boots":                                           TeviItemData("Movement",    44966541_030, ItemClassification.progression,                      3, 255),
+    "Double Rabi Boots":                                       TeviItemData("Movement",    44966541_031, ItemClassification.progression,                      1, 1),
+    "Jetpack":                                                 TeviItemData("Movement",    44966541_032, ItemClassification.progression,                      3, 255),
+    "Hydrodynamo":                                             TeviItemData("Movement",    44966541_033, ItemClassification.progression,                      1, 255),
     "PK Recon Badge":                                          TeviItemData("Item",    44966541_034, ItemClassification.useful,                           1, 255),
     "Decay Mask":                                              TeviItemData("Item",    44966541_035, ItemClassification.progression,                      3, 255),
     "Red Module Type-B":                                       TeviItemData("Item",    44966541_036, ItemClassification.progression,                      1, 255),
     "Red Module Type-C":                                       TeviItemData("Item",    44966541_037, ItemClassification.progression,                      1, 255),
     "Blue Module Type-B":                                      TeviItemData("Item",    44966541_038, ItemClassification.progression,                      1, 255),
     "Blue Module Type-C":                                      TeviItemData("Item",    44966541_039, ItemClassification.progression,                      1, 255),
-    "Decay Antidote":                                          TeviItemData("Item",    44966541_040, ItemClassification.useful,                           1, 255),
+    "Decay Antidote":                                          TeviItemData("Item",    44966541_040, ItemClassification.progression,                           1, 255),
     "Combustible":                                             TeviItemData("Item",    44966541_041, ItemClassification.progression,                      3, 255),
-    "Slipstream Boots":                                        TeviItemData("Item",    44966541_042, ItemClassification.progression,                      3, 255),
+    "Slipstream Boots":                                        TeviItemData("Movement",    44966541_042, ItemClassification.progression,                      3, 255),
     "Tartarus VIP Pass":                                      TeviItemData("Item",    44966541_043, ItemClassification.progression),
     "Valhalla VIP Pass":                                       TeviItemData("Item",    44966541_044, ItemClassification.progression),
     "Royal Emblem":                                            TeviItemData("Item",    44966541_045, ItemClassification.useful),
@@ -139,7 +147,7 @@ item_table: Dict[str,TeviItemData] ={
     "Alterscope":                                              TeviItemData("Item",    44966541_061, ItemClassification.useful),
     "Gilded Exultation":                                       TeviItemData("Item",    44966541_062, ItemClassification.useful),
     "Vortex Gloves":                                           TeviItemData("Item",    44966541_063, ItemClassification.progression,                      3, 255),
-    "Airy Powder":                                             TeviItemData("Item",    44966541_064, ItemClassification.progression),
+    "Airy Powder":                                             TeviItemData("Movement",    44966541_064, ItemClassification.progression),
     "Kitty Paw Charm":                                         TeviItemData("Item",    44966541_065, ItemClassification.useful),
     "Alembic Crystal":                                         TeviItemData("Item",    44966541_066, ItemClassification.progression),
 

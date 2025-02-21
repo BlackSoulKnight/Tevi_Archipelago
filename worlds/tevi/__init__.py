@@ -8,7 +8,7 @@ from BaseClasses import ItemClassification
 from Fill import swap_location_item
 from worlds.AutoWorld import World, WebWorld
 from worlds.LauncherComponents import Component, components, launch_subprocess, Type
-from .items import TeviItem, item_table, event_item_table, get_items_by_category,get_potential_new_item,get_potential_new_filler_item
+from .items import TeviItem, item_table, event_item_table, get_items_by_category,get_potential_new_item,get_potential_new_filler_item,get_item_groups
 from .Regions import RegionDef, get_all_possible_locations
 from .Options import TeviOptions
 from .Web import TeviWeb
@@ -36,14 +36,14 @@ class TeviWorld(World):
         id_num, name in enumerate(get_all_possible_locations(), base_id)
     }
 
-    item_name_groups = {
+    item_name_groups = get_item_groups()
 
-    }
-
+            
     def __init__(self, multiworld, player):
         super().__init__(multiworld, player)
         self.total_locations = 0
         self.transitionShuffle = []
+        a = 2
 
     def generate_early(self) -> None:
         """Set world specific generation properties"""
