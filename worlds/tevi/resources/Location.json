@@ -5573,6 +5573,10 @@
             {
                 "Method": "ITEM_SLIDE && ITEM_JETPACK && ITEM_HIJUMP && SpinnerBash",
                 "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_DOUBLEJUMP && (ITEM_WALLJUMP || SpinnerBash)",
+                "Difficulty": 0
             }
         ]
     },
@@ -5620,6 +5624,10 @@
         "Requirement": [
             {
                 "Method": "ITEM_SLIDE && ITEM_JETPACK 3 && ITEM_AirDash",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_SLIDE && BounceKick && ITEM_AirDash",
                 "Difficulty": 0
             },
             {
