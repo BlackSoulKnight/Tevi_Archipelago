@@ -187,6 +187,7 @@ def get_all_possible_locations():
 def get_location_group_names():
     locations = get_all_possible_locations()
     location_name_groups = {}
+
     for v in locations:
         if "EVENT" in v:
             continue
@@ -200,4 +201,9 @@ def get_location_group_names():
             location_name_groups[name[0]].add(name[1])
         else:
             location_name_groups[name[0]] = {name[1]}
+        if "shop" in v.lower():
+            if "Shop" in location_name_groups:
+                location_name_groups["Shop"].add(v)
+            else:
+                location_name_groups["Shop"] = {v}
     return location_name_groups
