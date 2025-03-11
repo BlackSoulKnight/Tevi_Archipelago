@@ -110,10 +110,6 @@ class RegionDef:
                 self.event_list.append(({"Location":region_name,"Event":self.locationsItem[location_name],"Rule":ap_rule}))
                 continue
             set_rule(ap_location,ap_rule)
-            if("Boss" in rule):
-                self.event_list.append({"Location":region_name,"Event":"Boss","Rule":ap_rule})
-            if("Memine" in rule and not "AllMemine" in rule):
-                self.event_list.append({"Location":region_name,"Event":"Memine","Rule":ap_rule})
             if("LibraryExtra" in rule and not self.options.superBosses.value > 0):
                 ap_location.progress_type = LocationProgressType.EXCLUDED
             regions[region_name].locations.append(ap_location)
@@ -129,6 +125,8 @@ class RegionDef:
         eventNumber = 0
         for event in self.event_list:
             eventNumber+=1
+            if "EVENT_Memine5" in event["Event"]:
+                a = 2
             newEvent = TeviLocation(self.player,f'{event["Location"]} {event["Event"]} {eventNumber}',None,regions[event["Location"]])
             newEvent.show_in_spoiler = False
             if event["Rule"] != "":

@@ -38,7 +38,7 @@ def can_reach_goal(state:CollectionState,player:int,goalCount:int):
 def has_Chapter_reached(chapter:int,state:CollectionState,player:int):
     """Check if enough Bosses are kille to be in Chapter X"""
     counter = 0
-    boss_killed = state.count("Boss",player)
+    boss_killed = state.count("EVENT_BOSS",player)
     if(boss_killed >= 1):
         counter +=1
     if(boss_killed >= 3):
@@ -65,10 +65,10 @@ def can_destroy_MoneyBlocks(state: CollectionState, player:int):
     return state.has(TeviToApNames["ITEM_LINEBOMB"],player) or state.has(TeviToApNames["ITEM_KNIFE"],player)
 
 def can_upgrade_Compass(state:CollectionState, player:int):
-    return state.has("Memine",player,3)
+    return state.has("EVENT_Memine",player,3)
 
 def completed_Memine(state:CollectionState, player:int):
-    return state.has("Memine",player,6)
+    return state.has("EVENT_Memine",player,6)
 
 def can_Upgrade_Items(state:CollectionState,player:int,option_VanillaCraft:bool):
     """Check if enough Material can be collected"""

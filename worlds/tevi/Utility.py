@@ -57,10 +57,6 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
                 return lambda _: True
         if "RainbowCheck" == literal:
             return lambda state: can_upgrade_Compass(state,player)
-        if "AllMemine" == literal:
-            return lambda state: completed_Memine(state,player)
-        if "Memine" == literal:
-            return lambda state: can_finish_Memine(state,player)
         if "SpinnerBash" == literal:
             return lambda state: can_use_SpinnerBash(state,player)
         if "ChargeShot" == literal:

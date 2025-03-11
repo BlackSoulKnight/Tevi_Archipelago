@@ -90,7 +90,19 @@
         "slotId": 22,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Oasis",
+        "LocationName": "Oasis - Boss",
+        "slotId": 1,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -182,7 +194,19 @@
         "slotId": 20,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Desert Base Entrance",
+        "LocationName": "Desert Base Entrance - Boss",
+        "slotId": 1,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -326,7 +350,7 @@
         "slotId": 1,
         "Requirement": [
             {
-                "Method": "",
+                "Method": "ITEM_SLIDE && ITEM_LINEBOMB",
                 "Difficulty": 0,
                 "Note": "Could be a seperate Area"
             }
@@ -431,7 +455,7 @@
     {
         "Itemname": "EVENT_EliteChallangeB",
         "Location": "Thanatara Canyon",
-        "LocationName": "Thanatara Canyon - EliteB",
+        "LocationName": "Thanatara Canyon - Elite Challenge B",
         "slotId": 1,
         "Requirement": [
             {
@@ -591,7 +615,19 @@
         "slotId": 42,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Solennian Ruins",
+        "LocationName": "Solennian Ruins - Boss",
+        "slotId": 42,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -623,7 +659,7 @@
     {
         "Itemname": "BADGE_BreakDamageBoost",
         "Location": "Solennian Ruins",
-        "LocationName": "Solennian Ruins - Nasty Break-up",
+        "LocationName": "Solennian Ruins - Nasty Break up",
         "slotId": 1,
         "Requirement": [
             {
@@ -931,7 +967,7 @@
     {
         "Itemname": "EVENT_EliteChallangeA",
         "Location": "Morose City",
-        "LocationName": "Morose City - Elite A",
+        "LocationName": "Morose City - Elite Challenge A",
         "slotId": 0,
         "Requirement": [
             {
@@ -947,7 +983,19 @@
         "slotId": 23,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Morose City",
+        "LocationName": "Morose City - Boss",
+        "slotId": 23,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -1224,7 +1272,7 @@
     {
         "Itemname": "Useable_WaffleAHoneycloud",
         "Location": "Morose City",
-        "LocationName": "Morose City Shop - Honeycloud Waffle",
+        "LocationName": "Morose City Waffle Shop - Honeycloud Waffle",
         "slotId": 1,
         "Requirement": [
             {
@@ -1236,7 +1284,7 @@
     {
         "Itemname": "Useable_WaffleBMeringue",
         "Location": "Morose City",
-        "LocationName": "Morose City Shop Chap 3 - Toasted Meringue Waffle",
+        "LocationName": "Morose City Waffle Shop Chap 3 - Toasted Meringue Waffle",
         "slotId": 1,
         "Requirement": [
             {
@@ -1248,7 +1296,7 @@
     {
         "Itemname": "Useable_WaffleCMorning",
         "Location": "Morose City",
-        "LocationName": "Morose City Shop Chap 4  - Good Morning Waffle",
+        "LocationName": "Morose City Waffle Shop Chap 4  - Good Morning Waffle",
         "slotId": 1,
         "Requirement": [
             {
@@ -1260,7 +1308,7 @@
     {
         "Itemname": "Useable_WaffleDJellydrop",
         "Location": "Morose City",
-        "LocationName": "Morose City Shop Chap 5  - Berry Pink Waffle",
+        "LocationName": "Morose City Waffle Shop Chap 5  - Berry Pink Waffle",
         "slotId": 1,
         "Requirement": [
             {
@@ -1272,7 +1320,7 @@
     {
         "Itemname": "Useable_WaffleElueberry",
         "Location": "Morose City",
-        "LocationName": "Morose City Chap 6 - Blueberry Waffle",
+        "LocationName": "Morose City Waffle Shop Chap 6 - Blueberry Waffle",
         "slotId": 1,
         "Requirement": [
             {
@@ -1331,7 +1379,7 @@
     },
     {
         "Itemname": "STACKABLE_MATK",
-        "Location": "Travoll Industrie East Exit",
+        "Location": "Travoll Industrie to CopperWood",
         "LocationName": "Travoll Industrie - Cherry Bunny Potion",
         "slotId": 26,
         "Requirement": [
@@ -1416,7 +1464,19 @@
         "slotId": 25,
         "Requirement": [
             {
-                "Method": "ChargeShot && ITEM_BOMBFUEL && Boss",
+                "Method": "ChargeShot && ITEM_BOMBFUEL",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Travoll Mines",
+        "LocationName": "Travoll Mines - Boss",
+        "slotId": 25,
+        "Requirement": [
+            {
+                "Method": "ChargeShot && ITEM_BOMBFUEL",
                 "Difficulty": 0
             }
         ]
@@ -1471,8 +1531,8 @@
     },
     {
         "Itemname": "BADGE_EasyDodge",
-        "Location": "Travoll Mines Swamp Exit",
-        "LocationName": "Travoll Mines Swamp Exit - Dodge: Headstrong",
+        "Location": "Travoll Mines to Swamp",
+        "LocationName": "Travoll Mines to Swamp - Dodge: Headstrong",
         "slotId": 1,
         "Requirement": [
             {
@@ -1483,7 +1543,7 @@
     },
     {
         "Itemname": "STACKABLE_EP",
-        "Location": "Travoll Mines East Exit",
+        "Location": "Travoll Mines to Morose City",
         "LocationName": "Travoll Mines - Lemon Bunny Potion",
         "slotId": 0,
         "Requirement": [
@@ -1495,8 +1555,8 @@
     },
     {
         "Itemname": "BADGE_EnergyDefend",
-        "Location": "Travoll Mines Forest Exit",
-        "LocationName": "Travoll Mines Forest Exit - Mana Armor",
+        "Location": "Travoll Mines to Forest",
+        "LocationName": "Travoll Mines to Forest - Mana Armor",
         "slotId": 1,
         "Requirement": [
             {
@@ -1608,7 +1668,19 @@
         "slotId": 24,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Forest Maze boss",
+        "LocationName": "Forest - Boss",
+        "slotId": 24,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -1711,8 +1783,8 @@
     },
     {
         "Itemname": "STACKABLE_EP",
-        "Location": "Gleamwood Bottom",
-        "LocationName": "Gleamwood Middle - Lemon Bunny Potion",
+        "Location": "Gloamwood Bottom",
+        "LocationName": "Gloamwood Middle - Lemon Bunny Potion",
         "slotId": 5,
         "Requirement": [
             {
@@ -1723,8 +1795,8 @@
     },
     {
         "Itemname": "STACKABLE_MATK",
-        "Location": "Gleamwood Bottom",
-        "LocationName": "Gleamwood Bottom - Cherry Bunny Potion",
+        "Location": "Gloamwood Bottom",
+        "LocationName": "Gloamwood Bottom - Cherry Bunny Potion",
         "slotId": 3,
         "Requirement": [
             {
@@ -1735,8 +1807,8 @@
     },
     {
         "Itemname": "BADGE_QuickBomber",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Middle - Quick Bomber",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Middle - Quick Bomber",
         "slotId": 1,
         "Requirement": [
             {
@@ -1747,8 +1819,8 @@
     },
     {
         "Itemname": "ITEM_MASK",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Middle - Decay Mask",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Middle - Decay Mask",
         "slotId": 1,
         "Requirement": [
             {
@@ -1759,8 +1831,8 @@
     },
     {
         "Itemname": "STACKABLE_HP",
-        "Location": "Gleamwood Bottom",
-        "LocationName": "Gleamwood Bottom - Kiwi Bunny Potion",
+        "Location": "Gloamwood Bottom",
+        "LocationName": "Gloamwood Bottom - Kiwi Bunny Potion",
         "slotId": 5,
         "Requirement": [
             {
@@ -1771,8 +1843,8 @@
     },
     {
         "Itemname": "STACKABLE_MP",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Middle - Blueberry Bunny Potion",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Middle - Blueberry Bunny Potion",
         "slotId": 26,
         "Requirement": [
             {
@@ -1783,8 +1855,8 @@
     },
     {
         "Itemname": "BADGE_ComboTimeExtendC",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Middle - Combo Time Extend III",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Middle - Combo Time Extend III",
         "slotId": 1,
         "Requirement": [
             {
@@ -1795,8 +1867,8 @@
     },
     {
         "Itemname": "STACKABLE_RATK",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Middle - Grape Bunny Potion",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Middle - Grape Bunny Potion",
         "slotId": 19,
         "Requirement": [
             {
@@ -1807,8 +1879,8 @@
     },
     {
         "Itemname": "STACKABLE_SHARD",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Middle - Rainbow Bunny Potion",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Middle - Rainbow Bunny Potion",
         "slotId": 15,
         "Requirement": [
             {
@@ -1827,8 +1899,8 @@
     },
     {
         "Itemname": "BADGE_TauntStare",
-        "Location": "Gleamwood Forest Exit",
-        "LocationName": "Gleamwood Middle - Special Action: Speechless",
+        "Location": "Gloamwood to Forest",
+        "LocationName": "Gloamwood Middle - Special Action: Speechless",
         "slotId": 1,
         "Requirement": [
             {
@@ -1851,8 +1923,8 @@
     },
     {
         "Itemname": "BADGE_DodgeMeterBoost",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Upper - Dodge: Optimize",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Upper - Dodge: Optimize",
         "slotId": 1,
         "Requirement": [
             {
@@ -1863,8 +1935,8 @@
     },
     {
         "Itemname": "EVENT_Earth",
-        "Location": "Gleamwood Middle",
-        "LocationName": "Gleamwood Upper - Earth",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Gloamwood Upper - Earth",
         "slotId": 5,
         "Requirement": [
             {
@@ -1875,8 +1947,8 @@
     },
     {
         "Itemname": "EVENT_EliteChallangeC",
-        "Location": "Gleamwood Ulvosa Exit",
-        "LocationName": "Gleamwood Upper - Elite",
+        "Location": "Gloamwood to Ulvosa",
+        "LocationName": "Gloamwood Upper - Elite Challenge C",
         "slotId": 1,
         "Requirement": [
             {
@@ -1887,7 +1959,7 @@
     },
     {
         "Itemname": "BADGE_BattleStartCharger",
-        "Location": "Gleamwood Right",
+        "Location": "Gloamwood Right",
         "LocationName": "Ulskan Village Area - MP Surge: Battle Start",
         "slotId": 1,
         "Requirement": [
@@ -1899,7 +1971,7 @@
     },
     {
         "Itemname": "EVENT_Earth",
-        "Location": "Gleamwood Right",
+        "Location": "Gloamwood Right",
         "LocationName": "Ulskan Village Area - Earth",
         "slotId": 1,
         "Requirement": [
@@ -1911,7 +1983,7 @@
     },
     {
         "Itemname": "STACKABLE_RATK",
-        "Location": "Gleamwood Right",
+        "Location": "Gloamwood Right",
         "LocationName": "Ulskan Village Area - Grape Bunny Potion",
         "slotId": 5,
         "Requirement": [
@@ -1963,7 +2035,7 @@
     },
     {
         "Itemname": "ITEM_AntiDecay",
-        "Location": "Ulskan Plague Exit",
+        "Location": "Ulskan To Plague Forest",
         "LocationName": "Ulskan Village Area - Decay Antidote",
         "slotId": 1,
         "Requirement": [
@@ -1975,7 +2047,7 @@
     },
     {
         "Itemname": "BADGE_SlideHalt",
-        "Location": "Gleamwood Right",
+        "Location": "Gloamwood Right",
         "LocationName": "Ulskan Village Area - Slide Halt",
         "slotId": 1,
         "Requirement": [
@@ -1987,7 +2059,7 @@
     },
     {
         "Itemname": "BADGE_GoldenLuck",
-        "Location": "Ulskan Plague Exit",
+        "Location": "Ulskan To Plague Forest",
         "LocationName": "Ulskan Village Area - Dodge: Golden Luck",
         "slotId": 1,
         "Requirement": [
@@ -2116,14 +2188,26 @@
         "slotId": 30,
         "Requirement": [
             {
-                "Method": "( ITEM_MASK ) && Boss",
+                "Method": "ITEM_MASK",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Plague Forest",
+        "LocationName": "Plague Forest - Boss",
+        "slotId": 30,
+        "Requirement": [
+            {
+                "Method": "ITEM_MASK",
                 "Difficulty": 0
             }
         ]
     },
     {
         "Itemname": "BADGE_BombNormal4Buffer",
-        "Location": "Plague Forest Exit",
+        "Location": "Plague Forest to Ulskan",
         "LocationName": "Plague Forest - Aplomb",
         "slotId": 1,
         "Requirement": [
@@ -2135,7 +2219,7 @@
     },
     {
         "Itemname": "BADGE_PrepDef",
-        "Location": "Plague Forest Exit",
+        "Location": "Plague Forest to Ulskan",
         "LocationName": "Plague Forest - Blood Armor",
         "slotId": 1,
         "Requirement": [
@@ -2308,7 +2392,19 @@
         "slotId": 31,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Ulvosa",
+        "LocationName": "Ulvosa - Boss",
+        "slotId": 31,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -2427,8 +2523,8 @@
     },
     {
         "Itemname": "BADGE_StyleCharge",
-        "Location": "CopperWood Industry Exit",
-        "LocationName": "CopperWood Industry Exit - MP Quicken: Style",
+        "Location": "CopperWood Industry to Travoll Industrie",
+        "LocationName": "CopperWood Industry to Travoll Industrie - MP Quicken: Style",
         "slotId": 1,
         "Requirement": [
             {
@@ -2484,7 +2580,7 @@
     {
         "Itemname": "BADGE_8thDamageHeal",
         "Location": "Relicts",
-        "LocationName": "Relicts - Attenu-8",
+        "LocationName": "Relicts - Attenu 8",
         "slotId": 1,
         "Requirement": [
             {
@@ -2516,7 +2612,19 @@
         "slotId": 44,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Relicts",
+        "LocationName": "Relicts - Boss",
+        "slotId": 44,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -2640,7 +2748,7 @@
     {
         "Itemname": "EVENT_EliteChallangeD",
         "Location": "Ana Thema",
-        "LocationName": "Ana Thema - Elite",
+        "LocationName": "Ana Thema - Elite Challenge D",
         "slotId": 1,
         "Requirement": [
             {
@@ -2687,8 +2795,8 @@
     },
     {
         "Itemname": "BADGE_StyleComboNewAttack",
-        "Location": "Ana Thema Gallery Exit",
-        "LocationName": "Ana Thema Gallery Exit - C. Rank Frenzy: Starter",
+        "Location": "Ana Thema to Gallery",
+        "LocationName": "Ana Thema to Gallery - C. Rank Frenzy: Starter",
         "slotId": 1,
         "Requirement": [
             {
@@ -3349,7 +3457,7 @@
     {
         "Itemname": "EVENT_EliteChallangeE",
         "Location": "Tartarus",
-        "LocationName": "Tartarus - Elite E",
+        "LocationName": "Tartarus - Elite Challenge E",
         "slotId": 1,
         "Requirement": [
             {
@@ -3801,7 +3909,19 @@
         "slotId": 63,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Catacombs Inner",
+        "LocationName": "Catacombs Inner - Boss",
+        "slotId": 63,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -3897,7 +4017,19 @@
         "slotId": 45,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Lab",
+        "LocationName": "Lab - Boss",
+        "slotId": 45,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -3940,8 +4072,8 @@
     },
     {
         "Itemname": "ITEM_Alterscope",
-        "Location": "Lab - Verdazure Swamp Connection",
-        "LocationName": "Lab - Verdazure Swamp Connection - Alterscope",
+        "Location": "Lab to Verdazure Swamp Connection",
+        "LocationName": "Lab to Verdazure Swamp Connection - Alterscope",
         "slotId": 1,
         "Requirement": [
             {
@@ -3952,8 +4084,8 @@
     },
     {
         "Itemname": "BADGE_HitCountChargeRate",
-        "Location": "Lab - Verdazure Swamp Connection",
-        "LocationName": "Lab - Verdazure Swamp Connection - MP Quicken: Battlescars",
+        "Location": "Lab to Verdazure Swamp Connection",
+        "LocationName": "Lab to Verdazure Swamp Connection - MP Quicken: Battlescars",
         "slotId": 1,
         "Requirement": [
             {
@@ -4048,7 +4180,7 @@
     },
     {
         "Itemname": "STACKABLE_RATK",
-        "Location": "Verdazure Sea Forgotten Exit",
+        "Location": "Verdazure Sea to Forgotten city",
         "LocationName": "Verdazure Sea to Forgotton City - Grape Bunny Potion",
         "slotId": 26,
         "Requirement": [
@@ -4201,7 +4333,7 @@
     {
         "Itemname": "EVENT_EliteChallangeF",
         "Location": "Valhalla City",
-        "LocationName": "Valhalla City - Elite F",
+        "LocationName": "Valhalla City - Elite Challenge F",
         "slotId": 18,
         "Requirement": [
             {
@@ -4466,7 +4598,7 @@
     {
         "Itemname": "STACKABLE_HP",
         "Location": "Valhalla City",
-        "LocationName": "Valhalla City - Shop Kiwi Bunny Potion",
+        "LocationName": "Valhalla City Shop - Kiwi Bunny Potion",
         "slotId": 33,
         "Requirement": [
             {
@@ -4617,8 +4749,8 @@
     },
     {
         "Itemname": "BADGE_ToArmorReducer",
-        "Location": "EverGarden Path to Boss",
-        "LocationName": "EverGarden Path to Boss - Whipcrack",
+        "Location": "EverGarden BossPath",
+        "LocationName": "EverGarden BossPath - Whipcrack",
         "slotId": 1,
         "Requirement": [
             {
@@ -4637,8 +4769,8 @@
     },
     {
         "Itemname": "BADGE_DashFlashInv",
-        "Location": "EverGarden Path to Boss",
-        "LocationName": "EverGarden Path to Boss - Shooting Star",
+        "Location": "EverGarden BossPath",
+        "LocationName": "EverGarden BossPath - Shooting Star",
         "slotId": 1,
         "Requirement": [
             {
@@ -4649,8 +4781,8 @@
     },
     {
         "Itemname": "BADGE_ComboAntiFullHealth",
-        "Location": "EverGarden Path to Boss",
-        "LocationName": "EverGarden Path to Boss - Battlecry",
+        "Location": "EverGarden BossPath",
+        "LocationName": "EverGarden BossPath - Battlecry",
         "slotId": 1,
         "Requirement": [
             {
@@ -4666,7 +4798,19 @@
         "slotId": 49,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "EverGarden Boss Area",
+        "LocationName": "EverGarden - Boss",
+        "slotId": 49,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -4838,7 +4982,19 @@
         "slotId": 46,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Cloister Pre Boss",
+        "LocationName": "Cloister Boss - Boss",
+        "slotId": 46,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -4978,7 +5134,19 @@
         "slotId": 47,
         "Requirement": [
             {
-                "Method": "ITEM_BombLengthExtend && ITEM_AntiDecay && Boss",
+                "Method": "ITEM_BombLengthExtend && ITEM_AntiDecay",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Gallery of Mirrors East",
+        "LocationName": "Gallery of Mirrors East - Boss",
+        "slotId": 47,
+        "Requirement": [
+            {
+                "Method": "ITEM_BombLengthExtend && ITEM_AntiDecay",
                 "Difficulty": 0
             }
         ]
@@ -5126,14 +5294,26 @@
         "slotId": 62,
         "Requirement": [
             {
-                "Method": "( ITEM_AntiDecay || ITEM_ZCrystal) && Boss",
+                "Method": "( ITEM_AntiDecay || ITEM_ZCrystal)",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Gallery of Souls Boss Area",
+        "LocationName": "Gallery of Souls Boss Area - Boss",
+        "slotId": 62,
+        "Requirement": [
+            {
+                "Method": "( ITEM_AntiDecay || ITEM_ZCrystal)",
                 "Difficulty": 0
             }
         ]
     },
     {
         "Itemname": "STACKABLE_HP",
-        "Location": "Verdazure Ocean Sea Exit",
+        "Location": "Verdazure Ocean To Sea",
         "LocationName": "Verdazure Ocean - Kiwi Bunny Potion",
         "slotId": 23,
         "Requirement": [
@@ -5423,19 +5603,43 @@
         "slotId": 34,
         "Requirement": [
             {
-                "Method": "ChargeShot && Boss",
+                "Method": "ChargeShot",
                 "Difficulty": 0
             },
             {
-                "Method": "ITEM_DOUBLEJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && Boss",
+                "Method": "ITEM_DOUBLEJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
                 "Difficulty": 0
             },
             {
-                "Method": "ITEM_WALLJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && Boss",
+                "Method": "ITEM_WALLJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
                 "Difficulty": 0
             },
             {
-                "Method": "ITEM_HIJUMP && ITEM_JETPACK 3 && ITEM_KNIFE && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && Boss",
+                "Method": "ITEM_HIJUMP && ITEM_JETPACK 3 && ITEM_KNIFE && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Forgotten City",
+        "LocationName": "Forgotten City - Boss",
+        "slotId": 34,
+        "Requirement": [
+            {
+                "Method": "ChargeShot",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_DOUBLEJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_WALLJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_HIJUMP && ITEM_JETPACK 3 && ITEM_KNIFE && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB",
                 "Difficulty": 0
             }
         ]
@@ -5531,7 +5735,19 @@
         "slotId": 32,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Snowveil Ex",
+        "LocationName": "Snowveil - Boss",
+        "slotId": 32,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -6040,19 +6256,43 @@
         "slotId": 36,
         "Requirement": [
             {
-                "Method": "ITEM_WALLJUMP && Boss",
+                "Method": "ITEM_WALLJUMP",
                 "Difficulty": 0
             },
             {
-                "Method": "ITEM_DOUBLEJUMP && Boss",
+                "Method": "ITEM_DOUBLEJUMP",
                 "Difficulty": 0
             },
             {
-                "Method": "ITEM_JETPACK && Boss",
+                "Method": "ITEM_JETPACK",
                 "Difficulty": 0
             },
             {
-                "Method": "ITEM_LINEBOMB && ChargeShot && ITEM_SLIDE && Boss",
+                "Method": "ITEM_LINEBOMB && ChargeShot && ITEM_SLIDE",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Golden Hands HQ Sewer",
+        "LocationName": "Golden Hands HQ Sewer - Boss",
+        "slotId": 36,
+        "Requirement": [
+            {
+                "Method": "ITEM_WALLJUMP",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_DOUBLEJUMP",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_JETPACK",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_LINEBOMB && ChargeShot && ITEM_SLIDE",
                 "Difficulty": 0
             }
         ]
@@ -6152,7 +6392,19 @@
         "slotId": 61,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "DreamKeeper",
+        "LocationName": "DreamKeeper - Boss Alius",
+        "slotId": 61,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -6212,7 +6464,19 @@
         "slotId": 60,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "DreamKeeper",
+        "LocationName": "DreamKeeper - Boss Charon",
+        "slotId": 60,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -6517,7 +6781,19 @@
         "slotId": 43,
         "Requirement": [
             {
-                "Method": "Boss",
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_BOSS",
+        "Location": "Illusion Palace Entrance",
+        "LocationName": "Illusion Palace Entrance - Boss",
+        "slotId": 43,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
@@ -6757,79 +7033,247 @@
         "slotId": 1,
         "Requirement": [
             {
-                "Method": "AllMemine",
+                "Method": "EVENT_Memine 6",
                 "Difficulty": 0
             }
         ]
     },
     {
         "Itemname": "STACKABLE_SHARD",
-        "Location": "Ana Thema",
-        "LocationName": "Memine Ana Thema - Rainbow Bunny Potion #1",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Memine Gloamwood - Rainbow Bunny Potion",
         "slotId": 0,
         "Requirement": [
             {
-                "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && ITEM_KNIFE && ITEM_AirDash && ITEM_SLIDE && ITEM_JETPACK && Memine",
+                "Method": "EVENT_Memine0",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine",
+        "Location": "Gloamwood Middle",
+        "LocationName": "Memine Gloamwood - Rainbow Bunny Potion",
+        "slotId": 0,
+        "Requirement": [
+            {
+                "Method": "EVENT_Memine0",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine0",
+        "Location": "Gloamwood Bottom",
+        "LocationName": "Gloamwood - Memine Race",
+        "slotId": 0,
+        "Requirement": [
+            {
+                "Method": "",
                 "Difficulty": 0
             }
         ]
     },
     {
         "Itemname": "STACKABLE_SHARD",
-        "Location": "Blushwood Sliding",
-        "LocationName": "Memine Blushwood Sliding - Rainbow Bunny Potion",
+        "Location": "Verdazure Ocean",
+        "LocationName": "Verdazure Ocean - Memine Race From Blushwood",
         "slotId": 1,
         "Requirement": [
             {
-                "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && ITEM_KNIFE && ITEM_AirDash && ITEM_SLIDE && ITEM_JETPACK && Memine",
+                "Method": "EVENT_Memine1",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine",
+        "Location": "Verdazure Ocean",
+        "LocationName": "Verdazure Ocean - Memine Race From Blushwood",
+        "slotId": 1,
+        "Requirement": [
+            {
+                "Method": "EVENT_Memine1",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine1",
+        "Location": "Blushwood Sliding",
+        "LocationName": "Blushwood Sliding - Memine Race",
+        "slotId": 1,
+        "Requirement": [
+            {
+                "Method": "ITEM_SLIDE && ITEM_LINEBOMB && (ITEM_JETPACK 3 || (ITEM_DOUBLEJUMP && (ITEM_SPEEDUP 3 || ITEM_JETPACK)))",
                 "Difficulty": 0
             }
         ]
     },
     {
         "Itemname": "STACKABLE_SHARD",
-        "Location": "Forest",
-        "LocationName": "Memine Forest - Rainbow Bunny Potion",
+        "Location": "CopperWood Industry to Travoll Industrie",
+        "LocationName": "CopperWood - Memine Race from Forest",
         "slotId": 2,
         "Requirement": [
             {
-                "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && ITEM_KNIFE && ITEM_AirDash && ITEM_SLIDE && ITEM_JETPACK && Memine",
+                "Method": "EVENT_Memine2 && ITEM_LINEBOMB && ((ITEM_WALLJUMP && (ITEM_HIJUMP || ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK)) || (ITEM_JETPACK && ITEM_DOUBLEJUMP) || ITEM_JETPACK 3)",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine",
+        "Location": "CopperWood Industry to Travoll Industrie",
+        "LocationName": "CopperWood - Memine Race from Forest",
+        "slotId": 2,
+        "Requirement": [
+            {
+                "Method": "EVENT_Memine2 &&  ITEM_LINEBOMB && ((ITEM_WALLJUMP && (ITEM_HIJUMP || ITEM_AirDash || ITEM_DOUBLEJUMP || ITEM_JETPACK)) || (ITEM_JETPACK && ITEM_DOUBLEJUMP) || ITEM_JETPACK 3)",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine2",
+        "Location": "Forest",
+        "LocationName": "Forest - Memine Race",
+        "slotId": 2,
+        "Requirement": [
+            {
+                "Method": "ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_HIJUMP || ITEM_WALLJUMP",
                 "Difficulty": 0
             }
         ]
     },
     {
         "Itemname": "STACKABLE_SHARD",
-        "Location": "Tartarus",
-        "LocationName": "Memine Tartarus - Rainbow Bunny Potion",
+        "Location": "Valhalla City",
+        "LocationName": "Valhalla City - Memine Race From Tartarus",
         "slotId": 3,
         "Requirement": [
             {
-                "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && ITEM_KNIFE && ITEM_AirDash && ITEM_SLIDE && ITEM_JETPACK && Memine",
+                "Method": "EVENT_Memine3",
                 "Difficulty": 0
             }
         ]
     },
     {
-        "Itemname": "STACKABLE_SHARD",
-        "Location": "Valhalla Breath West Extended",
-        "LocationName": "Memine Valhalla Breath West Extended - Rainbow Bunny Potion",
+        "Itemname": "EVENT_Memine",
+        "Location": "Valhalla City",
+        "LocationName": "Valhalla City - Memine Race From Tartarus",
+        "slotId": 3,
+        "Requirement": [
+            {
+                "Method": "EVENT_Memine3",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine3",
+        "Location": "Tartarus",
+        "LocationName": "Tartarus - Memine Race",
+        "slotId": 3,
+        "Requirement": [
+            {
+                "Method": "",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine4",
+        "Location": "Heavens Valley Snow Route Middle",
+        "LocationName": "Heavens Valley Snow Route Middle - Memine Race",
         "slotId": 4,
         "Requirement": [
             {
-                "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && ITEM_KNIFE && ITEM_AirDash && ITEM_SLIDE && ITEM_JETPACK && Memine",
+                "Method": "ITEM_SLIDE && ( (ITEM_WALLJUMP 2 && ITEM_DOUBLEJUMP) || (ITEM_WALLJUMP && (((ITEM_JETPACK || ITEM_AirDash) && ITEM_DOUBLEJUMP) || (ITEM_AirDash && ITEM_JETPACK))))",
                 "Difficulty": 0
             }
         ]
     },
     {
         "Itemname": "STACKABLE_SHARD",
-        "Location": "Ana Thema",
-        "LocationName": "Memine Ana Thema - Rainbow Bunny Potion #2",
+        "Location": "EverGarden BossPath",
+        "LocationName": "EverGarden - Memine Race From Valhallas Breath East",
+        "slotId": 4,
+        "Requirement": [
+            {
+                "Method": "EVENT_Memine4",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine",
+        "Location": "EverGarden BossPath",
+        "LocationName": "EverGarden - Memine Race From Valhallas Breath East",
+        "slotId": 4,
+        "Requirement": [
+            {
+                "Method": "EVENT_Memine4",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "STACKABLE_SHARD",
+        "Location": "Forgotten City",
+        "LocationName": "Forgotten City - Memine Race From Ana Thema",
         "slotId": 5,
         "Requirement": [
             {
-                "Method": "ITEM_DOUBLEJUMP && ITEM_LINEBOMB && ITEM_KNIFE && ITEM_AirDash && ITEM_SLIDE && ITEM_JETPACK && Memine",
+                "Method": "ChargeShot && EVENT_Memine5",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_DOUBLEJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && EVENT_Memine5",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_WALLJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && EVENT_Memine5",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_HIJUMP && ITEM_JETPACK 3 && ITEM_KNIFE && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && EVENT_Memine5",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine",
+        "Location": "Forgotten City",
+        "LocationName": "Forgotten City - Memine Race From Ana Thema",
+        "slotId": 5,
+        "Requirement": [
+            {
+                "Method": "ChargeShot && EVENT_Memine5",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_DOUBLEJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && EVENT_Memine5",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_WALLJUMP && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && EVENT_Memine5",
+                "Difficulty": 0
+            },
+            {
+                "Method": "ITEM_HIJUMP && ITEM_JETPACK 3 && ITEM_KNIFE && ITEM_BombLengthExtend 3 && ITEM_LINEBOMB && EVENT_Memine5",
+                "Difficulty": 0
+            }
+        ]
+    },
+    {
+        "Itemname": "EVENT_Memine5",
+        "Location": "Ana Thema",
+        "LocationName": "Ana Thema - Memine Race",
+        "slotId": 5,
+        "Requirement": [
+            {
+                "Method": "Coins 250 && Chapter 5",
                 "Difficulty": 0
             }
         ]
@@ -6841,7 +7285,7 @@
         "slotId": 29,
         "Requirement": [
             {
-                "Method": "AllMemine",
+                "Method": "EVENT_Memine 6",
                 "Difficulty": 0
             }
         ]
@@ -6849,7 +7293,7 @@
     {
         "Itemname": "BADGE_SableALastHitEnhance",
         "Location": "Crafting",
-        "LocationName": "Crafting Chap 1 - Sable Type-A: Voracious",
+        "LocationName": "Crafting Chap 1 - Sable Type A: Voracious",
         "slotId": 1,
         "Requirement": [
             {
@@ -6861,7 +7305,7 @@
     {
         "Itemname": "BADGE_SableALongRangeSnipe",
         "Location": "Crafting",
-        "LocationName": "Crafting - Sable Type-A: Fanged",
+        "LocationName": "Crafting - Sable Type A: Fanged",
         "slotId": 1,
         "Requirement": [
             {
@@ -6873,7 +7317,7 @@
     {
         "Itemname": "BADGE_SableAHitIncrease",
         "Location": "Crafting",
-        "LocationName": "Crafting - Sable Type-A: Ensnare",
+        "LocationName": "Crafting - Sable Type A: Ensnare",
         "slotId": 1,
         "Requirement": [
             {
@@ -6885,7 +7329,7 @@
     {
         "Itemname": "BADGE_SableBNormalShotDebuff",
         "Location": "Crafting",
-        "LocationName": "Crafting - Sable Type-B: Malediction",
+        "LocationName": "Crafting - Sable Type B: Malediction",
         "slotId": 1,
         "Requirement": [
             {
@@ -6897,7 +7341,7 @@
     {
         "Itemname": "BADGE_SableBReturnStyle",
         "Location": "Crafting",
-        "LocationName": "Crafting - Sable Type-B: Backlash",
+        "LocationName": "Crafting - Sable Type B: Backlash",
         "slotId": 1,
         "Requirement": [
             {
@@ -6909,7 +7353,7 @@
     {
         "Itemname": "BADGE_SableCBigExplode",
         "Location": "Crafting",
-        "LocationName": "Crafting - Sable Type-C: Ignite",
+        "LocationName": "Crafting - Sable Type C: Ignite",
         "slotId": 1,
         "Requirement": [
             {
@@ -6921,7 +7365,7 @@
     {
         "Itemname": "BADGE_SableCSaver",
         "Location": "Crafting",
-        "LocationName": "Crafting - Sable Type-C: Fervid",
+        "LocationName": "Crafting - Sable Type C: Fervid",
         "slotId": 1,
         "Requirement": [
             {
@@ -6945,7 +7389,7 @@
     {
         "Itemname": "BADGE_CeliaALongStun",
         "Location": "Crafting",
-        "LocationName": "Crafting Chap 1 - Celia Type-A: Stunning",
+        "LocationName": "Crafting Chap 1 - Celia Type A: Stunning",
         "slotId": 1,
         "Requirement": [
             {
@@ -6957,7 +7401,7 @@
     {
         "Itemname": "BADGE_CeliaASlowShot",
         "Location": "Crafting",
-        "LocationName": "Crafting - Celia Type-A: Meteoric",
+        "LocationName": "Crafting - Celia Type A: Meteoric",
         "slotId": 1,
         "Requirement": [
             {
@@ -6969,7 +7413,7 @@
     {
         "Itemname": "BADGE_CeliaAShortRangeBurst",
         "Location": "Crafting",
-        "LocationName": "Crafting - Celia Type-A: Beguile",
+        "LocationName": "Crafting - Celia Type A: Beguile",
         "slotId": 1,
         "Requirement": [
             {
@@ -6981,7 +7425,7 @@
     {
         "Itemname": "BADGE_CeliaTypeBAmount",
         "Location": "Crafting",
-        "LocationName": "Crafting - Celia Type-B: Halo",
+        "LocationName": "Crafting - Celia Type B: Halo",
         "slotId": 1,
         "Requirement": [
             {
@@ -6993,7 +7437,7 @@
     {
         "Itemname": "BADGE_CELIATYPEBANGLE",
         "Location": "Crafting",
-        "LocationName": "Crafting - Celia Type-B: Prism",
+        "LocationName": "Crafting - Celia Type B: Prism",
         "slotId": 1,
         "Requirement": [
             {
@@ -7005,7 +7449,7 @@
     {
         "Itemname": "BADGE_CeliaCShotIncrease",
         "Location": "Crafting",
-        "LocationName": "Crafting - Celia Type-C: Barrage",
+        "LocationName": "Crafting - Celia Type C: Barrage",
         "slotId": 1,
         "Requirement": [
             {
@@ -7017,7 +7461,7 @@
     {
         "Itemname": "BADGE_CeliaCShotAllDirection",
         "Location": "Crafting",
-        "LocationName": "Crafting - Celia Type-C: Panoptic",
+        "LocationName": "Crafting - Celia Type C: Panoptic",
         "slotId": 1,
         "Requirement": [
             {
@@ -7077,7 +7521,7 @@
     {
         "Itemname": "BADGE_NormalShotWhenChargedShot",
         "Location": "Crafting",
-        "LocationName": "Crafting Chap 3 - Two-pronged Shot",
+        "LocationName": "Crafting Chap 3 - Two pronged Shot",
         "slotId": 1,
         "Requirement": [
             {
@@ -7889,7 +8333,7 @@
     {
         "Itemname": "ITEM_OrbTypeC2",
         "Location": "Item Upgrade",
-        "LocationName": "Orb Type Upgrade - Blue Module Type-B",
+        "LocationName": "Orb Type Upgrade - Blue Module Type B",
         "slotId": 1,
         "Requirement": [
             {
@@ -7901,7 +8345,7 @@
     {
         "Itemname": "ITEM_OrbTypeS2",
         "Location": "Item Upgrade",
-        "LocationName": "Orb Type Upgrade - Red Module Type-B",
+        "LocationName": "Orb Type Upgrade - Red Module Typ B",
         "slotId": 1,
         "Requirement": [
             {
@@ -7913,7 +8357,7 @@
     {
         "Itemname": "ITEM_OrbTypeC3",
         "Location": "Item Upgrade",
-        "LocationName": "Orb Type Upgrade - Blue Module Type-C",
+        "LocationName": "Orb Type Upgrade - Blue Module Type C",
         "slotId": 1,
         "Requirement": [
             {
@@ -7925,7 +8369,7 @@
     {
         "Itemname": "ITEM_OrbTypeS3",
         "Location": "Item Upgrade",
-        "LocationName": "Orb Type Upgrade - Red Module Type-C",
+        "LocationName": "Orb Type Upgrade - Red Module Type C",
         "slotId": 1,
         "Requirement": [
             {
@@ -7937,7 +8381,7 @@
     {
         "Itemname": "ITEM_OrbBoostU",
         "Location": "Item Upgrade",
-        "LocationName": "Orb Type Upgrade - Core Module Type-U",
+        "LocationName": "Orb Type Upgrade - Core Module Type U",
         "slotId": 1,
         "Requirement": [
             {
@@ -7949,7 +8393,7 @@
     {
         "Itemname": "ITEM_OrbBoostD",
         "Location": "Item Upgrade",
-        "LocationName": "Orb Type Upgrade - Core Module Type-D",
+        "LocationName": "Orb Type Upgrade - Core Module Type D",
         "slotId": 1,
         "Requirement": [
             {
