@@ -7,7 +7,7 @@ from typing import Dict,List
 
 
 
-def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, Region]], options):
+def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, Region]], options,isEntrance = False):
     """
     This method converts a rule from the existing randomizer to a lambda which can be passed to AP.
     The existing randomizer evaluates a defined logic expression, which it seperates into 5 classes:
@@ -52,65 +52,70 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
         if "Coins" in literal:
             coins = int(literal.split(" ")[1])
             if coins >250:
-                return lambda state: can_destroy_MoneyBlocks(state,player)
+                return lambda state: TeviLogic.can_destroy_MoneyBlocks(state,player)
             else:
                 return lambda _: True
         if "RainbowCheck" == literal:
-            return lambda state: can_upgrade_Compass(state,player)
+            return lambda state: TeviLogic.can_upgrade_Compass(state,player)
         if "SpinnerBash" == literal:
-            return lambda state: can_use_SpinnerBash(state,player)
+            return lambda state: TeviLogic.can_use_SpinnerBash(state,player)
         if "ChargeShot" == literal:
-            return lambda state: can_use_ChargeShot(state,player)
+            return lambda state: TeviLogic.can_use_ChargeShot(state,player)
         if "Chapter" in literal:
             chapter = int(literal.split(" ")[1])
-            return lambda state: has_Chapter_reached(chapter,state,player)
+            return lambda state: TeviLogic.has_Chapter_reached(chapter,state,player)
         if "Upgrade" in literal:
-            return lambda state: can_Upgrade_Items(state,player, not options.randomize_item_upgrade.value)
+            return lambda state: TeviLogic.can_Upgrade_Items(state,player, not options.randomize_item_upgrade.value)
         if "OpenMorose" == literal:
             return lambda _: (options.open_morose.value > 0)
         if "VenaBomb" == literal:
-            return lambda state: can_use_VenaBomb(state,player)
+            return lambda state: TeviLogic.can_use_VenaBomb(state,player)
+        if isEntrance:
+            if "RailPass" in literal or "ITEM_AirshipPass" == literal:
+                return lambda state: TeviLogic.can_use_travelSystem(state,player,literal)
+        if "Memine" in literal:
+            return lambda state: TeviLogic.can_complete_race(state,player,literal)
         #tricks
         if "BarrierSkip" in literal:
-            return lambda state: trick_barrierSkip(state,player,options)
+            return lambda state: TeviLogic.trick_barrierSkip(state,player,options)
         if "ADCKick" in literal:
-            return lambda state: trick_ADCKick(state,player,options)
+            return lambda state: TeviLogic.trick_ADCKick(state,player,options)
         if "BackFlip" == literal:
-            return lambda state: trick_backflip(state,player,options)
+            return lambda state: TeviLogic.trick_backflip(state,player,options)
         if "CKick" == literal:
-            return lambda state: trick_ckick(state,player,options)
+            return lambda state: TeviLogic.trick_ckick(state,player,options)
         if "HiddenP" == literal:
-            return lambda state: trick_HiddenP(state,player,options)
+            return lambda state: TeviLogic.trick_HiddenP(state,player,options)
         if "RabbitJump" == literal:
-            return lambda state: trick_RabbitJump(state,player,options)
+            return lambda state: TeviLogic.trick_RabbitJump(state,player,options)
         if "RabbitWalljump" == literal:
-            return lambda state: trick_RabbitWalljump(state,player,options)
+            return lambda state: TeviLogic.trick_RabbitWalljump(state,player,options)
         if "EarlyDream" == literal:
-            return lambda state: trick_EarlyDream(state,player,options)
+            return lambda state: TeviLogic.trick_EarlyDream(state,player,options)
 
         #needs to changed
         if "Core" in literal:
-            return lambda state: can_Upgrade_Core(state,player)
+            return lambda state: TeviLogic.can_Upgrade_Core(state,player)
         if "Goal" == literal:
-            return lambda state: can_reach_goal(state,player,options.goal_count.value)
+            return lambda state: TeviLogic.can_reach_goal(state,player,options.goal_count.value)
         if literal == "I19" or literal == "I20":
             return lambda state: state.has(TeviToApNames[literal],player)
 
         if literal in literal_eval_map:
             return literal_eval_map[literal]
 
-        return lambda state: has_item_levelX(literal,state,player)
+        return lambda state: TeviLogic.has_item_levelX(literal,state,player)
 
     elif isinstance(existing_rule, OpNot):
-        expr = evaluate_rule(existing_rule.expr, player, regions, options)
+        expr = evaluate_rule(existing_rule.expr, player, regions, options,isEntrance)
         return lambda state: not expr(state)
     elif isinstance(existing_rule, OpOr):
-        expr_l = evaluate_rule(existing_rule.exprL, player, regions, options)
-        expr_r = evaluate_rule(existing_rule.exprR, player, regions, options)
+        expr_l = evaluate_rule(existing_rule.exprL, player, regions, options,isEntrance)
+        expr_r = evaluate_rule(existing_rule.exprR, player, regions, options,isEntrance)
         return lambda state: expr_l(state) or expr_r(state)
     elif isinstance(existing_rule, OpAnd):
-        expr_l = evaluate_rule(existing_rule.exprL, player, regions, options)
-        expr_r = evaluate_rule(existing_rule.exprR, player, regions, options)
+        expr_l = evaluate_rule(existing_rule.exprL, player, regions, options,isEntrance)
+        expr_r = evaluate_rule(existing_rule.exprR, player, regions, options,isEntrance)
         return lambda state: expr_l(state) and expr_r(state)
     raise ValueError("Invalid Expression recieved.")
 

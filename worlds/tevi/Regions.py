@@ -75,7 +75,7 @@ class RegionDef:
                     continue
                 rule = self.edges[from_location][to_loaction]
                 ap_rule = parse_expression_logic(rule)
-                ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options)
+                ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options,True)
                 regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
 
 
@@ -125,9 +125,9 @@ class RegionDef:
         eventNumber = 0
         for event in self.event_list:
             eventNumber+=1
-            if "EVENT_Memine5" in event["Event"]:
-                a = 2
             newEvent = TeviLocation(self.player,f'{event["Location"]} {event["Event"]} {eventNumber}',None,regions[event["Location"]])
+            if "EVENT_Memine" in event["Event"] and len(event["Event"]) == 13:
+                newEvent.name = event["Event"]
             newEvent.show_in_spoiler = False
             if event["Rule"] != "":
                 if isinstance(event["Rule"],str):

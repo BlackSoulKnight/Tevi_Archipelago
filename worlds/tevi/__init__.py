@@ -44,7 +44,6 @@ class TeviWorld(World):
         super().__init__(multiworld, player)
         self.total_locations = 0
         self.transitionShuffle = []
-        a = 2
 
     def generate_early(self) -> None:
         """Set world specific generation properties"""
@@ -135,6 +134,7 @@ class TeviWorld(World):
             else:
                 item = location.item.name
             locationData.append ({
+                "version":"0.4",
                 "location":location.name,
                 "item":item,
                 "player":location.item.player,
