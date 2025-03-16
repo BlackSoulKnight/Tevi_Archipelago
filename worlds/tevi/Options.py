@@ -38,7 +38,7 @@ class FreeAttackUp(Range):
     """
     Start the Game with X amount of Atk Ups
 
-    This is usefull if Bosses 
+    This is usefull to kill Bosses faster
     """
     range_start = 0
     range_end = 220
