@@ -134,7 +134,6 @@ class TeviWorld(World):
             else:
                 item = location.item.name
             locationData.append ({
-                "version":"0.4",
                 "location":location.name,
                 "item":item,
                 "player":location.item.player,
@@ -148,6 +147,7 @@ class TeviWorld(World):
 
         options = self.options.getOptions()
         return {
+            "version":"0.4",
             "openMorose": self.options.open_morose.value,
             "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
