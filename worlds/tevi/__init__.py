@@ -128,20 +128,7 @@ class TeviWorld(World):
         self.multiworld.itempool += item_pool
 
     def fill_slot_data(self) -> dict:
-        data = self.multiworld.get_filled_locations(self.player)
-        locationData = []
         transitionData = []
-        for location in data:
-            if location.item.name in ApNamesToTevi:
-                item = ApNamesToTevi[location.item.name]
-            else:
-                item = location.item.name
-            locationData.append ({
-                "location":location.name,
-                "item":item,
-                "player":location.item.player,
-                "game":location.item.game,
-                "progressive":location.item.advancement})
         for connection in self.region_def.randomizedEntrances:
             transitionData.append({
                 "from":connection[0],
@@ -150,12 +137,11 @@ class TeviWorld(World):
 
         options = self.options.getOptions()
         return {
-            "version":"0.4",
+            "version":"0.4.2",
             "openMorose": self.options.open_morose.value,
             "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
             "GoalCount": self.options.goal_count.value,
-            "locationData": locationData,
             "transitionData":transitionData,
             "options": options
         }
