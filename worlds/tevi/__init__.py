@@ -14,6 +14,7 @@ from .Options import TeviOptions
 from .Web import TeviWeb
 from .Utility import GetAllUpgradeables
 from .TeviToApNames import TeviToApNames,ApNamesToTevi
+from entrance_rando import randomize_entrances
 
 class TeviWorld(World):
     """
@@ -44,6 +45,8 @@ class TeviWorld(World):
         super().__init__(multiworld, player)
         self.total_locations = 0
         self.transitionShuffle = []
+        self.region_def = None
+
 
     def generate_early(self) -> None:
         """Set world specific generation properties"""
@@ -69,14 +72,14 @@ class TeviWorld(World):
         Define regions and locations.
         This also defines access rules for the regions and locations.
         """
-        region_def = RegionDef(self.multiworld, self.player, self.options)
-        region_def.set_regions()
-        region_def.connect_regions()
-        self.total_locations = region_def.set_locations(self.location_name_to_id)
-        region_def.set_events()
-        self.transitionShuffle = region_def.transitions
+        self.region_def = RegionDef(self.multiworld, self.player, self.options)
+        self.region_def.set_regions()
+        self.total_locations = self.region_def.set_locations(self.location_name_to_id)
+        self.region_def.set_events()
         
-
+    def connect_entrances(self) -> None:
+        self.region_def.connect_regions()
+        
     def create_items(self) -> None:
         item_pool: List[TeviItem] = []
         total_locations = len(self.multiworld.get_unfilled_locations(self.player))
@@ -126,10 +129,10 @@ class TeviWorld(World):
 
     def fill_slot_data(self) -> dict:
         transitionData = []
-        for v in self.transitionShuffle:
+        for connection in self.region_def.randomizedEntrances:
             transitionData.append({
-                "from":v["Name"],
-                "to":v["Connections"][0]["Exit"]
+                "from":connection[0],
+                "to":connection[1]
                 })
 
         options = self.options.getOptions()

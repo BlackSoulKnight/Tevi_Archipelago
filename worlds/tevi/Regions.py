@@ -2,13 +2,13 @@ import os
 import json,pkgutil
 
 from typing import List, Set, Dict, Optional, Callable
-from BaseClasses import Location, Region, MultiWorld, ItemClassification,LocationProgressType
+from BaseClasses import Location, Region, MultiWorld, ItemClassification,LocationProgressType,EntranceType
+from entrance_rando import disconnect_entrance_for_randomization,randomize_entrances
 from worlds.generic.Rules import add_rule, set_rule
 from .items import TeviItem
 from .Utility import evaluate_rule,parse_expression_logic,GetAllUpgradeables
 from .Options import TeviOptions
 from .TeviToApNames import TeviToApNames
-from .transitionShuffle import *
 
 
 
@@ -33,9 +33,7 @@ class RegionDef:
         self.locationsItem = {}
         self.region_names = {}
         self.event_list =[]
-        if options.transitionShuffle.value > 0:
-            self.data["Area"] = transitionShuffle(self.data["Area"],multiworld)
-        self.transitions = self.data["Area"]["Transitions"]
+        self.randomizedEntrances = []
         self._get_region_name_list()
         self._get_location_rules()
         self.player = player
@@ -68,7 +66,7 @@ class RegionDef:
         regions = self.multiworld.regions.region_cache[self.player]
         regions["Menu"].connect(regions["Thanatara Canyon"])
 
-
+        meh = []
         for from_location in self.edges:
             for to_loaction in self.edges[from_location]:
                 if to_loaction == "":
@@ -76,7 +74,18 @@ class RegionDef:
                 rule = self.edges[from_location][to_loaction]
                 ap_rule = parse_expression_logic(rule)
                 ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options,True)
-                regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
+                #entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
+                if from_location.isdigit() and to_loaction.isdigit() and self.options.transitionShuffle.value > 0:
+                    entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
+                    entrance[0].randomization_type = EntranceType.TWO_WAY
+                    entrance[0].name = from_location
+                    meh += entrance
+                    pass 
+                else:
+                    entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
+        for b in meh:
+            disconnect_entrance_for_randomization(b)
+        self.randomizedEntrances = randomize_entrances(self.multiworld.worlds[self.player],True,{0:[0]}).pairings
 
 
     def set_locations(self, location_name_to_id):
