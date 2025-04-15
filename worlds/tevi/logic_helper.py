@@ -29,17 +29,15 @@ class TeviLogic():
         if len(split) > 1:
             level = int(split[1])
         item = split[0]
-        if "AREABOMB" in item:
-            return state.has(TeviToApNames[item],player,level) and state.has(TeviToApNames["ITEM_LINEBOMB"],player,1)
         if "AirSlide" in item:
             return state.has(TeviToApNames[item],player,level) and state.has(TeviToApNames["ITEM_SLIDE"],player,1)
         if "BOMBFUEL" in item:
-            return state.has(TeviToApNames[item],player,level) and state.has(TeviToApNames["ITEM_LINEBOMB"],player,1)
+            return state.has(TeviToApNames[item],player,level) and (state.has(TeviToApNames["ITEM_LINEBOMB"],player,1) or state.has(TeviToApNames["ITEM_AREABOMB"],player,1))
         if "ITEM_Rotater" in item:
             return state.has(TeviToApNames[item],player,level) and state.has(TeviToApNames["ITEM_KNIFE"],player,1)
         if "ITEM_BombLengthExtend" in item:
             return state.has(TeviToApNames[item],player,level) and state.has(TeviToApNames["ITEM_LINEBOMB"],player,1)
-        if "EVENT" in item:
+        if "EVENT_" in item:
             return state.has(item,player,level)
         return state.has(TeviToApNames[item],player,level)
 
