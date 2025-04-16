@@ -1368,7 +1368,7 @@
             "Connections": [
                 {
                     "Exit": "Heavens Valley West",
-                    "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB || HddenP) && (CKick || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_AirDash)"
+                    "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB || HiddenP) && (CKick || ITEM_DOUBLEJUMP || ITEM_JETPACK || ITEM_AirDash)"
                 },
                 {
                     "Exit": "2101",

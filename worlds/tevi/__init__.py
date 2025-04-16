@@ -32,6 +32,7 @@ class TeviWorld(World):
     game: str = "Tevi"
     options_dataclass = TeviOptions
     options: TeviOptions
+    settings: ClassVar[TeviSettings]
     topology_present: bool = False
     web: WebWorld = TeviWeb()
 
@@ -56,6 +57,7 @@ class TeviWorld(World):
         self.total_locations = 0
         self.transitionShuffle = []
         self.region_def = None
+        self.tracker_world["map_page_setting_key"] = f"Slot:{self.player}:currentMap"
 
 
     def generate_early(self) -> None:
@@ -198,44 +200,46 @@ class TeviWorld(World):
     def interpret_slot_data(slot_data: Dict[str, Any]) -> Dict[str, Any]:
         # returning slot_data so it regens, giving it back in multiworld.re_gen_passthrough
         # we are using re_gen_passthrough over modifying the world here due to complexities with ER
-        return slot_data
     
+    
+        return None    
     tracker_world = {
     "map_page_maps": ["maps/maps.jsonc"],
-    "map_page_locations": ["locations/anaThema.jsonc",
-                           "locations/blushwood.jsonc",
-                           "locations/canyonDesert.jsonc",
-                           "locations/catacombs.jsonc",
-                           "locations/cloister.jsonc",
-                           "locations/copperwood.jsonc",
-                           "locations/desertBase.jsonc",
-                           "locations/dreamersKeep.jsonc",
-                           "locations/evergarden.jsonc",
-                           "locations/forgottenCity.jsonc",
-                           "locations/galleryMirrors.jsonc",
-                           "locations/gloamwood.jsonc",
-                           "locations/magmaPlusSwamp.jsonc",
-                           "locations/morose.jsonc",
-                           "locations/oasis.jsonc",
-                           "locations/other.jsonc",
-                           "locations/plagueForest.jsonc",
-                           "locations/relicts.jsonc",
-                           "locations/sinners.jsonc",
-                           "locations/snowCity.jsonc",
-                           "locations/snowveilVerglas.jsonc",
-                           "locations/solennianRuins.jsonc",
-                           "locations/tartarus.jsonc",
-                           "locations/Transitions.jsonc",
-                           "locations/travollIndustries.jsonc",
-                           "locations/ulvosa.jsonc",
-                           "locations/valhalla.jsonc",
-                           "locations/valhallasBreathEast.jsonc",
-                           "locations/valhallasBreathWest.jsonc",
-                           "locations/vena.jsonc",
-                           "locations/verdawnAndMaze.jsonc",
-                           "locations/verdazureSea.jsonc",
+    "map_page_locations": [
+        "locations/desertBase.jsonc",
+        "locations/canyonDesert.jsonc",
+        "locations/oasis.jsonc",
+        "locations/morose.jsonc",
+        "locations/verdawnAndMaze.jsonc",
+        "locations/anaThema.jsonc",
+        "locations/blushwood.jsonc",
+        "locations/catacombs.jsonc",
+        "locations/cloister.jsonc",
+        "locations/copperwood.jsonc",
+        "locations/dreamersKeep.jsonc",
+        "locations/evergarden.jsonc",
+        "locations/forgottenCity.jsonc",
+        "locations/galleryMirrors.jsonc",
+        "locations/gloamwood.jsonc",
+        "locations/magmaPlusSwamp.jsonc",
+        "locations/other.jsonc",
+        "locations/plagueForest.jsonc",
+        "locations/relicts.jsonc",
+        "locations/sinners.jsonc",
+        "locations/snowCity.jsonc",
+        "locations/snowveilVerglas.jsonc",
+        "locations/solennianRuins.jsonc",
+        "locations/tartarus.jsonc",
+        "locations/Transitions.jsonc",
+        "locations/travollIndustries.jsonc",
+        "locations/ulvosa.jsonc",
+        "locations/valhalla.jsonc",
+        "locations/valhallasBreathEast.jsonc",
+        "locations/valhallasBreathWest.jsonc",
+        "locations/vena.jsonc",
+        "locations/verdazureSea.jsonc",
 ],
-    "map_page_setting_key": f"Slot:{ut_player}:Current Map",
+    "map_page_setting_key": f"Slot:-1:currentMap",
     "map_page_index": ut_stuff.map_page_index,
     "external_pack_key": "ut_poptracker_path",
     "poptracker_name_mapping": ut_stuff.poptracker_data

@@ -3,24 +3,9 @@ from typing import Any, TYPE_CHECKING
 
 # for UT poptracker integration map tab switching
 def map_page_index(data: Any) -> int:
-    mapping: dict[str, int] = {
-        "Beneath the Earth": 1,
-        "Beneath the Well": 2,
-        "The Cathedral": 3,
-        "Dark Tomb": 4,
-        "Eastern Vault": 5,
-        "Frog's Domain": 6,
-        "Swamp": 7,
-        "Overworld": 8,
-        "The Quarry": 9,
-        "Ruined Atoll": 10,
-        "West Gardens": 11,
-        "The Grand Library": 12,
-        "East Forest": 13,
-        "The Far Shore": 14,
-        "The Rooted Ziggurat": 15,
-    }
-    return mapping.get(data, 0)
+    if type(data) == str:
+        return 0
+    return data
 
 
 # mapping of everything after the second to last slash and the location id
