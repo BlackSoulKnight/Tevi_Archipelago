@@ -2,7 +2,7 @@
 This module serves as an entrypoint into the Tevi AP world.
 """
 from collections import defaultdict
-from typing import ClassVar, Dict, Set,List
+from typing import ClassVar, Dict, Set,List,Union,Any
 
 from BaseClasses import ItemClassification
 from Fill import swap_location_item
@@ -15,6 +15,15 @@ from .Web import TeviWeb
 from .Utility import GetAllUpgradeables
 from .TeviToApNames import TeviToApNames,ApNamesToTevi
 from entrance_rando import randomize_entrances
+from settings import Group,FilePath
+from . import ut_stuff
+
+class TeviSettings(Group):
+    class UTPoptrackerPath(FilePath):
+        """Path to the user's TEvi Poptracker Pack."""
+        description = "Tevi Poptracker Pack zip file"
+        required = False    
+    ut_poptracker_path: Union[UTPoptrackerPath, str] = UTPoptrackerPath()
 
 class TeviWorld(World):
     """
@@ -39,6 +48,7 @@ class TeviWorld(World):
 
     item_name_groups = get_item_groups()
     location_name_groups = get_location_group_names()
+    ut_player:int = -1
 
             
     def __init__(self, multiworld, player):
@@ -137,7 +147,7 @@ class TeviWorld(World):
 
         options = self.options.getOptions()
         return {
-            "version":"0.4.3",
+            "version":"0.4.2",
             "openMorose": self.options.open_morose.value,
             "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
@@ -183,4 +193,52 @@ class TeviWorld(World):
         #this needs to be change / Multiple Tevi Games will run into an itempool overflow
         item_table[choice].quantity +=1
         return choice
+    
+    @staticmethod
+    def interpret_slot_data(slot_data: Dict[str, Any]) -> Dict[str, Any]:
+        # returning slot_data so it regens, giving it back in multiworld.re_gen_passthrough
+        # we are using re_gen_passthrough over modifying the world here due to complexities with ER
+        return slot_data
+    
+    tracker_world = {
+    "map_page_maps": ["maps/maps.jsonc"],
+    "map_page_locations": ["locations/anaThema.jsonc",
+                           "locations/blushwood.jsonc",
+                           "locations/canyonDesert.jsonc",
+                           "locations/catacombs.jsonc",
+                           "locations/cloister.jsonc",
+                           "locations/copperwood.jsonc",
+                           "locations/desertBase.jsonc",
+                           "locations/dreamersKeep.jsonc",
+                           "locations/evergarden.jsonc",
+                           "locations/forgottenCity.jsonc",
+                           "locations/galleryMirrors.jsonc",
+                           "locations/gloamwood.jsonc",
+                           "locations/magmaPlusSwamp.jsonc",
+                           "locations/morose.jsonc",
+                           "locations/oasis.jsonc",
+                           "locations/other.jsonc",
+                           "locations/plagueForest.jsonc",
+                           "locations/relicts.jsonc",
+                           "locations/sinners.jsonc",
+                           "locations/snowCity.jsonc",
+                           "locations/snowveilVerglas.jsonc",
+                           "locations/solennianRuins.jsonc",
+                           "locations/tartarus.jsonc",
+                           "locations/Transitions.jsonc",
+                           "locations/travollIndustries.jsonc",
+                           "locations/ulvosa.jsonc",
+                           "locations/valhalla.jsonc",
+                           "locations/valhallasBreathEast.jsonc",
+                           "locations/valhallasBreathWest.jsonc",
+                           "locations/vena.jsonc",
+                           "locations/verdawnAndMaze.jsonc",
+                           "locations/verdazureSea.jsonc",
+],
+    "map_page_setting_key": f"Slot:{ut_player}:Current Map",
+    "map_page_index": ut_stuff.map_page_index,
+    "external_pack_key": "ut_poptracker_path",
+    "poptracker_name_mapping": ut_stuff.poptracker_data
+}
+
 
