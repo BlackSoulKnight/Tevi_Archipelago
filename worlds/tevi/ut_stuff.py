@@ -3,7 +3,7 @@ from typing import Any, TYPE_CHECKING
 
 # for UT poptracker integration map tab switching
 def map_page_index(data: Any) -> int:
-    if type(data) == str:
+    if type(data) != int:
         return 0
     return data
 
