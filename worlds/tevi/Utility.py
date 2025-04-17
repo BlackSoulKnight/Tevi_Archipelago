@@ -97,7 +97,7 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
         if "Core" in literal:
             return lambda state: TeviLogic.can_Upgrade_Core(state,player)
         if "Goal" == literal:
-            return lambda state: TeviLogic.can_reach_goal(state,player,options.goal_count.value)
+            return lambda state: TeviLogic.can_reach_goal(state,player,options.goal_count.value,options.goal_type.value)
         if literal == "I19" or literal == "I20":
             return lambda state: state.has(TeviToApNames[literal],player)
 

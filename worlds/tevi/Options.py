@@ -52,6 +52,14 @@ class ItemChaos(Toggle):
     """
     display_name = "Chaos mode"
 
+class GoalType(Choice):
+    """
+    Determines the requirement type to fight the Final Boss
+    """ 
+    display_name = "Goal Type"
+    option_AstralGear = 0
+    option_KillBosses = 1
+  
 class GearCount(Range):
     """
     The Amount of Gears found in the Game
@@ -101,7 +109,7 @@ class BarrierSkip(Choice):
     option_easy = 1
     option_hard = 2
     default = 0
-    
+      
 class HiddenPaths(Toggle):
     """
     Consider Hidden Paths in Free Roam for the logic
@@ -133,6 +141,7 @@ class TeviOptions(PerGameCommonOptions):
     chaos_mode: ItemChaos
     celia_sable: CeliaSableUnlocked
     free_attack_up : FreeAttackUp
+    goal_type: GoalType
     gear_count: GearCount
     goal_count: GoalCount
     transitionShuffle: TransitionShuffle
@@ -155,6 +164,7 @@ class TeviOptions(PerGameCommonOptions):
             "chaos_mode":self.chaos_mode.value,
             "celia_sable":self.celia_sable.value,
             "free_attack_up":self.free_attack_up.value,
+            "goal_type": self.goal_type.value,
             "gear_count":self.gear_count.value,
             "goal_count":self.goal_count.value,
             "transitionShuffle":self.transitionShuffle.value,

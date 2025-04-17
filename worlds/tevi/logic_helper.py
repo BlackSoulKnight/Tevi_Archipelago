@@ -41,8 +41,12 @@ class TeviLogic():
             return state.has(item,player,level)
         return state.has(TeviToApNames[item],player,level)
 
-    def can_reach_goal(state:CollectionState,player:int,goalCount:int):
+    def can_reach_goal(state:CollectionState,player:int,goalCount:int,goalType:int):
+        if goalType == 1:
+            return state.has("EVENT_BOSS",player,21)
+        #default goal
         return state.has(TeviToApNames["STACKABLE_COG"],player,goalCount)
+        
 
 
     def has_Chapter_reached(chapter:int,state:CollectionState,player:int):
