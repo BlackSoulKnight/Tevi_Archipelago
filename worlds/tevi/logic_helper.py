@@ -105,7 +105,7 @@ class TeviLogic():
                             TeviToApNames["ITEM_WATERMOVEMENT"]],player)
 
     def can_use_SpinnerBash(state:CollectionState,player:int):
-        return state.has(TeviToApNames["ITEM_KNIFE"],player)
+        return state.has(TeviToApNames["ITEM_KNIFE"],player) and TeviLogic.has_Chapter_reached(4,state,player)
 
     def can_finish_Memine(state:CollectionState,player:int):
         return state.has(TeviToApNames["ITEM_LINEBOMB"],player) and TeviLogic.can_use_ChargeShot(state,player) and TeviLogic.has_all_Movement(state,player)
@@ -118,7 +118,7 @@ class TeviLogic():
         return void or cloud or calico or tabby
 
     def has_fast_item(state:CollectionState,player:int):
-        return state.has_any([TeviToApNames["Useable_VenaBombBunBun"]],player)
+        return state.has_any([TeviToApNames["Useable_VenaBombBunBun"]],player) or TeviLogic.can_use_VenaBomb(state,player)
 
     def can_use_travelSystem(state:CollectionState,player:int,travelItem):
         return state._tevi_is_in_race[player] == False and state.has(travelItem,player)
@@ -131,14 +131,14 @@ class TeviLogic():
         state._tevi_is_in_race[player] = False
         return possible
 
-    def trick_RabbitJump(state:CollectionState,player:int,options:TeviOptions):
-        return options.RJump.value>0 and TeviLogic.has_fast_item(state,player)
-
-    def trick_RabbitWalljump(state:CollectionState,player:int,options:TeviOptions):
-        return options.RWalljump.value>0 and TeviLogic.has_fast_item(state,player)
+    def trick_WallJump(state:CollectionState,player:int,difficutly:int,option:int):
+        if difficutly > 1:
+            return difficutly <= option and TeviLogic.has_fast_item(state,player)
+        return difficutly <= option
 
     def trick_HiddenP(state:CollectionState,player:int,options:TeviOptions):
         return options.hiddenP.value>0
+    
     def trick_EarlyDream(state:CollectionState,player:int,options:TeviOptions):
         return options.earlydream.value>0 and TeviLogic.has_item_levelX("ITEM_KNIFE",state,player)
 

@@ -7,7 +7,7 @@ from typing import Dict,List
 
 
 
-def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, Region]], options,isEntrance = False):
+def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, Region]], options:TeviOptions,isEntrance = False):
     """
     This method converts a rule from the existing randomizer to a lambda which can be passed to AP.
     The existing randomizer evaluates a defined logic expression, which it seperates into 5 classes:
@@ -40,7 +40,6 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
             "None": lambda _: True,
             "False": lambda _: False,
             "Boss": lambda _: True,
-            "ItemUse": lambda _: True,
             "BounceKick": lambda _: False,
             "EnemyManip": lambda _: False,
             "WindSkip": lambda _: False,
@@ -86,10 +85,12 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
             return lambda state: TeviLogic.trick_ckick(state,player,options)
         if "HiddenP" == literal:
             return lambda state: TeviLogic.trick_HiddenP(state,player,options)
+        if "ItemUse" == literal:
+            return lambda state: TeviLogic.trick_WallJump(state,player,1,options.walljumpTricks.value)
         if "RabbitJump" == literal:
-            return lambda state: TeviLogic.trick_RabbitJump(state,player,options)
+            return lambda state: TeviLogic.trick_WallJump(state,player,2,options.walljumpTricks.value)
         if "RabbitWalljump" == literal:
-            return lambda state: TeviLogic.trick_RabbitWalljump(state,player,options)
+            return lambda state: TeviLogic.trick_WallJump(state,player,3,options.walljumpTricks.value)
         if "EarlyDream" == literal:
             return lambda state: TeviLogic.trick_EarlyDream(state,player,options)
 

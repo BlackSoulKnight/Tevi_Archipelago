@@ -78,16 +78,17 @@ class GoalCount(Range):
     range_end = 25
     default = 16
 
-class RabbitJump(Toggle):
+class WalljumpTrick(Choice):
     """
-    Using a Item with 200% item use to reach ledges after a Walljump
+    Using Items to manipulate Movementspeed,
+    for the Rabbit variants 200% Item use speed is required
     """
-    display_name = "Rabbit Jump"
-class RabbitWalljump(Toggle):
-    """
-    Using a Item with 200% item use to Climb a Wall (Higher FPS is easier)
-    """
-    display_name = "Rabbit Walljump"
+    display_name = "Walljump Tricks"
+    option_disabled = 0
+    option_AnyItem = 1
+    option_RabbitJump = 2
+    option_RabbitWalljump = 3
+    default = 0
 
 class Backflip(Toggle):
     """
@@ -145,8 +146,7 @@ class TeviOptions(PerGameCommonOptions):
     gear_count: GearCount
     goal_count: GoalCount
     transitionShuffle: TransitionShuffle
-    RJump:RabbitJump
-    RWalljump:RabbitWalljump
+    walljumpTricks : WalljumpTrick
     backflip:Backflip
     cKick:CKick
     hiddenP:HiddenPaths
@@ -168,8 +168,7 @@ class TeviOptions(PerGameCommonOptions):
             "gear_count":self.gear_count.value,
             "goal_count":self.goal_count.value,
             "transitionShuffle":self.transitionShuffle.value,
-            "RJump":self.RJump.value,
-            "RWalljump":self.RWalljump.value,
+            "walljumpTricks":self.walljumpTricks.value,
             "backflip":self.backflip.value,
             "cKick":self.cKick.value,
             "hiddenP":self.hiddenP.value,
