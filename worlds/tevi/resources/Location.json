@@ -7129,7 +7129,7 @@
         "slotId": 1,
         "Requirement": [
             {
-                "Method": "ITEM_SLIDE && (ITEM_LINEBOMB) && (ITEM_JETPACK 3 || (ITEM_DOUBLEJUMP && (ITEM_SPEEDUP 3 || ITEM_JETPACK)))",
+                "Method": "ITEM_SLIDE && (ITEM_LINEBOMB || ITEM_AREABOMB) && (ITEM_JETPACK 3 || (ITEM_DOUBLEJUMP && (ITEM_SPEEDUP 3 || ITEM_JETPACK)))",
                 "Difficulty": 0
             }
         ]
