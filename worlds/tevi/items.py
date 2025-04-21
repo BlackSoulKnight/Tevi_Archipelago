@@ -446,6 +446,46 @@ item_table: Dict[str,TeviItemData] ={
     "Pocket Biscuit":                                          TeviItemData("Consumeable",  44966541_405, ItemClassification.filler,0,999999) 
     }
 
+teleporter_table: Dict[str,TeviItem] = {
+    "Teleporter Desert Base":                                       TeviItemData("Teleporter",  44966541_500, ItemClassification.progression,1,1), 
+    "Teleporter Canyon":                                            TeviItemData("Teleporter",  44966541_501, ItemClassification.progression,1,1), 
+    "Teleporter Oasis":                                             TeviItemData("Teleporter",  44966541_502, ItemClassification.progression,1,1), 
+    "Teleporter Morose":                                            TeviItemData("Teleporter",  44966541_503, ItemClassification.progression,1,1), 
+    "Teleporter ForestMaze":                                        TeviItemData("Teleporter",  44966541_504, ItemClassification.progression,1,1), 
+    "Teleporter Forest":                                            TeviItemData("Teleporter",  44966541_505, ItemClassification.progression,1,1), 
+    "Teleporter Mines":                                             TeviItemData("Teleporter",  44966541_506, ItemClassification.progression,1,1), 
+    "Teleporter Industry":                                          TeviItemData("Teleporter",  44966541_507, ItemClassification.progression,1,1), 
+    "Teleporter Copper Forest":                                     TeviItemData("Teleporter",  44966541_508, ItemClassification.progression,1,1), 
+    "Teleporter Anathema":                                          TeviItemData("Teleporter",  44966541_509, ItemClassification.progression,1,1), 
+    "Teleporter Gloamwood":                                         TeviItemData("Teleporter",  44966541_510, ItemClassification.progression,1,1), 
+    "Teleporter Plague":                                            TeviItemData("Teleporter",  44966541_511, ItemClassification.progression,1,1), 
+    "Teleporter Ulvosa":                                            TeviItemData("Teleporter",  44966541_512, ItemClassification.progression,1,1), 
+    "Teleporter Snow Village":                                      TeviItemData("Teleporter",  44966541_513, ItemClassification.progression,1,1), 
+    "Teleporter Sea":                                               TeviItemData("Teleporter",  44966541_514, ItemClassification.progression,1,1), 
+    "Teleporter Ocean":                                             TeviItemData("Teleporter",  44966541_515, ItemClassification.progression,1,1), 
+    "Teleporter Forgotten City":                                    TeviItemData("Teleporter",  44966541_516, ItemClassification.progression,1,1), 
+    "Teleporter Tartarus":                                          TeviItemData("Teleporter",  44966541_517, ItemClassification.progression,1,1), 
+    "Teleporter Snow City":                                         TeviItemData("Teleporter",  44966541_518, ItemClassification.progression,1,1), 
+    "Teleporter Magma Depths":                                      TeviItemData("Teleporter",  44966541_519, ItemClassification.progression,1,1), 
+    "Teleporter Dreamkeeper Outside":                               TeviItemData("Teleporter",  44966541_520, ItemClassification.progression,1,1), 
+    "Teleporter Dreamkeeper Inside":                                TeviItemData("Teleporter",  44966541_521, ItemClassification.progression,1,1), 
+    "Teleporter Deep Dream":                                        TeviItemData("Teleporter",  44966541_522, ItemClassification.progression,1,1), 
+    "Teleporter Valhalla Breath East":                              TeviItemData("Teleporter",  44966541_523, ItemClassification.progression,1,1), 
+    "Teleporter Valhalla City":                                     TeviItemData("Teleporter",  44966541_524, ItemClassification.progression,1,1), 
+    "Teleporter Heavens Valley West":                               TeviItemData("Teleporter",  44966541_525, ItemClassification.progression,1,1), 
+    "Teleporter Valhalla Breath West":                              TeviItemData("Teleporter",  44966541_526, ItemClassification.progression,1,1), 
+    "Teleporter Ruins":                                             TeviItemData("Teleporter",  44966541_527, ItemClassification.progression,1,1), 
+    "Teleporter Sinner's Hell":                                     TeviItemData("Teleporter",  44966541_528, ItemClassification.progression,1,1), 
+    "Teleporter Relicts":                                           TeviItemData("Teleporter",  44966541_529, ItemClassification.progression,1,1), 
+    "Teleporter Catacombs":                                         TeviItemData("Teleporter",  44966541_530, ItemClassification.progression,1,1), 
+    "Teleporter Lab":                                               TeviItemData("Teleporter",  44966541_531, ItemClassification.progression,1,1), 
+    "Teleporter Cloister":                                          TeviItemData("Teleporter",  44966541_532, ItemClassification.progression,1,1), 
+    "Teleporter Gallery of Mirrors":                                TeviItemData("Teleporter",  44966541_533, ItemClassification.progression,1,1), 
+    "Teleporter Gallery of Souls":                                  TeviItemData("Teleporter",  44966541_534, ItemClassification.progression,1,1), 
+    "Teleporter Blushwood":                                         TeviItemData("Teleporter",  44966541_535, ItemClassification.progression,1,1), 
+    "Teleporter Evernight Garden":                                  TeviItemData("Teleporter",  44966541_536, ItemClassification.progression,1,1), 
+}
+
 event_item_table: Dict[str, TeviItem] = {
 
 }
