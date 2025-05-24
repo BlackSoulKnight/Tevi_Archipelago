@@ -84,6 +84,11 @@ class TeviLogic():
     def completed_Memine(state:CollectionState, player:int):
         return state.has("EVENT_Memine",player,6)
 
+    def unlocked_Teleporter(state:CollectionState,player:int,teleporter:str):
+        """Check if enough Material can be collected"""
+        #No Logic was made yet for this so we check the basic needs to reach everyting
+        return state.has(TeviToApNames[teleporter],player)
+
     def can_Upgrade_Items(state:CollectionState,player:int,option_VanillaCraft:bool):
         """Check if enough Material can be collected"""
         #No Logic was made yet for this so we check the basic needs to reach everyting

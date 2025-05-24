@@ -3,6 +3,10 @@ from dataclasses import dataclass
 
 from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink
 
+class TeleporterMode(Toggle):
+    """Restrict traveling to Teleporters"""
+    display_name = "Teleporter Mode"
+
 class OpenMorose(Toggle):
     """Gain access to Morose without Crossbomb"""
     display_name = "Open Morose"
@@ -135,6 +139,7 @@ class ADCKick(Toggle):
 @dataclass
 class TeviOptions(PerGameCommonOptions):
     """Tevi Options Definition"""
+    teleporter_mode: TeleporterMode
     open_morose: OpenMorose
     randomize_knife: RandomizeKnife
     randomize_orb: RandomizeOrb
@@ -157,6 +162,7 @@ class TeviOptions(PerGameCommonOptions):
     
     def getOptions(self):
         return {
+            "teleporter_mode":self.teleporter_mode.value,
             "open_morose":self.open_morose.value,
             "randomize_knife":self.randomize_knife.value,
             "randomize_orb":self.randomize_orb.value,

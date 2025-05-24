@@ -8,7 +8,7 @@ from BaseClasses import ItemClassification
 from Fill import swap_location_item
 from worlds.AutoWorld import World, WebWorld
 from worlds.LauncherComponents import Component, components, launch_subprocess, Type
-from .items import TeviItem, item_table, event_item_table, get_items_by_category,get_potential_new_item,get_potential_new_filler_item,get_item_groups
+from .items import TeviItem, item_table, event_item_table, get_items_by_category,get_potential_new_item,get_potential_new_filler_item,get_item_groups,teleporter_table
 from .Regions import RegionDef, get_all_possible_locations,get_location_group_names
 from .Options import TeviOptions
 from .Web import TeviWeb
@@ -41,7 +41,7 @@ class TeviWorld(World):
     item_name_groups: Dict[str, Set[str]] = {}
     location_name_groups: Dict[str, Set[str]] = {}
 
-    item_name_to_id: Dict[str, int] = {name: data.code for name, data in item_table.items()}
+    item_name_to_id: Dict[str, int] = {name: data.code for name, data in (item_table|teleporter_table).items()} 
     location_name_to_id: Dict[str, int] = {
         name: id_num for
         id_num, name in enumerate(get_all_possible_locations(), base_id)
@@ -75,6 +75,10 @@ class TeviWorld(World):
         data = item_table[name]
         return TeviItem(name, data.classification, data.code, self.player)
 
+    def create_teleporter(self,name:str) -> TeviItem:
+        data = teleporter_table[name]
+        return TeviItem(name, data.classification, data.code, self.player)
+
     def create_event(self, name: str) -> TeviItem:
         data = event_item_table[name]
         return TeviItem(name, data.classification, data.code, self.player)
@@ -98,9 +102,23 @@ class TeviWorld(World):
         upgradeable = GetAllUpgradeables()
         #total_locations += 2
         start_items = self.options.start_inventory.value
-
+        removingPotions = [0,0,0,0,0]
+        if self.options.teleporter_mode.value >0:
+            for name, data in teleporter_table.items():
+                data.quantity = data.default_quantity
+                item_pool += [self.create_teleporter(name) for _ in range(0, data.quantity)]
+                pot = self.multiworld.random.randint(0,4)
+                if removingPotions[pot] == 35:
+                    pot = (pot +1)%5
+                removingPotions[pot] += 1
+                
+        potIndex = 0
         for name, data in item_table.items():
             data.quantity = data.default_quantity
+            if "Potion" in name:
+                if potIndex <5:
+                    data.quantity -= removingPotions[potIndex]
+                    potIndex += 1
             start_item_amount = 0
             if name in start_items:
                 start_item_amount = start_items[name]
@@ -131,7 +149,7 @@ class TeviWorld(World):
             
             item_pool += [self.create_item(name) for _ in range(0, data.quantity)]
 
-        
+
         while len(item_pool) < total_locations:
             if self.options.chaos_mode.value:
                 item_pool.append(self.create_item(self.get_chaos_item_name()))
@@ -149,7 +167,7 @@ class TeviWorld(World):
 
         options = self.options.getOptions()
         return {
-            "version":"0.4.2",
+            "version":"0.4.4",
             "openMorose": self.options.open_morose.value,
             "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
@@ -206,38 +224,7 @@ class TeviWorld(World):
     tracker_world = {
     "map_page_maps": ["maps/maps.jsonc"],
     "map_page_locations": [
-        "locations/desertBase.jsonc",
-        "locations/canyonDesert.jsonc",
-        "locations/oasis.jsonc",
-        "locations/morose.jsonc",
-        "locations/verdawnAndMaze.jsonc",
-        "locations/anaThema.jsonc",
-        "locations/blushwood.jsonc",
-        "locations/catacombs.jsonc",
-        "locations/cloister.jsonc",
-        "locations/copperwood.jsonc",
-        "locations/dreamersKeep.jsonc",
-        "locations/evergarden.jsonc",
-        "locations/forgottenCity.jsonc",
-        "locations/galleryMirrors.jsonc",
-        "locations/gloamwood.jsonc",
-        "locations/magmaPlusSwamp.jsonc",
-        "locations/other.jsonc",
-        "locations/plagueForest.jsonc",
-        "locations/relicts.jsonc",
-        "locations/sinners.jsonc",
-        "locations/snowCity.jsonc",
-        "locations/snowveilVerglas.jsonc",
-        "locations/solennianRuins.jsonc",
-        "locations/tartarus.jsonc",
-        "locations/Transitions.jsonc",
-        "locations/travollIndustries.jsonc",
-        "locations/ulvosa.jsonc",
-        "locations/valhalla.jsonc",
-        "locations/valhallasBreathEast.jsonc",
-        "locations/valhallasBreathWest.jsonc",
-        "locations/vena.jsonc",
-        "locations/verdazureSea.jsonc",
+        "locations/locations.jsonc"
 ],
     "map_page_setting_key": f"Slot:-1:currentMap",
     "map_page_index": ut_stuff.map_page_index,

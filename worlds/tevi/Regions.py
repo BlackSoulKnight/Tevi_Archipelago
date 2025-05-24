@@ -65,6 +65,9 @@ class RegionDef:
 
         regions = self.multiworld.regions.region_cache[self.player]
         regions["Menu"].connect(regions["Thanatara Canyon"])
+        if self.options.teleporter_mode.value > 0:
+            regions["Menu"].connect(regions["TeleportHub"])
+
 
         meh = []
         for from_location in self.edges:
@@ -75,12 +78,16 @@ class RegionDef:
                 ap_rule = parse_expression_logic(rule)
                 ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options,True)
                 #entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
-                if from_location.isdigit() and to_loaction.isdigit() and self.options.transitionShuffle.value > 0:
-                    entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
-                    entrance[0].randomization_type = EntranceType.TWO_WAY
-                    entrance[0].name = from_location
-                    meh += entrance
-                    pass 
+                if from_location.isdigit() and to_loaction.isdigit():
+                    if self.options.teleporter_mode.value > 0:
+                        continue
+                    if self.options.transitionShuffle.value > 0: 
+                        entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
+                        entrance[0].randomization_type = EntranceType.TWO_WAY
+                        entrance[0].name = from_location
+                        meh += entrance
+                    else:
+                        entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
                 else:
                     entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
         for b in meh:
