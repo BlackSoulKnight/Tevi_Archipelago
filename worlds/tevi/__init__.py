@@ -167,7 +167,7 @@ class TeviWorld(World):
 
         options = self.options.getOptions()
         return {
-            "version":"0.4.4",
+            "version":"0.6.0",
             "openMorose": self.options.open_morose.value,
             "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
