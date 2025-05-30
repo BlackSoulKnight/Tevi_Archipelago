@@ -441,7 +441,7 @@ item_table: Dict[str,TeviItemData] ={
     "BB Rabbit":                                               TeviItemData("Consumeable",  44966541_400, ItemClassification.progression,1,999999), 
     "Calico Bomb":                                             TeviItemData("Consumeable",  44966541_401, ItemClassification.progression,1,999999), 
     "Tabby Bomb":                                              TeviItemData("Consumeable",  44966541_402, ItemClassification.progression,1,999999), 
-    "Memorial Bookmark":                                       TeviItemData("Consumeable",  44966541_403, ItemClassification.filler,0,999999), 
+    "Memorial Bookmark":                                       TeviItemData("Consumeable",  44966541_403, ItemClassification.filler,0,0), 
     "Burnt Dessert":                                           TeviItemData("Consumeable",  44966541_404, ItemClassification.filler,0,999999), 
     "Pocket Biscuit":                                          TeviItemData("Consumeable",  44966541_405, ItemClassification.filler,0,999999) 
     }
