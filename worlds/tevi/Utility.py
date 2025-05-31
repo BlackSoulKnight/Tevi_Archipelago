@@ -49,11 +49,7 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
         }
 
         if "Coins" in literal:
-            coins = int(literal.split(" ")[1])
-            if coins >250:
-                return lambda state: TeviLogic.can_destroy_MoneyBlocks(state,player)
-            else:
-                return lambda _: True
+            return lambda state: TeviLogic.has_Chapter_reached(1,state,player)    
         if "RainbowCheck" == literal:
             return lambda state: TeviLogic.can_upgrade_Compass(state,player)
         if "SpinnerBash" == literal:
