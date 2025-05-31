@@ -1,7 +1,7 @@
 # Releases
 
-All releases are located at [Tevi Randomzier](https://github.com/BlackSoulKnight/Tevi_Randomizer/releases),
-they contain all necessary files for Tevi,Archipelago and Poptracker
+All releases are located at [Tevi Randomzier](https://github.com/BlackSoulKnight/Tevi_Randomizer/releases),<br>
+they contain all necessary files for Tevi,Archipelago and Poptracker<br><br><br><br><br><br>
 
 
 # [Archipelago](https://archipelago.gg) ![Discord Shield](https://discordapp.com/api/guilds/731205301247803413/widget.png?style=shield) | [Install](https://github.com/ArchipelagoMW/Archipelago/releases)
