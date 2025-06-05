@@ -87,6 +87,11 @@ def get_item_groups():
             item_name_groups[data.category].add(item)
         else:
             item_name_groups[data.category] = {item}
+    for item,data in teleporter_table.items():
+        if data.category in item_name_groups:
+            item_name_groups[data.category].add(item)
+        else:
+            item_name_groups[data.category] = {item}
     return item_name_groups
 
 item_table: Dict[str,TeviItemData] ={
