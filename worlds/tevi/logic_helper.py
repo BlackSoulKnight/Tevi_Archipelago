@@ -159,7 +159,7 @@ class TeviLogic():
             return state.has_any([TeviToApNames["ITEM_AirDash"],TeviToApNames["ITEM_SLIDE"]],player)
         if val >0:
             return state.has(TeviToApNames["ITEM_AirDash"],player)
-        return lambda _ :False
+        return False
 
     def trick_ADCKick(state:CollectionState,player:int,options:TeviOptions):
         return options.adcKick >0 and state.has(TeviToApNames["ITEM_AirDash"],player)
