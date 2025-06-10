@@ -42,3 +42,18 @@ class TestMemine(TeviTestBase):
         items = []
         self.collect(items)
         self.assertFalse(self.can_reach_location("CopperWood - Memine Race from Forest"))
+
+
+class TestGalleryOfSouls(TeviTestBase):
+    run_default_tests = None
+    options = {
+        "teleporter_mode": "1",
+    }
+    
+    def test_gallery_of_souls(self) -> None:
+        items =[self.get_item_by_name("Cluster Bomb"),self.get_item_by_name("Slick Boots"),self.get_item_by_name("Double Rabi Boots"),self.get_item_by_name("Teleporter Gallery of Souls")]
+        
+        locations = "Gallery of Souls - Double Rabi Boots"
+        self.collect(items)
+        self.assertFalse(self.can_reach_location(locations))
+
