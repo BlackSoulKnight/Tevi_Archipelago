@@ -212,9 +212,9 @@ def get_location_group_names():
         if len(name) == 1:
             continue
         if name[0] in location_name_groups:
-            location_name_groups[name[0]].add(name[1])
+            location_name_groups[name[0]].add(v)
         else:
-            location_name_groups[name[0]] = {name[1]}
+            location_name_groups[name[0]] = {v}
         if "shop" in v.lower():
             if "Shop" in location_name_groups:
                 location_name_groups["Shop"].add(v)
