@@ -29,6 +29,8 @@ class TeviWorld(World):
     """
     Description of TEVI
     """
+    version = "0.6.1"
+    
     game: str = "Tevi"
     options_dataclass = TeviOptions
     options: TeviOptions
@@ -166,7 +168,7 @@ class TeviWorld(World):
 
         options = self.options.getOptions()
         return {
-            "version":"0.6.0",
+            "version":self.version,
             "openMorose": self.options.open_morose.value,
             "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
