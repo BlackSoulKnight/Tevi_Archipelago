@@ -24,6 +24,8 @@ class TestLocationCheck(TeviTestBase):
 
 
 
+
+
 class TestMemine(TeviTestBase):
     run_default_tests = None
     options = {
@@ -47,7 +49,7 @@ class TestMemine(TeviTestBase):
 class TestGalleryOfSouls(TeviTestBase):
     run_default_tests = None
     options = {
-        "teleporter_mode": "1",
+        "traverse_Mode": "2",
     }
     
     def test_gallery_of_souls(self) -> None:

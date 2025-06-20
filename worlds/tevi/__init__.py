@@ -55,7 +55,6 @@ class TeviWorld(World):
     def __init__(self, multiworld, player):
         super().__init__(multiworld, player)
         self.total_locations = 0
-        self.transitionShuffle = []
         self.region_def = None
         self.tracker_world["map_page_setting_key"] = f"Slot:{self.player}:currentMap"
 
@@ -103,7 +102,7 @@ class TeviWorld(World):
         #total_locations += 2
         start_items = self.options.start_inventory.value
         removingPotions = [0,0,0,0,0]
-        if self.options.teleporter_mode.value >0:
+        if self.options.traverse_Mode.value ==2:
             for name, data in teleporter_table.items():
                 data.quantity = data.default_quantity
                 item_pool += [self.create_teleporter(name) for _ in range(0, data.quantity)]

@@ -65,7 +65,7 @@ class RegionDef:
 
         regions = self.multiworld.regions.region_cache[self.player]
         regions["Menu"].connect(regions["Thanatara Canyon"])
-        if self.options.teleporter_mode.value > 0:
+        if self.options.traverse_Mode.value == 2:
             regions["Menu"].connect(regions["TeleportHub"])
 
 
@@ -79,9 +79,9 @@ class RegionDef:
                 ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options,True)
                 #entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
                 if from_location.isdigit() and to_loaction.isdigit():
-                    if self.options.teleporter_mode.value > 0:
+                    if self.options.traverse_Mode.value == 2:
                         continue
-                    if self.options.transitionShuffle.value > 0: 
+                    if self.options.traverse_Mode.value == 1: 
                         entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
                         entrance[0].randomization_type = EntranceType.TWO_WAY
                         entrance[0].name = from_location

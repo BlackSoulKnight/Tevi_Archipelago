@@ -3,9 +3,6 @@ from dataclasses import dataclass
 
 from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink
 
-class TeleporterMode(Toggle):
-    """Restrict traveling to Teleporters"""
-    display_name = "Teleporter Mode"
 
 class OpenMorose(Toggle):
     """Gain access to Morose without Crossbomb"""
@@ -19,9 +16,19 @@ class RandomizeKnife(Toggle):
     """If set to false, the Knife is at the default location"""
     display_name = "Randomize Knife"
 
-class TransitionShuffle(Toggle):
-    """Shuffles every Map transition"""
-    display_name = "Map Shuffle"
+class TraveseMode(Choice):
+    """
+    Choose how you want to Traverse the World
+    Normal: no changes to the game
+    Random Transition: Map transition like Morose -> Forest are randomized
+    Random Teleporter: No Map transition and only through Teleport possible
+    """
+    display_name = "Traverse Mode"
+    option_normal = 0
+    option_random_transition = 1
+    option_random_teleporter = 2
+    default = 0
+
 
 class RandomizeOrb(Toggle):
     """If set to false, the Orb is at the default location"""
@@ -35,7 +42,9 @@ class RandomizedItemUpgrades(Toggle):
     display_name = "Randomized Item Upgrades"
 
 class CeliaSableUnlocked(Toggle):
-    """If this flag is true, Celia and Sable are already unlocked"""
+    """If this flag is true, Celia and Sable are already unlocked
+    Also enables ChargeShot with only level 1 Orbitar
+    """
     display_name = "Unlock Celia and Sable "
 
 class FreeAttackUp(Range):
@@ -139,7 +148,7 @@ class ADCKick(Toggle):
 @dataclass
 class TeviOptions(PerGameCommonOptions):
     """Tevi Options Definition"""
-    teleporter_mode: TeleporterMode
+    traverse_Mode: TraveseMode
     open_morose: OpenMorose
     randomize_knife: RandomizeKnife
     randomize_orb: RandomizeOrb
@@ -150,7 +159,6 @@ class TeviOptions(PerGameCommonOptions):
     goal_type: GoalType
     gear_count: GearCount
     goal_count: GoalCount
-    transitionShuffle: TransitionShuffle
     walljumpTricks : WalljumpTrick
     backflip:Backflip
     cKick:CKick
@@ -162,7 +170,7 @@ class TeviOptions(PerGameCommonOptions):
     
     def getOptions(self):
         return {
-            "teleporter_mode":self.teleporter_mode.value,
+            "traverse_mode":self.traverse_Mode.value,
             "open_morose":self.open_morose.value,
             "randomize_knife":self.randomize_knife.value,
             "randomize_orb":self.randomize_orb.value,
@@ -173,7 +181,6 @@ class TeviOptions(PerGameCommonOptions):
             "goal_type": self.goal_type.value,
             "gear_count":self.gear_count.value,
             "goal_count":self.goal_count.value,
-            "transitionShuffle":self.transitionShuffle.value,
             "walljumpTricks":self.walljumpTricks.value,
             "backflip":self.backflip.value,
             "cKick":self.cKick.value,
