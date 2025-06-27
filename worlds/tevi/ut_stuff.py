@@ -176,7 +176,7 @@ poptracker_data: dict[str, int] = {
 "Plague Forest - Windmill Strike/Windmill Strike":44966541162,
 "Plague Forest - C. Rank Frenzy: Defend/C. Rank Frenzy: Defend":44966541163,
 "Plague Forest - Kiwi Bunny Potion/Kiwi Bunny Potion":44966541164,
-"Plague Forest - Blueberry Bunny Potion/Teleporter Plague Forest":44966541165,
+"Plague Forest - Blueberry Bunny Potion/Blueberry Bunny Potion":44966541165,
 "Plague Forest - Slick Boots/Slick Boots":44966541166,
 "Plague Forest - Lemon Bunny Potion/Lemon Bunny Potion":44966541167,
 "Plague Forest - Special Action: Show Off/Special Action: Show Off":44966541168,
@@ -657,5 +657,4 @@ poptracker_data: dict[str, int] = {
 "Orb Type Upgrade - Red Module Type C/Red Module Type-C":44966541643,
 "Orb Type Upgrade - Core Module Type U/Core Module Type-U":44966541644,
 "Orb Type Upgrade - Core Module Type D/Core Module Type-D":44966541645
-
 }
