@@ -62,12 +62,18 @@ class RegionDef:
 
         :returns: None
         """
-
+        using_ut = False
+        ut_transition_data = {}
+        if (hasattr(self.multiworld, "re_gen_passthrough") and "Tevi" in getattr(self.multiworld, "re_gen_passthrough")):
+            using_ut = True
+            for v in self.multiworld.re_gen_passthrough["Tevi"]["transitionData"]:
+                ut_transition_data[v["from"]] = v["to"]
+            
         regions = self.multiworld.regions.region_cache[self.player]
         regions["Menu"].connect(regions["Thanatara Canyon"])
         if self.options.traverse_Mode.value == 2:
             regions["Menu"].connect(regions["TeleportHub"])
-
+        
 
         meh = []
         for from_location in self.edges:
@@ -82,10 +88,14 @@ class RegionDef:
                     if self.options.traverse_Mode.value == 2:
                         continue
                     if self.options.traverse_Mode.value == 1: 
-                        entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
-                        entrance[0].randomization_type = EntranceType.TWO_WAY
-                        entrance[0].name = from_location
-                        meh += entrance
+                        if using_ut:
+                            entrance = regions[from_location].add_exits([ut_transition_data[from_location]],{to_loaction:ap_rule})
+                            continue
+                        else:
+                            entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
+                            entrance[0].randomization_type = EntranceType.TWO_WAY
+                            entrance[0].name = from_location
+                            meh += entrance
                     else:
                         entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
                 else:

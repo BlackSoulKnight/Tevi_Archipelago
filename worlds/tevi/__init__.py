@@ -69,11 +69,23 @@ class TeviWorld(World):
         if self.options.gear_count.value < self.options.goal_count.value:
             self.options.goal_count.value = self.options.gear_count.value
 
+        if (hasattr(self.multiworld, "re_gen_passthrough") and "Tevi" in getattr(self.multiworld, "re_gen_passthrough")):
+            self.options.traverse_Mode.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["traverse_mode"]
+            self.options.goal_type.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["goal_type"]
+            self.options.cKick.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["cKick"]
+            self.options.hiddenP.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["hiddenP"]
+            self.options.earlydream.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["earlydream"]
+            self.options.barrierSkip.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["barrierSkip"]
+            self.options.adcKick.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["adcKick"]
+            self.options.superBosses.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["superBosses"]
+            self.options.open_morose.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["open_morose"]
+            self.options.randomize_item_upgrade.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["randomize_item_upgrade"]
+
 
 
     def create_item(self, name: str) -> TeviItem:
         """Create a Tevi item for this player"""
-        data = item_table[name]
+        data = (item_table|teleporter_table)[name]
         return TeviItem(name, data.classification, data.code, self.player)
 
     def create_teleporter(self,name:str) -> TeviItem:
@@ -219,9 +231,8 @@ class TeviWorld(World):
     def interpret_slot_data(slot_data: Dict[str, Any]) -> Dict[str, Any]:
         # returning slot_data so it regens, giving it back in multiworld.re_gen_passthrough
         # we are using re_gen_passthrough over modifying the world here due to complexities with ER
+        return slot_data   
     
-    
-        return None    
     tracker_world = {
     "map_page_maps": ["maps/maps.jsonc"],
     "map_page_locations": [
