@@ -49,7 +49,7 @@ class TestMemine(TeviTestBase):
 class TestGalleryOfSouls(TeviTestBase):
     run_default_tests = None
     options = {
-        "traverse_Mode": "2",
+        "traverse_Mode": "random_teleporter",
     }
     
     def test_gallery_of_souls(self) -> None:
