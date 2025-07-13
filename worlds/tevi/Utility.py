@@ -60,7 +60,7 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
             chapter = int(literal.split(" ")[1])
             return lambda state: TeviLogic.has_Chapter_reached(chapter,state,player)
         if "Upgrade" in literal:
-            return lambda state: TeviLogic.can_Upgrade_Items(state,player, not options.randomize_item_upgrade.value)
+            return lambda state: TeviLogic.can_Upgrade_Items(state,player, not options.randomize_item_upgrade.value,options.traverse_Mode.value == 2)
         if "OpenMorose" == literal:
             return lambda _: (options.open_morose.value > 0)
         if "VenaBomb" == literal:

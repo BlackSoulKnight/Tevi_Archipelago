@@ -89,13 +89,12 @@ class TeviLogic():
         #No Logic was made yet for this so we check the basic needs to reach everyting
         return state.has(TeviToApNames[teleporter],player)
 
-    def can_Upgrade_Items(state:CollectionState,player:int,option_VanillaCraft:bool):
+    def can_Upgrade_Items(state:CollectionState,player:int,option_VanillaCraft:bool,option_TeleporterMode:bool = False):
         """Check if enough Material can be collected"""
         #No Logic was made yet for this so we check the basic needs to reach everyting
+        if option_TeleporterMode:
+            return (option_VanillaCraft or TeviLogic.has_all_Movement(state,player)) and state.has(TeviToApNames["ITEM_LINEBOMB"],player) and TeviLogic.has_Chapter_reached(6,state,player)
         return (option_VanillaCraft or TeviLogic.has_all_Movement(state,player)) and state.has(TeviToApNames["ITEM_LINEBOMB"],player)
-
-    def can_Upgrade_OrbType(state:CollectionState,player:int):
-        return TeviLogic.has_all_Movement(state,player) and state.has(TeviToApNames["ITEM_LINEBOMB"],player)
 
     def can_Upgrade_Core(state:CollectionState,player:int):
         return TeviLogic.has_all_Movement(state,player) and state.has_all([TeviToApNames["ITEM_LINEBOMB"],TeviToApNames["ITEM_AREABOMB"],TeviToApNames["ITEM_BombLengthExtend"]],player)
