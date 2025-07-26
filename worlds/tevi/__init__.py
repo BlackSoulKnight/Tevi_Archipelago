@@ -58,7 +58,7 @@ class TeviWorld(World):
         super().__init__(multiworld, player)
         self.total_locations = 0
         self.region_def = None
-        self.tracker_world["map_page_setting_key"] = f"Slot:{self.player}:currentMap"
+        self.tracker_world["map_page_setting_key"] = r"Slot:{player}:currentMap"
 
 
     def generate_early(self) -> None:
