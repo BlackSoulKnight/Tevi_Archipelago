@@ -4,7 +4,7 @@ This module serves as an entrypoint into the Tevi AP world.
 from collections import defaultdict
 from typing import ClassVar, Dict, Set,List,Union,Any
 
-from BaseClasses import ItemClassification
+from BaseClasses import ItemClassification,LocationProgressType
 from Fill import swap_location_item
 from worlds.AutoWorld import World, WebWorld
 from worlds.LauncherComponents import Component, components, launch_subprocess, Type
@@ -209,6 +209,8 @@ class TeviWorld(World):
                     self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
                 if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 1):
                     self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
+                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).progress_type = LocationProgressType.EXCLUDED
+                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).progress_type = LocationProgressType.EXCLUDED
 
 
     def get_chaos_item_name(self) -> str:
