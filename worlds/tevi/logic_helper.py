@@ -113,8 +113,6 @@ class TeviLogic():
     def can_use_SpinnerBash(state:CollectionState,player:int):
         return state.has(TeviToApNames["ITEM_KNIFE"],player) and TeviLogic.has_Chapter_reached(4,state,player)
 
-    def can_finish_Memine(state:CollectionState,player:int):
-        return state.has(TeviToApNames["ITEM_LINEBOMB"],player) and TeviLogic.can_use_ChargeShot(state,player) and TeviLogic.has_all_Movement(state,player)
 
     def can_use_VenaBomb(state:CollectionState,player:int):
         void = state.has_all([TeviToApNames["Useable_VenaBombSmall"],"EVENT_Fire"],player)
