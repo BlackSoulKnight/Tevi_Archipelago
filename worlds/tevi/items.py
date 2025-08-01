@@ -82,14 +82,19 @@ def get_potential_new_filler_item() -> Dict[str,TeviItemData]:
 
 def get_item_groups():
     item_name_groups = {}
+    item_name_groups["Progression"] = []
     for item,data in item_table.items():
         if data.category in item_name_groups:
             item_name_groups[data.category].add(item)
         else:
             item_name_groups[data.category] = {item}
+        if data.classification == ItemClassification.progression:
+            item_name_groups["Progression"] += {item}
+
     for item,data in teleporter_table.items():
         if data.category in item_name_groups:
             item_name_groups[data.category].add(item)
+            item_name_groups["Progression"] += {item}
         else:
             item_name_groups[data.category] = {item}
     return item_name_groups
