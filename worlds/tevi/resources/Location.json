@@ -4718,7 +4718,7 @@
                 "Difficulty": 0
             },
             {
-                "Method": "ITEM_LINEBOMB && ITEM_WALLJUMP && ITEM_AirDash && Rabbitjump",
+                "Method": "ITEM_LINEBOMB && ITEM_WALLJUMP && ITEM_AirDash && RabbitJump",
                 "Difficulty": 0
             }
         ]
