@@ -5150,7 +5150,7 @@
         "slotId": 47,
         "Requirement": [
             {
-                "Method": "ITEM_BombLengthExtend && ITEM_AntiDecay",
+                "Method": "ITEM_BombLengthExtend && (ITEM_AntiDecay || ITEM_ZCrystal)",
                 "Difficulty": 0
             }
         ]
@@ -5162,7 +5162,7 @@
         "slotId": 47,
         "Requirement": [
             {
-                "Method": "ITEM_BombLengthExtend && ITEM_AntiDecay",
+                "Method": "ITEM_BombLengthExtend && (ITEM_AntiDecay || ITEM_ZCrystal)",
                 "Difficulty": 0
             }
         ]
@@ -5174,7 +5174,7 @@
         "slotId": 47,
         "Requirement": [
             {
-                "Method": "ITEM_BombLengthExtend && ITEM_AntiDecay",
+                "Method": "ITEM_BombLengthExtend && (ITEM_AntiDecay || ITEM_ZCrystal)",
                 "Difficulty": 0
             }
         ]

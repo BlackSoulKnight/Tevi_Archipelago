@@ -5,7 +5,7 @@ from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink
 
 
 class OpenMorose(Toggle):
-    """Gain access to Morose without Crossbomb"""
+    """Gain access to Morose without Crossbomb or Clusterbomb"""
     display_name = "Open Morose"
 
 class SuperBosses(Toggle):
@@ -13,7 +13,7 @@ class SuperBosses(Toggle):
     display_name = "Super Bosses"
 
 class RandomizeKnife(Toggle):
-    """If set to false, the Knife is at the default location"""
+    """If set to false, you receive the Knife as Starting Item"""
     display_name = "Randomize Knife"
 
 class TraveseMode(Choice):
@@ -31,7 +31,7 @@ class TraveseMode(Choice):
 
 
 class RandomizeOrb(Toggle):
-    """If set to false, the Orb is at the default location"""
+    """If set to false, you receive the Orb as Starting item"""
     display_name = "Randomize Orb"
 
 class RandomizedItemUpgrades(Toggle):
