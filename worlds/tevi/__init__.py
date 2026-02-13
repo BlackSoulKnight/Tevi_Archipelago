@@ -205,7 +205,6 @@ class TeviWorld(World):
         return {
             "version":self.world_version.as_simple_string(),
             "openMorose": self.options.open_morose.value,
-            "attackMode": self.options.free_attack_up.value,
             "CeliaSable": self.options.celia_sable.value,
             "GoalCount": self.options.goal_count.value,
             "transitionData":transitionData,
