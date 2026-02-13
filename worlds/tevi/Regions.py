@@ -195,6 +195,7 @@ class RegionDef:
                 ap_location.place_locked_item(self.create_item("Magitite Shard"))
                 
             if "I14" == self.locationsItem[location_name] and self.options.randomize_money.value == 0:
+                continue
                 total_locations -= 1
                 ap_location.place_locked_item(self.create_item("500 Zennie Pack"))
 
