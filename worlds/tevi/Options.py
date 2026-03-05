@@ -1,7 +1,7 @@
 """This module represents option defintions for Tevi"""
 from dataclasses import dataclass
 
-from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink
+from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink,ItemSet
 
 
 class OpenMorose(Toggle):
@@ -57,6 +57,14 @@ class CeliaSableUnlocked(Toggle):
     Also enables ChargeShot with only level 1 Orbitar
     """
     display_name = "Unlock Celia and Sable "
+
+class TrapPercent(Range):
+    """
+    Sets the percent amount of filler / useful items that are replaced by Traps.
+    """
+    range_start = 0
+    range_end = 100
+    default = 0
 
 class FreeMeleeAttackUp(Range):
     """
@@ -212,6 +220,11 @@ class ExcludeArcade(Toggle):
     """
     display_name = "Exclude Arcade"
 
+class ExcludeTraps(ItemSet):
+    """
+    Removes traps from pool
+    """
+    display_name = "Exclude Traps"
 
 class ExcludeUpgradeCraft(Toggle):
     """
@@ -219,6 +232,17 @@ class ExcludeUpgradeCraft(Toggle):
     """
     display_name = "Exclude Upgrade Crafting"
 
+class PopupProgression(Toggle):
+    """Receiving a progression item triggers a Popup"""
+    display_name = "Popup Progression"
+
+class PopupBadge(Toggle):
+    """Receiving a badge triggers a Popup"""
+    display_name = "Popup Badge"
+
+class PopupAll(Toggle):
+    """Receiving an item triggers a Popup"""
+    display_name = "Popup Everything"
 
 class pre_release_option_1(Toggle):
     """
@@ -239,6 +263,7 @@ class TeviOptions(PerGameCommonOptions):
     randomize_magitite:RandomizeMagitite
     chaos_mode: ItemChaos
     celia_sable: CeliaSableUnlocked
+    traps_percent: TrapPercent
     free_MATK: FreeMeleeAttackUp
     free_RATK: FreeRangedAttackUp
     free_HP: FreeHP
@@ -262,6 +287,11 @@ class TeviOptions(PerGameCommonOptions):
     excludeShop:ExcludeShop
     excludeUpgradeCraft:ExcludeUpgradeCraft
     excludeArcade:ExcludeArcade
+    excludeTraps:ExcludeTraps
+    
+    popupAll:PopupAll
+    popupProgression:PopupProgression
+    popupBadge:PopupBadge
 
     alphaFeature1:pre_release_option_1
 
@@ -289,5 +319,8 @@ class TeviOptions(PerGameCommonOptions):
             "earlydream":self.earlydream.value,
             "barrierSkip":self.barrierSkip.value,
             "adcKick":self.adcKick.value,
-            "superBosses":self.superBosses.value
+            "superBosses":self.superBosses.value,
+            "popupAll":self.popupAll.value,
+            "popupProgression":self.popupProgression.value,
+            "popupBadge":self.popupBadge.value
         }

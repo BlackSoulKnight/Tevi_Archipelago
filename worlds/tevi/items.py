@@ -67,6 +67,12 @@ def get_items_by_category(category: str) -> Dict[str, TeviItemData]:
 
     return item_dict
 
+def get_traps(world: "TeviWorld",ignore:set) -> Dict[str,TeviItemData]:
+    item_dict: Dict[str, TeviItemData] = {}
+    for name, data in trap_table.items():
+        if name not in ignore and world.item_quantities[name] < data.max_quantity:
+            item_dict.setdefault(name, data)
+    return item_dict
 
 def get_potential_new_item(world: "TeviWorld") -> Dict[str, TeviItemData]:
     item_dict: Dict[str, TeviItemData] = {}
@@ -116,7 +122,7 @@ item_table: Dict[str,TeviItemData] ={
     "Rainbow Bunny Potion":                                    TeviItemData("Stat",    44966541_008, ItemClassification.filler,                           15, 255),
 
     #custom items
-    "500 Zennie Pack":                                         TeviItemData("Custom",   44966541_014,  ItemClassification.filler,                             591,585),
+    "500 Zennie Pack":                                         TeviItemData("Custom",   44966541_014,  ItemClassification.filler,                             591,591),
     "Magitite Shard":                                          TeviItemData("Upgrade",   44966541_015,  ItemClassification.progression,                             70,66),
     "Mananite Shard":                                          TeviItemData("Upgrade",   44966541_016,  ItemClassification.progression,                             97,93),
 
@@ -510,3 +516,15 @@ teleporter_table: Dict[str,TeviItemData] = {
 event_item_table: Dict[str, TeviItem] = {
 
 }
+
+trap_table: Dict[str,TeviItem] = {
+    "Reverse Camera":                                               TeviItemData("Trap",  44966541_550, ItemClassification.trap,0,99999999), 
+    "Double Time":                                                  TeviItemData("Trap",  44966541_551, ItemClassification.trap,0,99999999), 
+    "Yeet":                                                         TeviItemData("Trap",  44966541_552, ItemClassification.trap,0,99999999), 
+    "Debuff":                                                       TeviItemData("Trap",  44966541_553, ItemClassification.trap,0,99999999,6), 
+    "Taunt":                                                        TeviItemData("Trap",  44966541_554, ItemClassification.trap,0,99999999), 
+    "Reduce Jump Height":                                            TeviItemData("Trap",  44966541_555, ItemClassification.trap,0,99999999), 
+}
+
+
+all_item_table = item_table|teleporter_table|trap_table

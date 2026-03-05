@@ -11,7 +11,7 @@ from BaseClasses import ItemClassification,LocationProgressType
 from Fill import swap_location_item
 from worlds.AutoWorld import World, WebWorld
 from worlds.LauncherComponents import Component, components, launch_subprocess, Type
-from .items import TeviItem, item_table, event_item_table, get_items_by_category,get_potential_new_item,get_potential_new_filler_item,get_item_groups,teleporter_table
+from .items import TeviItem, event_item_table, get_traps,get_potential_new_item,get_potential_new_filler_item,get_item_groups,all_item_table,teleporter_table,item_table
 from .Regions import RegionDef, get_all_possible_locations,get_location_group_names
 from .Options import TeviOptions
 from .Web import TeviWeb
@@ -32,8 +32,6 @@ class TeviWorld(World):
     """
     Description of TEVI
     """
-
-    
     game: str = "Tevi"
     options_dataclass = TeviOptions
     options: TeviOptions
@@ -45,12 +43,12 @@ class TeviWorld(World):
 
     item_name_groups: Dict[str, Set[str]] = {}
     location_name_groups: Dict[str, Set[str]] = {}
-
-    item_name_to_id: Dict[str, int] = {name: data.code for name, data in (item_table|teleporter_table).items()} 
+    item_name_to_id: Dict[str, int] = {name: data.code for name, data in (all_item_table).items()} 
     location_name_to_id: Dict[str, int] = {
         name: id_num for
         id_num, name in enumerate(get_all_possible_locations(), base_id)
     }
+    removingPotions = [0,0,0,0,0]
 
     item_name_groups = get_item_groups()
     location_name_groups = get_location_group_names()
@@ -64,7 +62,7 @@ class TeviWorld(World):
         self.region_def = None
         self.tracker_world["map_page_setting_key"] = r"Slot:{player}:currentMap"
         self.item_quantities = {item: item_data.default_quantity for item, item_data in
-                                (item_table | teleporter_table).items()}
+                                (all_item_table).items()}
 
 
     def generate_early(self) -> None:
@@ -91,7 +89,7 @@ class TeviWorld(World):
 
     def create_item(self, name: str) -> TeviItem:
         """Create a Tevi item for this player"""
-        data = (item_table|teleporter_table)[name]
+        data = (all_item_table)[name]
         return TeviItem(name, data.classification, data.code, self.player)
 
     def create_teleporter(self,name:str) -> TeviItem:
@@ -117,74 +115,99 @@ class TeviWorld(World):
         
     def create_items(self) -> None:
         item_pool: List[TeviItem] = list()
-        total_locations = len(self.multiworld.get_unfilled_locations(self.player))
-        upgradeable = GetAllUpgradeables()
-        #total_locations += 2
-        start_items = self.options.start_inventory.value
-        removingPotions = [0,0,0,0,0]
+
         if self.options.traverse_Mode.value ==2:
             for name, data in teleporter_table.items():
                 item_pool += [self.create_teleporter(name) for _ in range(0, self.item_quantities[name])]
-                pot = self.multiworld.random.randint(0,4)
-                if removingPotions[pot] == 35:
-                    pot = (pot +1)%5
-                removingPotions[pot] += 1
                 
-        potIndex = 0
+        total_locations = self.itempool_options()
+        filler_items = []
         for name, data in item_table.items():
-
-            #Remove resource for testing
-            resources = ["500 Zennie Pack","Magitite Shard","Mananite Shard"]
-            if name == "500 Zennie Pack" and self.options.randomize_money.value == 0:
+            #if self.options.chaos_mode.value and data.classification != ItemClassification.progression  \
+            #                                 and data.classification != ItemClassification.progression_skip_balancing:
+            #    self.item_quantities[name] = 0
+            if data.classification == ItemClassification.progression  \
+                                            or data.classification == ItemClassification.progression_skip_balancing:
+                item_pool += [self.create_item(name) for _ in range(0, self.item_quantities[name])]
+            elif self.options.chaos_mode.value:
                 self.item_quantities[name] = 0
+            else: 
+                filler_items.append(name) 
 
-            if name == "Magitite Shard" and self.options.randomize_magitite.value == 0:
-                self.item_quantities[name] = 0
+        
 
-            if name == "Mananite Shard" and self.options.randomize_mananite.value == 0:
-                self.item_quantities[name] = 0
-
-            if "Potion" in name:
-                if potIndex <5:
-                    self.item_quantities[name] -= removingPotions[potIndex]
-                    potIndex += 1
-            start_item_amount = 0
-            if name in start_items:
-                start_item_amount = start_items[name]
-                self.item_quantities[name] -= max(0, min(start_item_amount, self.item_quantities[name]))
-
-            if self.item_quantities[name] <= 0:
-                pass    
-            elif not self.options.randomize_knife.value and name == "Dagger":
-                self.item_quantities[name] -= 1
-                total_locations -=1
-            elif name == "Astral Gear":
-                self.item_quantities[name] = max(self.options.gear_count.value, self.options.goal_count)
-            elif not self.options.randomize_orb.value and name == "Orbitars":
-                self.item_quantities[name] -= 1
-                total_locations -=1
-            # Celia and Sable are added to the player start inventory
-            #if self.options.celia_sable.value and (name == "I20" or name =="I19"):
-            # self.item_quantities[name] -=1
-                #total_locations -=1
-            if not self.options.randomize_item_upgrade.value and ApNamesToTevi[name] in upgradeable:
-                amount = min(2,max(0,start_item_amount))
-                self.item_quantities[name] -= 2 - amount
-                total_locations -= 2-amount
-
-            if self.options.chaos_mode.value and data.classification != ItemClassification.progression  \
-                                             and data.classification != ItemClassification.progression_skip_balancing:
-                self.item_quantities[name] = 0
-
-            item_pool += [self.create_item(name) for _ in range(0, self.item_quantities[name])]
-
-
-        while len(item_pool) < total_locations:
-            if self.options.chaos_mode.value:
+        if self.options.chaos_mode.value:
+            while len(item_pool) < total_locations:
                 item_pool.append(self.create_item(self.get_chaos_item_name()))
-            else:
-                item_pool.append(self.create_item(self.get_filler_item_name()))
+        else:
+            total_items_left = total_locations-len(item_pool)
+            traps_amount = int(self.options.traps_percent.value * total_items_left / 100)
+            item_list = [filler for filler in filler_items for _ in range(self.item_quantities[filler])]
+            while(len(item_list) < total_items_left):
+                item_list.append(self.get_filler_item_name())
+            choice_list = self.random.sample(item_list, k=total_items_left-traps_amount)
+            for choice in choice_list:
+                item_pool.append(self.create_item(choice))
+            item_pool += [self.create_item(name) for name in self.get_traps(traps_amount,self.options.excludeTraps.value)]
+            
+
+        # while len(item_pool) < total_locations:
+        #     if self.options.chaos_mode.value:
+        #         item_pool.append(self.create_item(self.get_chaos_item_name()))
+        #         #item_pool += [self.create_item(name) for name in self.get_traps(total_locations-len(item_pool))]
+        #     else:
+        #         item_pool.append(self.create_item(self.get_filler_item_name()))
         self.multiworld.itempool += item_pool
+
+    def itempool_options(self) -> int:
+        """
+        Removes all item that are not required
+        """
+        total_locations = len(self.multiworld.get_unfilled_locations(self.player))
+
+        upgradeable = GetAllUpgradeables()
+
+
+
+        if self.options.randomize_money.value == 0:
+            self.item_quantities["500 Zennie Pack"] = 0
+
+        if self.options.randomize_magitite.value == 0:
+            self.item_quantities["Magitite Shard"] = 0
+
+        if self.options.randomize_mananite.value == 0:
+            self.item_quantities["Mananite Shard"] = 0
+
+    
+
+        self.item_quantities["Kiwi Bunny Potion"] -= self.removingPotions[0]
+        self.item_quantities["Blueberry Bunny Potion"] -= self.removingPotions[1]
+        self.item_quantities["Lemon Bunny Potion"] -= self.removingPotions[2]
+        self.item_quantities["Cherry Bunny Potion"] -= self.removingPotions[3]
+        self.item_quantities["Grape Bunny Potion"] -= self.removingPotions[4]
+
+        start_item_amount = 0
+        start_items = self.options.start_inventory.value
+
+        for item,amount in start_items:
+            start_item_amount = amount
+            self.item_quantities[item] -= max(0, min(start_item_amount, self.item_quantities[item]))
+   
+        if not self.options.randomize_knife.value and self.item_quantities["Dagger"] >0:
+            self.item_quantities["Dagger"] -= 1
+            total_locations -=1
+
+        self.item_quantities["Astral Gear"] = max(self.options.gear_count.value, self.options.goal_count)
+
+        if not self.options.randomize_orb.value and self.item_quantities["Orbitars"] > 0:
+            self.item_quantities["Orbitars"] -= 1
+            total_locations -=1
+        if not self.options.randomize_item_upgrade.value:
+            for item in upgradeable:
+                amount = min(2,max(0,start_item_amount))
+                self.item_quantities[TeviToApNames[item]] -= 2 - amount
+                total_locations -= 2-amount
+        return total_locations
 
     def fill_slot_data(self) -> dict:
         transitionData = []
@@ -204,9 +227,6 @@ class TeviWorld(World):
 
         return {
             "version":self.world_version.as_simple_string(),
-            "openMorose": self.options.open_morose.value,
-            "CeliaSable": self.options.celia_sable.value,
-            "GoalCount": self.options.goal_count.value,
             "transitionData":transitionData,
             "options": options
         }
@@ -256,6 +276,16 @@ class TeviWorld(World):
         self.item_quantities[choice] += 1
         return choice
     
+    def get_traps(self,amount = 1,ignoreList:set = None) -> List[str]:
+        if ignoreList == None:
+            ignoreList = []
+        traps = get_traps(self,ignoreList)
+        weights = [data.weight for data in traps.values()]
+        choice_list = self.random.choices([filler for filler in traps.keys()], weights, k=amount)
+        for choice in choice_list:
+            self.item_quantities[choice] += 1
+        return choice_list
+        
     @staticmethod
     def interpret_slot_data(slot_data: Dict[str, Any]) -> Dict[str, Any]:
         # returning slot_data so it regens, giving it back in multiworld.re_gen_passthrough

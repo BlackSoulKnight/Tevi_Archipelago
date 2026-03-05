@@ -5,7 +5,7 @@ from typing import List, Set, Dict, Optional, Callable
 from BaseClasses import Location, Region, MultiWorld, ItemClassification,LocationProgressType,EntranceType
 from entrance_rando import disconnect_entrance_for_randomization,randomize_entrances
 from worlds.generic.Rules import add_rule, set_rule
-from .items import TeviItem,item_table,teleporter_table
+from .items import TeviItem,all_item_table
 from .Utility import evaluate_rule,parse_expression_logic,GetAllUpgradeables
 from .Options import TeviOptions
 from .TeviToApNames import TeviToApNames
@@ -23,7 +23,7 @@ class RegionDef:
     """
     def create_item(self, name: str) -> TeviItem:
         """Create a Tevi item for this player"""
-        data = (item_table|teleporter_table)[name]
+        data = (all_item_table)[name]
         return TeviItem(name, data.classification, data.code, self.player)
     
     def __init__(self, multiworld: MultiWorld, player: int, options:TeviOptions):
