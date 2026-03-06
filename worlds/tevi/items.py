@@ -123,8 +123,8 @@ item_table: Dict[str,TeviItemData] ={
 
     #custom items
     "500 Zennie Pack":                                         TeviItemData("Custom",   44966541_014,  ItemClassification.filler,                             591,591),
-    "Magitite Shard":                                          TeviItemData("Upgrade",   44966541_015,  ItemClassification.progression,                             70,66),
-    "Mananite Shard":                                          TeviItemData("Upgrade",   44966541_016,  ItemClassification.progression,                             97,93),
+    "Magitite Shard":                                          TeviItemData("Upgrade",   44966541_015,  ItemClassification.progression,                             70,70),
+    "Mananite Shard":                                          TeviItemData("Upgrade",   44966541_016,  ItemClassification.progression,                             96,96),
 
     #Items
     "Celia":                                                   TeviItemData("Weapon",    44966541_019, ItemClassification.progression),
