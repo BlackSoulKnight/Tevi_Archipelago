@@ -50,7 +50,7 @@ class TeviItemData():
                 classification: ItemClassification = ItemClassification.filler,
                 default_quantity: int = 1,
                 max_quantity: int = 1,
-                weight: int = 1):
+                weight: int = 100):
         self.category= category
         self.code: Optional[int] = code
         self.classification = classification
@@ -71,6 +71,13 @@ def get_traps(world: "TeviWorld",ignore:set) -> Dict[str,TeviItemData]:
     item_dict: Dict[str, TeviItemData] = {}
     for name, data in trap_table.items():
         if name not in ignore and world.item_quantities[name] < data.max_quantity:
+            item_dict.setdefault(name, data)
+    return item_dict
+
+def get_fillers(world: "TeviWorld") -> Dict[str,TeviItemData]:
+    item_dict: Dict[str, TeviItemData] = {}
+    for name, data in item_table.items():
+        if  world.item_quantities[name] < data.default_quantity:
             item_dict.setdefault(name, data)
     return item_dict
 
@@ -113,18 +120,18 @@ item_table: Dict[str,TeviItemData] ={
     "Astral Gear":                                             TeviItemData("Goal",    44966541_001, ItemClassification.progression_skip_balancing,       25, 255),
 
     #Stat Buffs
-    "Kiwi Bunny Potion":                                       TeviItemData("Stat",    44966541_002, ItemClassification.filler,                           35, 255),
-    "Blueberry Bunny Potion":                                 TeviItemData("Stat",    44966541_003, ItemClassification.filler,                           35, 255),
-    "Lemon Bunny Potion":                                      TeviItemData("Stat",    44966541_004, ItemClassification.filler,                           35, 255),
-    "Cherry Bunny Potion":                                     TeviItemData("Stat",    44966541_005, ItemClassification.filler,                           35, 255),
-    "Grape Bunny Potion":                                      TeviItemData("Stat",    44966541_006, ItemClassification.filler,                           35, 255),
-    "Bag Expander":                                            TeviItemData("Stat",    44966541_007, ItemClassification.filler,                           5, 255),
-    "Rainbow Bunny Potion":                                    TeviItemData("Stat",    44966541_008, ItemClassification.filler,                           15, 255),
+    "Kiwi Bunny Potion":                                       TeviItemData("Stat",    44966541_002, ItemClassification.filler,                           35, 255,80),
+    "Blueberry Bunny Potion":                                 TeviItemData("Stat",    44966541_003, ItemClassification.filler,                           35, 255,80),
+    "Lemon Bunny Potion":                                      TeviItemData("Stat",    44966541_004, ItemClassification.filler,                           35, 255,80),
+    "Cherry Bunny Potion":                                     TeviItemData("Stat",    44966541_005, ItemClassification.filler,                           35, 255,80),
+    "Grape Bunny Potion":                                      TeviItemData("Stat",    44966541_006, ItemClassification.filler,                           35, 255,80),
+    "Bag Expander":                                            TeviItemData("Stat",    44966541_007, ItemClassification.filler,                           5, 255,150),
+    "Rainbow Bunny Potion":                                    TeviItemData("Stat",    44966541_008, ItemClassification.filler,                           15, 255,60),
 
     #custom items
-    "500 Zennie Pack":                                         TeviItemData("Custom",   44966541_014,  ItemClassification.filler,                             591,591),
-    "Magitite Shard":                                          TeviItemData("Upgrade",   44966541_015,  ItemClassification.progression,                             70,70),
-    "Mananite Shard":                                          TeviItemData("Upgrade",   44966541_016,  ItemClassification.progression,                             96,96),
+    "500 Zennie Pack":                                         TeviItemData("Custom",   44966541_014,  ItemClassification.filler,                             591,591,10),
+    "Magitite Shard":                                          TeviItemData("Upgrade",   44966541_015,  ItemClassification.progression,                             35,70),
+    "Mananite Shard":                                          TeviItemData("Upgrade",   44966541_016,  ItemClassification.progression,                             90,96),
 
     #Items
     "Celia":                                                   TeviItemData("Weapon",    44966541_019, ItemClassification.progression),
@@ -143,10 +150,10 @@ item_table: Dict[str,TeviItemData] ={
     "Hydrodynamo":                                             TeviItemData("Movement",    44966541_033, ItemClassification.progression,                      1, 255),
     "PK Recon Badge":                                          TeviItemData("Item",    44966541_034, ItemClassification.useful,                           1, 255),
     "Decay Mask":                                              TeviItemData("Item",    44966541_035, ItemClassification.progression,                      3, 255),
-    "Red Module Type-B":                                       TeviItemData("Item",    44966541_036, ItemClassification.progression,                      1, 255),
-    "Red Module Type-C":                                       TeviItemData("Item",    44966541_037, ItemClassification.progression,                      1, 255),
-    "Blue Module Type-B":                                      TeviItemData("Item",    44966541_038, ItemClassification.progression,                      1, 255),
-    "Blue Module Type-C":                                      TeviItemData("Item",    44966541_039, ItemClassification.progression,                      1, 255),
+    "Red Module Type-B":                                       TeviItemData("Item",    44966541_036, ItemClassification.progression,                      1, 1),
+    "Red Module Type-C":                                       TeviItemData("Item",    44966541_037, ItemClassification.progression,                      1, 1),
+    "Blue Module Type-B":                                      TeviItemData("Item",    44966541_038, ItemClassification.progression,                      1, 1),
+    "Blue Module Type-C":                                      TeviItemData("Item",    44966541_039, ItemClassification.progression,                      1, 1),
     "Decay Antidote":                                          TeviItemData("Item",    44966541_040, ItemClassification.progression,                           1, 255),
     "Combustible":                                             TeviItemData("Item",    44966541_041, ItemClassification.progression,                      3, 255),
     "Slipstream Boots":                                        TeviItemData("Movement",    44966541_042, ItemClassification.progression,                      3, 255),
@@ -445,32 +452,32 @@ item_table: Dict[str,TeviItemData] ={
     "Go Ballistic":                                            TeviItemData("Badge",    44966541_377, ItemClassification.useful),
 
     #Consumeables
-    "Cocoa Truffles":                                          TeviItemData("Consumeable",  44966541_380, ItemClassification.filler,0,999999), 
-    "Fluffy Cream Puff":                                       TeviItemData("Consumeable",  44966541_381, ItemClassification.filler,0,999999), 
-    "Vitalolly":                                               TeviItemData("Consumeable",  44966541_382, ItemClassification.filler,0,999999), 
-    "Energy Happy Juice":                                      TeviItemData("Consumeable",  44966541_383, ItemClassification.filler,0,999999), 
-    "Crispy Crunchsicle":                                      TeviItemData("Consumeable",  44966541_384, ItemClassification.filler,0,999999), 
-    "Rewind Donut":                                            TeviItemData("Consumeable",  44966541_385, ItemClassification.filler,0,999999), 
-    "Voodoo's Mewmew Cookie":                                  TeviItemData("Consumeable",  44966541_386, ItemClassification.filler,0,999999), 
-    "Snowflake Rumi Cake":                                     TeviItemData("Consumeable",  44966541_387, ItemClassification.filler,0,999999), 
-    "Rainbowba":                                               TeviItemData("Consumeable",  44966541_388, ItemClassification.filler,0,999999), 
-    "Waffle of Wonder (Attempt)":                              TeviItemData("Consumeable",  44966541_389, ItemClassification.filler,0,999999), 
-    "Mysterious Confection":                                   TeviItemData("Consumeable",  44966541_390, ItemClassification.filler,0,999999), 
-    "Honeycloud Waffle":                                       TeviItemData("Consumeable",  44966541_391, ItemClassification.filler,1,999999), 
-    "Toasted Meringue Waffle":                                 TeviItemData("Consumeable",  44966541_392, ItemClassification.filler,1,999999), 
-    "Good Morning Waffle":                                     TeviItemData("Consumeable",  44966541_393, ItemClassification.filler,1,999999), 
-    "Berry Pink Waffle":                                       TeviItemData("Consumeable",  44966541_394, ItemClassification.filler,1,999999), 
-    "Blueberry Waffle":                                        TeviItemData("Consumeable",  44966541_395, ItemClassification.filler,1,999999), 
-    "Whimsical Waffle of Wonder":                              TeviItemData("Consumeable",  44966541_396, ItemClassification.filler,0,999999), 
+    "Cocoa Truffles":                                          TeviItemData("Consumeable",  44966541_380, ItemClassification.filler,0,999999,5), 
+    "Fluffy Cream Puff":                                       TeviItemData("Consumeable",  44966541_381, ItemClassification.filler,0,999999,5), 
+    "Vitalolly":                                               TeviItemData("Consumeable",  44966541_382, ItemClassification.filler,0,999999,5), 
+    "Energy Happy Juice":                                      TeviItemData("Consumeable",  44966541_383, ItemClassification.filler,0,999999,5), 
+    "Crispy Crunchsicle":                                      TeviItemData("Consumeable",  44966541_384, ItemClassification.filler,0,999999,5), 
+    "Rewind Donut":                                            TeviItemData("Consumeable",  44966541_385, ItemClassification.filler,0,999999,5), 
+    "Voodoo's Mewmew Cookie":                                  TeviItemData("Consumeable",  44966541_386, ItemClassification.filler,0,999999,5), 
+    "Snowflake Rumi Cake":                                     TeviItemData("Consumeable",  44966541_387, ItemClassification.filler,0,999999,5), 
+    "Rainbowba":                                               TeviItemData("Consumeable",  44966541_388, ItemClassification.filler,0,999999,5), 
+    "Waffle of Wonder (Attempt)":                              TeviItemData("Consumeable",  44966541_389, ItemClassification.filler,0,999999,5), 
+    "Mysterious Confection":                                   TeviItemData("Consumeable",  44966541_390, ItemClassification.filler,0,999999,5), 
+    "Honeycloud Waffle":                                       TeviItemData("Consumeable",  44966541_391, ItemClassification.filler,1,999999,100), 
+    "Toasted Meringue Waffle":                                 TeviItemData("Consumeable",  44966541_392, ItemClassification.filler,1,999999,100), 
+    "Good Morning Waffle":                                     TeviItemData("Consumeable",  44966541_393, ItemClassification.filler,1,999999,100), 
+    "Berry Pink Waffle":                                       TeviItemData("Consumeable",  44966541_394, ItemClassification.filler,1,999999,100), 
+    "Blueberry Waffle":                                        TeviItemData("Consumeable",  44966541_395, ItemClassification.filler,1,999999,100), 
+    "Whimsical Waffle of Wonder":                              TeviItemData("Consumeable",  44966541_396, ItemClassification.filler,0,999999,5), 
     #"Silver Bell":                                            TeviItemData("Consumeable",  44966541_397, ItemClassification.filler), 
     "Void Bomb":                                               TeviItemData("Consumeable",  44966541_398, ItemClassification.progression,1,999999), 
     "Cloud Bomb":                                              TeviItemData("Consumeable",  44966541_399, ItemClassification.progression,1,999999), 
     "BB Rabbit":                                               TeviItemData("Consumeable",  44966541_400, ItemClassification.progression,1,999999), 
     "Calico Bomb":                                             TeviItemData("Consumeable",  44966541_401, ItemClassification.progression,1,999999), 
     "Tabby Bomb":                                              TeviItemData("Consumeable",  44966541_402, ItemClassification.progression,1,999999), 
-    "Memorial Bookmark":                                       TeviItemData("Consumeable",  44966541_403, ItemClassification.filler,0,0), 
-    "Burnt Dessert":                                           TeviItemData("Consumeable",  44966541_404, ItemClassification.filler,0,999999), 
-    "Pocket Biscuit":                                          TeviItemData("Consumeable",  44966541_405, ItemClassification.filler,0,999999) 
+    #"Memorial Bookmark":                                       TeviItemData("Consumeable",  44966541_403, ItemClassification.filler,0,0,20), 
+    "Burnt Dessert":                                           TeviItemData("Consumeable",  44966541_404, ItemClassification.filler,0,999999,5), 
+    "Pocket Biscuit":                                          TeviItemData("Consumeable",  44966541_405, ItemClassification.filler,0,999999,5) 
     }
 
 teleporter_table: Dict[str,TeviItemData] = {
@@ -513,17 +520,17 @@ teleporter_table: Dict[str,TeviItemData] = {
     "Teleporter Evernight Garden":                                  TeviItemData("Teleporter",  44966541_536, ItemClassification.progression,1,1), 
 }
 
-event_item_table: Dict[str, TeviItem] = {
+event_item_table: Dict[str, TeviItemData] = {
 
 }
 
-trap_table: Dict[str,TeviItem] = {
-    "Reverse Camera":                                               TeviItemData("Trap",  44966541_550, ItemClassification.trap,0,99999999), 
-    "Double Time":                                                  TeviItemData("Trap",  44966541_551, ItemClassification.trap,0,99999999), 
-    "Yeet":                                                         TeviItemData("Trap",  44966541_552, ItemClassification.trap,0,99999999), 
+trap_table: Dict[str,TeviItemData] = {
+    "Reverse Camera":                                               TeviItemData("Trap",  44966541_550, ItemClassification.trap,0,99999999,1), 
+    "Double Time":                                                  TeviItemData("Trap",  44966541_551, ItemClassification.trap,0,99999999,1), 
+    "Yeet":                                                         TeviItemData("Trap",  44966541_552, ItemClassification.trap,0,99999999,1), 
     "Debuff":                                                       TeviItemData("Trap",  44966541_553, ItemClassification.trap,0,99999999,6), 
-    "Taunt":                                                        TeviItemData("Trap",  44966541_554, ItemClassification.trap,0,99999999), 
-    "Reduce Jump Height":                                            TeviItemData("Trap",  44966541_555, ItemClassification.trap,0,99999999), 
+    "Taunt":                                                        TeviItemData("Trap",  44966541_554, ItemClassification.trap,0,99999999,1), 
+    "Reduce Jump Height":                                            TeviItemData("Trap",  44966541_555, ItemClassification.trap,0,99999999,1), 
 }
 
 

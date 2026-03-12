@@ -11,7 +11,7 @@ from BaseClasses import ItemClassification,LocationProgressType
 from Fill import swap_location_item
 from worlds.AutoWorld import World, WebWorld
 from worlds.LauncherComponents import Component, components, launch_subprocess, Type
-from .items import TeviItem, event_item_table, get_traps,get_potential_new_item,get_potential_new_filler_item,get_item_groups,all_item_table,teleporter_table,item_table
+from .items import TeviItem, event_item_table, get_traps,get_fillers,get_potential_new_item,get_potential_new_filler_item,get_item_groups,all_item_table,teleporter_table,item_table
 from .Regions import RegionDef, get_all_possible_locations,get_location_group_names
 from .Options import TeviOptions
 from .Web import TeviWeb
@@ -61,7 +61,7 @@ class TeviWorld(World):
         self.total_locations = 0
         self.region_def = None
         self.tracker_world["map_page_setting_key"] = r"Slot:{player}:currentMap"
-        self.item_quantities = {item: item_data.default_quantity for item, item_data in
+        self.item_quantities = {item: 0 for item, item_data in
                                 (all_item_table).items()}
 
 
@@ -118,21 +118,17 @@ class TeviWorld(World):
 
         if self.options.traverse_Mode.value ==2:
             for name, data in teleporter_table.items():
-                item_pool += [self.create_teleporter(name) for _ in range(0, self.item_quantities[name])]
+                item_pool += [self.create_teleporter(name) for _ in range(0, data.default_quantity)]
                 
         total_locations = self.itempool_options()
-        filler_items = []
+        
         for name, data in item_table.items():
-            #if self.options.chaos_mode.value and data.classification != ItemClassification.progression  \
-            #                                 and data.classification != ItemClassification.progression_skip_balancing:
-            #    self.item_quantities[name] = 0
             if data.classification == ItemClassification.progression  \
-                                            or data.classification == ItemClassification.progression_skip_balancing:
-                item_pool += [self.create_item(name) for _ in range(0, self.item_quantities[name])]
+                                      or data.classification == ItemClassification.progression_skip_balancing:
+                item_pool += [self.create_item(name) for _ in range(0, data.default_quantity)]
             elif self.options.chaos_mode.value:
                 self.item_quantities[name] = 0
-            else: 
-                filler_items.append(name) 
+
 
         
 
@@ -142,21 +138,15 @@ class TeviWorld(World):
         else:
             total_items_left = total_locations-len(item_pool)
             traps_amount = int(self.options.traps_percent.value * total_items_left / 100)
-            item_list = [filler for filler in filler_items for _ in range(self.item_quantities[filler])]
-            while(len(item_list) < total_items_left):
-                item_list.append(self.get_filler_item_name())
-            choice_list = self.random.sample(item_list, k=total_items_left-traps_amount)
-            for choice in choice_list:
-                item_pool.append(self.create_item(choice))
-            item_pool += [self.create_item(name) for name in self.get_traps(traps_amount,self.options.excludeTraps.value)]
-            
 
-        # while len(item_pool) < total_locations:
-        #     if self.options.chaos_mode.value:
-        #         item_pool.append(self.create_item(self.get_chaos_item_name()))
-        #         #item_pool += [self.create_item(name) for name in self.get_traps(total_locations-len(item_pool))]
-        #     else:
-        #         item_pool.append(self.create_item(self.get_filler_item_name()))
+            #all useful and filler items
+            item_list = self.get_filler_items(total_items_left-traps_amount)
+
+            # Add traps to list
+            item_list+= self.get_traps(traps_amount,self.options.excludeTraps.value)
+            item_pool += [self.create_item(name) for name in item_list]
+            
+        a = len(self.multiworld.get_unfilled_locations(self.player))
         self.multiworld.itempool += item_pool
 
     def itempool_options(self) -> int:
@@ -177,8 +167,6 @@ class TeviWorld(World):
 
         if self.options.randomize_mananite.value == 0:
             self.item_quantities["Mananite Shard"] = 0
-
-    
 
         self.item_quantities["Kiwi Bunny Potion"] -= self.removingPotions[0]
         self.item_quantities["Blueberry Bunny Potion"] -= self.removingPotions[1]
@@ -268,13 +256,7 @@ class TeviWorld(World):
         choice = self.random.choices([filler for filler in fillers.keys()], weights, k=1)[0]
         self.item_quantities[choice] += 1
         return choice
-    
-    def get_filler_item_name(self) -> str:
-        fillers = get_potential_new_filler_item(self)
-        weights = [data.weight for data in fillers.values()]
-        choice = self.random.choices([filler for filler in fillers.keys()], weights, k=1)[0]
-        self.item_quantities[choice] += 1
-        return choice
+
     
     def get_traps(self,amount = 1,ignoreList:set = None) -> List[str]:
         if ignoreList == None:
@@ -282,9 +264,26 @@ class TeviWorld(World):
         traps = get_traps(self,ignoreList)
         weights = [data.weight for data in traps.values()]
         choice_list = self.random.choices([filler for filler in traps.keys()], weights, k=amount)
+        self.random.choice
         for choice in choice_list:
             self.item_quantities[choice] += 1
         return choice_list
+        
+    def get_filler_items(self,amount = 1) -> List[str]:
+        filler = get_fillers(self)
+        item_list = [filler for filler in filler.keys()]
+        weights = [data.weight for data in filler.values()]
+        result = []
+        while(amount > 0):
+            amount -=1
+            choice = self.random.choices(item_list, weights, k=1)[0]
+            self.item_quantities[choice] +=1
+            result.append(choice)
+            if self.item_quantities[choice] >= item_table[choice].default_quantity:
+                idx = item_list.index(choice)
+                item_list.pop(idx)
+                weights.pop(idx)
+        return result
         
     @staticmethod
     def interpret_slot_data(slot_data: Dict[str, Any]) -> Dict[str, Any]:
