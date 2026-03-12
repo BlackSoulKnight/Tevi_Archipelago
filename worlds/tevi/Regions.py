@@ -162,18 +162,19 @@ class RegionDef:
 
 
             rule = self.locations[location_name]
+
+            ap_rule = parse_expression_logic(rule)
+            ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options)
+            if "EVENT" in self.locationsItem[location_name]:
+                self.event_list.append(({"Location":region_name,"Event":self.locationsItem[location_name],"Rule":ap_rule}))
+                continue
+
             ap_location = TeviLocation(
                 self.player,
                 location_name,
                 location_name_to_id[location_name],
                 regions[region_name]
             )
-            ap_rule = parse_expression_logic(rule)
-            ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options)
-
-            if "EVENT" in self.locationsItem[location_name]:
-                self.event_list.append(({"Location":region_name,"Event":self.locationsItem[location_name],"Rule":ap_rule}))
-                continue
 
             set_rule(ap_location,ap_rule)
             if("LibraryExtra" in rule and not self.options.superBosses.value > 0):
