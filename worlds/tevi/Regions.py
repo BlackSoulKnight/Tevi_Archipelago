@@ -1,14 +1,12 @@
 import os
 import json,pkgutil
 
-from typing import List, Set, Dict, Optional, Callable
 from BaseClasses import Location, Region, MultiWorld, ItemClassification,LocationProgressType,EntranceType
 from entrance_rando import disconnect_entrance_for_randomization,randomize_entrances
-from worlds.generic.Rules import add_rule, set_rule
+from worlds.generic.Rules import set_rule
 from .items import TeviItem,all_item_table
-from .Utility import evaluate_rule,parse_expression_logic,GetAllUpgradeables
+from .Utility import evaluate_rule,parse_expression_logic
 from .Options import TeviOptions
-from .TeviToApNames import TeviToApNames
 
 
 
@@ -271,7 +269,10 @@ def get_all_possible_locations():
     file = pkgutil.get_data(__name__, os.path.join('resources', 'MoneyLocations.json')).decode()
     moreLocs = json.loads(file)
     data += moreLocs
-    return [location["LocationName"] for location in data]
+    returnVal = {}
+    for location in data:
+        returnVal[location["LocationName"]] = location["LocationID"]
+    return returnVal
 
 def get_location_group_names():
     locations = get_all_possible_locations()

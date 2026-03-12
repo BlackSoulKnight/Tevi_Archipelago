@@ -1,7 +1,7 @@
-import os,re,json,pkgutil
-from BaseClasses import CollectionState, Region
+import re
+from BaseClasses import Region
 from .logic_helper import *
-from .TeviToApNames import TeviToApNames
+from .items import TeviToApNames
 from typing import Dict,List
 
 

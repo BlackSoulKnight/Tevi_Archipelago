@@ -4,20 +4,15 @@ This module serves as an entrypoint into the Tevi AP world.
 
 # This AP world uses Rabi-Ribi Ap world as a base, so check out that game as well
 
-from collections import defaultdict
 from typing import ClassVar, Dict, Set,List,Union,Any
 
 from BaseClasses import ItemClassification,LocationProgressType
-from Fill import swap_location_item
 from worlds.AutoWorld import World, WebWorld
-from worlds.LauncherComponents import Component, components, launch_subprocess, Type
-from .items import TeviItem, event_item_table, get_traps,get_fillers,get_potential_new_item,get_potential_new_filler_item,get_item_groups,all_item_table,teleporter_table,item_table
+from .items import TeviItem, event_item_table, get_traps,get_fillers,get_potential_new_item,get_item_groups,all_item_table,teleporter_table,item_table,StartIDTeleporter,StartIDTrap,TeviToApNames,ApNamesToTevi
 from .Regions import RegionDef, get_all_possible_locations,get_location_group_names
 from .Options import TeviOptions
 from .Web import TeviWeb
 from .Utility import GetAllUpgradeables
-from .TeviToApNames import TeviToApNames,ApNamesToTevi
-from entrance_rando import randomize_entrances
 from settings import Group,FilePath
 from . import ut_stuff
 
@@ -39,15 +34,11 @@ class TeviWorld(World):
     topology_present: bool = False
     web: WebWorld = TeviWeb()
     prefilled_items:List[TeviItem] = list()
-    base_id: int = 44966541000
-
+    #world_version = "0.6.8" 
     item_name_groups: Dict[str, Set[str]] = {}
     location_name_groups: Dict[str, Set[str]] = {}
     item_name_to_id: Dict[str, int] = {name: data.code for name, data in (all_item_table).items()} 
-    location_name_to_id: Dict[str, int] = {
-        name: id_num for
-        id_num, name in enumerate(get_all_possible_locations(), base_id)
-    }
+    location_name_to_id: Dict[str, int] = get_all_possible_locations()
     removingPotions = [0,0,0,0,0]
 
     item_name_groups = get_item_groups()
@@ -215,6 +206,8 @@ class TeviWorld(World):
 
         return {
             "version":self.world_version.as_simple_string(),
+            "StartIDTeleporter":StartIDTeleporter,
+            "StartIDTrap":StartIDTrap,
             "transitionData":transitionData,
             "options": options
         }
