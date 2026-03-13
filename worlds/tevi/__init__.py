@@ -60,9 +60,9 @@ class TeviWorld(World):
         """Set world specific generation properties"""
         #Set up the number of find able Gears
         self.item_quantities["Astral Gear"] = self.options.gear_count.value
-        # Reduce Goal to match Gear count if its greater
+        # Increase gear count to match goal count
         if self.options.gear_count.value < self.options.goal_count.value:
-            self.options.goal_count.value = self.options.gear_count.value
+            self.options.gear_count.value = self.options.goal_count.value
 
         if (hasattr(self.multiworld, "re_gen_passthrough") and "Tevi" in getattr(self.multiworld, "re_gen_passthrough")):
             self.options.traverse_Mode.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["traverse_mode"]
@@ -110,19 +110,17 @@ class TeviWorld(World):
         if self.options.traverse_Mode.value ==2:
             for name, data in teleporter_table.items():
                 item_pool += [self.create_teleporter(name) for _ in range(0, data.default_quantity)]
-                
-        total_locations = self.itempool_options()
-        
+
         for name, data in item_table.items():
             if data.classification == ItemClassification.progression  \
                                       or data.classification == ItemClassification.progression_skip_balancing:
-                item_pool += [self.create_item(name) for _ in range(0, data.default_quantity)]
-            elif self.options.chaos_mode.value:
-                self.item_quantities[name] = 0
+                self.item_quantities[name] = data.default_quantity
 
+        total_locations = self.itempool_options()
 
-        
-
+        for name, data in item_table.items():
+            item_pool += [self.create_item(name) for _ in range(0, self.item_quantities[name])]
+            
         if self.options.chaos_mode.value:
             while len(item_pool) < total_locations:
                 item_pool.append(self.create_item(self.get_chaos_item_name()))
@@ -137,7 +135,6 @@ class TeviWorld(World):
             item_list+= self.get_traps(traps_amount,self.options.excludeTraps.value)
             item_pool += [self.create_item(name) for name in item_list]
             
-        a = len(self.multiworld.get_unfilled_locations(self.player))
         self.multiworld.itempool += item_pool
 
     def itempool_options(self) -> int:
@@ -159,33 +156,31 @@ class TeviWorld(World):
         if self.options.randomize_mananite.value == 0:
             self.item_quantities["Mananite Shard"] = 0
 
-        self.item_quantities["Kiwi Bunny Potion"] -= self.removingPotions[0]
-        self.item_quantities["Blueberry Bunny Potion"] -= self.removingPotions[1]
-        self.item_quantities["Lemon Bunny Potion"] -= self.removingPotions[2]
-        self.item_quantities["Cherry Bunny Potion"] -= self.removingPotions[3]
-        self.item_quantities["Grape Bunny Potion"] -= self.removingPotions[4]
-
         start_item_amount = 0
         start_items = self.options.start_inventory.value
 
         for item,amount in start_items:
             start_item_amount = amount
-            self.item_quantities[item] -= max(0, min(start_item_amount, self.item_quantities[item]))
+            self.item_quantities[item] = min(item_table[item].default_quantity, min(start_item_amount))
    
-        if not self.options.randomize_knife.value and self.item_quantities["Dagger"] >0:
-            self.item_quantities["Dagger"] -= 1
+        if not self.options.randomize_knife.value:
+            if self.item_quantities["Dagger"] > 0:
+                self.item_quantities["Dagger"] -= 1
             total_locations -=1
 
         self.item_quantities["Astral Gear"] = max(self.options.gear_count.value, self.options.goal_count)
 
-        if not self.options.randomize_orb.value and self.item_quantities["Orbitars"] > 0:
-            self.item_quantities["Orbitars"] -= 1
+        if not self.options.randomize_orb.value:
+            if self.item_quantities["Orbitars"] > 0:
+                self.item_quantities["Orbitars"] -= 1
             total_locations -=1
+
         if not self.options.randomize_item_upgrade.value:
             for item in upgradeable:
                 amount = min(2,max(0,start_item_amount))
-                self.item_quantities[TeviToApNames[item]] -= 2 - amount
+                self.item_quantities[TeviToApNames[item]] += amount
                 total_locations -= 2-amount
+
         return total_locations
 
     def fill_slot_data(self) -> dict:
