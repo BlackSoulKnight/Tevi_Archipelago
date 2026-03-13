@@ -279,22 +279,22 @@ def get_location_group_names():
     locations = get_all_possible_locations()
     location_name_groups = {}
 
-    for v in locations:
-        if "EVENT" in v:
+    for k,v in locations.items():
+        if v == 0:
             continue
-        name = v.split("-")
+        name = k.split("-")
         name[0] = name[0].strip()
         if "Memine" in name[0]:
             name[0] = "Memine"
         if len(name) == 1:
             continue
         if name[0] in location_name_groups:
-            location_name_groups[name[0]].add(v)
+            location_name_groups[name[0]].add(k)
         else:
-            location_name_groups[name[0]] = {v}
-        if "shop" in v.lower():
+            location_name_groups[name[0]] = {k}
+        if "shop" in k.lower():
             if "Shop" in location_name_groups:
-                location_name_groups["Shop"].add(v)
+                location_name_groups["Shop"].add(k)
             else:
-                location_name_groups["Shop"] = {v}
+                location_name_groups["Shop"] = {k}
     return location_name_groups
