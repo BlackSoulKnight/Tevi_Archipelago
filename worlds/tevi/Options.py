@@ -66,7 +66,6 @@ class TrapPercent(Range):
     range_end = 100
     default = 0
 
-class FreeMeleeAttackUp(Range):
     """
     Start the Game with X amount of Melee Attack Ups
 
@@ -76,37 +75,6 @@ class FreeMeleeAttackUp(Range):
     range_end = 220
     default = 0
 
-class FreeRangedAttackUp(Range):
-    """
-    Start the Game with X amount of Range Attack Ups
-
-    This is usefull to kill Bosses faster
-    """
-    range_start = 0
-    range_end = 220
-    default = 0    
-class FreeMana(Range):
-    """
-    Start the Game with X amount of Mana Ups
-    """
-    range_start = 0
-    range_end = 220
-    default = 0    
-class FreeBadgePoints(Range):
-    """
-    Start the Game with X amount of EP Ups
-    """
-    range_start = 0
-    range_end = 220
-    default = 0    
-class FreeHP(Range):
-    """
-    Start the Game with X amount of HP Ups
-    """
-    range_start = 0
-    range_end = 220
-    default = 0
-    
 class ItemChaos(Toggle):
     """
     Item Chaos rerolls every non Progressive Item into a new Item.
@@ -264,11 +232,6 @@ class TeviOptions(PerGameCommonOptions):
     chaos_mode: ItemChaos
     celia_sable: CeliaSableUnlocked
     traps_percent: TrapPercent
-    free_MATK: FreeMeleeAttackUp
-    free_RATK: FreeRangedAttackUp
-    free_HP: FreeHP
-    free_MP: FreeMana
-    free_EP: FreeBadgePoints
 
     goal_type: GoalType
     gear_count: GearCount
@@ -304,11 +267,6 @@ class TeviOptions(PerGameCommonOptions):
             "randomize_item_upgrade":self.randomize_item_upgrade.value,
             "chaos_mode":self.chaos_mode.value,
             "celia_sable":self.celia_sable.value,
-            "free_MATK": self.free_MATK.value,
-            "free_RATK": self.free_RATK.value,
-            "free_HP": self.free_HP.value,
-            "free_MP": self.free_MP.value,
-            "free_EP": self.free_EP.value,
             "goal_type": self.goal_type.value,
             "gear_count":self.gear_count.value,
             "goal_count":self.goal_count.value,
