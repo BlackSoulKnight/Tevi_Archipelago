@@ -66,14 +66,6 @@ class TrapPercent(Range):
     range_end = 100
     default = 0
 
-    """
-    Start the Game with X amount of Melee Attack Ups
-
-    This is usefull to kill Bosses faster
-    """
-    range_start = 0
-    range_end = 220
-    default = 0
 
 class ItemChaos(Toggle):
     """
