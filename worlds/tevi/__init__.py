@@ -246,6 +246,8 @@ class TeviWorld(World):
 
     
     def get_traps(self,amount = 1,ignoreList:set = None) -> List[str]:
+        if amount <= 0:
+            return []
         if ignoreList == None:
             ignoreList = []
         traps = get_traps(self,ignoreList)
@@ -257,6 +259,8 @@ class TeviWorld(World):
         return choice_list
         
     def get_filler_items(self,amount = 1) -> List[str]:
+        if amount <= 0:
+            return []
         filler = get_fillers(self)
         item_list = [filler for filler in filler.keys()]
         weights = [data.weight for data in filler.values()]
