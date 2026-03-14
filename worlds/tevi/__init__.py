@@ -34,7 +34,6 @@ class TeviWorld(World):
     topology_present: bool = False
     web: WebWorld = TeviWeb()
     prefilled_items:List[TeviItem] = list()
-    #world_version = "0.6.8" 
     item_name_groups: Dict[str, Set[str]] = {}
     location_name_groups: Dict[str, Set[str]] = {}
     item_name_to_id: Dict[str, int] = {name: data.code for name, data in (all_item_table).items()} 
