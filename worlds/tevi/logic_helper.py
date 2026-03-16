@@ -170,6 +170,8 @@ class TeviLogic():
         return possible
 
     def trick_WallJump(state:CollectionState,player:int,difficutly:int,option:int):
+        if difficutly == 3:
+            return state.has_any([TeviToApNames["Useable_VenaBombBunBun"]],player) and TeviLogic.has_item_levelX("ITEM_WALLJUMP",state,player)
         if difficutly > 1:
             return difficutly <= option and TeviLogic.has_fast_item(state,player) and TeviLogic.has_item_levelX("ITEM_WALLJUMP",state,player)
         return difficutly <= option
