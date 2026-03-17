@@ -4,6 +4,8 @@ This module serves as an entrypoint into the Tevi AP world.
 
 # This AP world uses Rabi-Ribi Ap world as a base, so check out that game as well
 
+import json,pkgutil
+
 from typing import ClassVar, Dict, Set,List,Union,Any
 
 from BaseClasses import ItemClassification,LocationProgressType
@@ -183,6 +185,9 @@ class TeviWorld(World):
         return total_locations
 
     def fill_slot_data(self) -> dict:
+        file = pkgutil.get_data(__name__, 'archipelago.json').decode()
+        file = json.loads(file)
+        backup_version = file["world_version"]
         transitionData = []
         options = self.options.getOptions()
         if self.options.traverse_Mode.value == 2:
@@ -197,9 +202,9 @@ class TeviWorld(World):
                     "from":connection[0],
                     "to":connection[1]
                     })
-
         return {
             "version":self.world_version.as_simple_string(),
+            "backup_version":backup_version,
             "StartIDTeleporter":StartIDTeleporter,
             "StartIDTrap":StartIDTrap,
             "transitionData":transitionData,
