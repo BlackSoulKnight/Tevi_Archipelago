@@ -162,7 +162,7 @@ class TeviWorld(World):
 
         for item,amount in start_items.items():
             start_item_amount = amount
-            self.item_quantities[item] = min(item_table[item].default_quantity, min(start_item_amount))
+            self.item_quantities[item] = min(item_table[item].default_quantity, start_item_amount)
    
         if not self.options.randomize_knife.value:
             if self.item_quantities["Dagger"] > 0:
