@@ -160,7 +160,7 @@ class TeviWorld(World):
         start_item_amount = 0
         start_items = self.options.start_inventory.value
 
-        for item,amount in start_items:
+        for item,amount in start_items.items():
             start_item_amount = amount
             self.item_quantities[item] = min(item_table[item].default_quantity, min(start_item_amount))
    
