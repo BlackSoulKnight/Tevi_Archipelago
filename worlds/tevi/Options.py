@@ -257,6 +257,7 @@ class TeviOptions(PerGameCommonOptions):
             "randomize_knife":self.randomize_knife.value,
             "randomize_orb":self.randomize_orb.value,
             "randomize_item_upgrade":self.randomize_item_upgrade.value,
+            "randomize_money":self.randomize_money.value,
             "chaos_mode":self.chaos_mode.value,
             "celia_sable":self.celia_sable.value,
             "goal_type": self.goal_type.value,

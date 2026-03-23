@@ -836,6 +836,8 @@ poptracker_data: dict[str, int] = {
 "Unique Enemy Magitite - V_Ironmaiden/Magitite Shard":745,
 "Unique Enemy Magitite - Landmine/Magitite Shard":746,
 "Unique Enemy Magitite - Knights_A/Magitite Shard":747,
+"Unique Enemy Mananite - Pestilence/Mananite Shard":1339,
+"Unique Enemy Mananite - Pestilence_Range/Mananite Shard":1340,
 "Desert Base - Money Room X: 18 Y: 13/500 Zennie Pack #1":748,
 "Desert Base - Money Room X: 18 Y: 13/500 Zennie Pack #2":749,
 "Desert Base - Money Room X: 14 Y: 11/500 Zennie Pack #1":750,
