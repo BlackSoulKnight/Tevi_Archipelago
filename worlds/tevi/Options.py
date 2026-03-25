@@ -40,7 +40,6 @@ class TraveseMode(Choice):
     option_random_teleporter = 2
     default = 0
 
-
 class RandomizeOrb(Toggle):
     """If set to false, you receive the Orb as Starting item"""
     display_name = "Randomize Orb"
@@ -66,7 +65,6 @@ class TrapPercent(Range):
     range_end = 100
     default = 0
 
-
 class ItemChaos(Toggle):
     """
     Item Chaos rerolls every non Progressive Item into a new Item.
@@ -82,7 +80,23 @@ class GoalType(Choice):
     display_name = "Goal Type"
     option_AstralGear = 0
     option_KillBosses = 1
-  
+
+class MananiteAmount(Range):
+    """
+    Sets the amount of findable purple shards when they are randomized
+    """
+    range_start = 90
+    range_end = 96
+    default = 90
+
+class MagititeAmount(Range):
+    """
+    Sets the amount of findable yellow shards when they are randomized
+    """
+    range_start = 35
+    range_end = 70
+    default = 35
+
 class GearCount(Range):
     """
     The Amount of Gears found in the Game
@@ -226,6 +240,8 @@ class TeviOptions(PerGameCommonOptions):
     traps_percent: TrapPercent
 
     goal_type: GoalType
+    magitite_amount:MagititeAmount
+    mananite_amount:MananiteAmount
     gear_count: GearCount
     goal_count: GoalCount
     walljumpTricks : WalljumpTrick

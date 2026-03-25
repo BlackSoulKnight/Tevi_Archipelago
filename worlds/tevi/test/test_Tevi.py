@@ -1,5 +1,5 @@
 from . import TeviTestBase
-
+from ..items import all_item_table
 class TestLocationCheck(TeviTestBase):
     def test_Linebomb(self) -> None:
         location = ["North Thanatara Canyon - Blueberry Bunny Potion"]
@@ -24,7 +24,25 @@ class TestLocationCheck(TeviTestBase):
         self.assertTrue(self.can_reach_location("Cloister Main - C. Rank Frenzy: Focus MAX"))
 
 
-
+class TestItems(TeviTestBase):
+    run_default_tests = None
+    options = {
+        "randomize_money": "1",
+    }
+    def test_ProgressionItemCount(self):
+        itemList = {}
+        for item in self.multiworld.get_items():
+            if item in itemList:
+                itemList[item] +=1
+            else:
+                itemList[item] = 1
+        for k,v in itemList.items():
+            if k.trap or "EVENT" in k.name:
+                continue
+            if not k.advancement and all_item_table[k.name].category == "Consumeable":
+                continue
+            default_quantity = all_item_table[k.name].default_quantity
+            self.assertFalse(v>default_quantity,f"{k}: {v}>{default_quantity}")
 
 
 class TestMemine(TeviTestBase):

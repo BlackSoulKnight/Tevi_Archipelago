@@ -78,7 +78,7 @@ def get_traps(world: "TeviWorld",ignore:set) -> Dict[str,TeviItemData]:
 def get_fillers(world: "TeviWorld") -> Dict[str,TeviItemData]:
     item_dict: Dict[str, TeviItemData] = {}
     for name, data in item_table.items():
-        if  world.item_quantities[name] < data.default_quantity:
+        if data.classification != ItemClassification.progression and world.item_quantities[name] < data.default_quantity:
             item_dict.setdefault(name, data)
     return item_dict
 

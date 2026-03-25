@@ -10,7 +10,7 @@ from typing import ClassVar, Dict, Set,List,Union,Any
 
 from BaseClasses import ItemClassification,LocationProgressType
 from worlds.AutoWorld import World, WebWorld
-from .items import TeviItem, event_item_table, get_traps,get_fillers,get_potential_new_item,get_item_groups,all_item_table,teleporter_table,item_table,StartIDTeleporter,StartIDTrap,TeviToApNames,ApNamesToTevi
+from .items import TeviItem, event_item_table, get_traps,get_fillers,get_potential_new_item,get_item_groups,get_items_by_category,all_item_table,teleporter_table,item_table,StartIDTeleporter,StartIDTrap,TeviToApNames,ApNamesToTevi
 from .Regions import RegionDef, get_all_possible_locations,get_location_group_names
 from .Options import TeviOptions
 from .Web import TeviWeb
@@ -153,9 +153,14 @@ class TeviWorld(World):
 
         if self.options.randomize_magitite.value == 0:
             self.item_quantities["Magitite Shard"] = 0
+        else:
+            self.item_quantities["Magitite Shard"] = self.options.magitite_amount.value
+
 
         if self.options.randomize_mananite.value == 0:
             self.item_quantities["Mananite Shard"] = 0
+        else:
+            self.item_quantities["Mananite Shard"] = self.options.mananite_amount.value
 
         start_item_amount = 0
         start_items = self.options.start_inventory.value
@@ -178,9 +183,9 @@ class TeviWorld(World):
 
         if not self.options.randomize_item_upgrade.value:
             for item in upgradeable:
-                amount = min(2,max(0,start_item_amount))
-                self.item_quantities[TeviToApNames[item]] += amount
-                total_locations -= 2-amount
+                amount = max(0,2-start_item_amount)
+                self.item_quantities[TeviToApNames[item]] -= amount
+                total_locations -= amount
 
         return total_locations
 
@@ -270,6 +275,19 @@ class TeviWorld(World):
         item_list = [filler for filler in filler.keys()]
         weights = [data.weight for data in filler.values()]
         result = []
+        if len(item_list) < amount:
+            leftover = amount -len(item_list)
+            result += item_list
+            food = get_items_by_category("Consumeable")
+            food_list = []
+            food_weights = []
+            for k,v in food.items():
+                if v.classification == ItemClassification.progression:
+                    continue
+                food_list.append(k)
+                food_weights.append(v.weight)
+            result += self.random.choices(food_list, food_weights, k=leftover)
+            return result
         while(amount > 0):
             amount -=1
             choice = self.random.choices(item_list, weights, k=1)[0]
