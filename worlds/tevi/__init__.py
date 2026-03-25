@@ -162,12 +162,10 @@ class TeviWorld(World):
         else:
             self.item_quantities["Mananite Shard"] = self.options.mananite_amount.value
 
-        start_item_amount = 0
         start_items = self.options.start_inventory.value
 
         for item,amount in start_items.items():
-            start_item_amount = amount
-            self.item_quantities[item] = min(item_table[item].default_quantity, start_item_amount)
+            self.item_quantities[item] = max(0,item_table[item].default_quantity-amount)
    
         if not self.options.randomize_knife.value:
             if self.item_quantities["Dagger"] > 0:
@@ -183,8 +181,8 @@ class TeviWorld(World):
 
         if not self.options.randomize_item_upgrade.value:
             for item in upgradeable:
-                amount = max(0,2-start_item_amount)
-                self.item_quantities[TeviToApNames[item]] -= amount
+                amount = max(0,self.item_quantities[TeviToApNames[item]]-2)
+                self.item_quantities[TeviToApNames[item]] = amount
                 total_locations -= amount
 
         return total_locations

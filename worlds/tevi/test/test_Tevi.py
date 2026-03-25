@@ -28,6 +28,13 @@ class TestItems(TeviTestBase):
     run_default_tests = None
     options = {
         "randomize_money": "1",
+        "randomize_magitite": "1",
+        "randomize_mananite": "1",
+        "start_inventory":{
+            "Running Boots": 3,
+            "Trinketeer's Fortune": 3,
+            "Bag Expander": 5
+            }
     }
     def test_ProgressionItemCount(self):
         itemList = {}
