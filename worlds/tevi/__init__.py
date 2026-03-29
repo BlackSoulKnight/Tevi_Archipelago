@@ -272,9 +272,21 @@ class TeviWorld(World):
         item_list = [filler for filler in filler.keys()]
         weights = [data.weight for data in filler.values()]
         result = []
+
+
+        
+        while(amount > 0 and len(item_list) >0):
+            amount -=1
+            choice = self.random.choices(item_list, weights, k=1)[0]
+            self.item_quantities[choice] +=1
+            result.append(choice)
+            if self.item_quantities[choice] >= item_table[choice].default_quantity:
+                idx = item_list.index(choice)
+                item_list.pop(idx)
+                weights.pop(idx)
+
         if len(item_list) < amount:
             leftover = amount -len(item_list)
-            result += item_list
             food = get_items_by_category("Consumeable")
             food_list = []
             food_weights = []
@@ -284,16 +296,6 @@ class TeviWorld(World):
                 food_list.append(k)
                 food_weights.append(v.weight)
             result += self.random.choices(food_list, food_weights, k=leftover)
-            return result
-        while(amount > 0):
-            amount -=1
-            choice = self.random.choices(item_list, weights, k=1)[0]
-            self.item_quantities[choice] +=1
-            result.append(choice)
-            if self.item_quantities[choice] >= item_table[choice].default_quantity:
-                idx = item_list.index(choice)
-                item_list.pop(idx)
-                weights.pop(idx)
         return result
         
     @staticmethod
