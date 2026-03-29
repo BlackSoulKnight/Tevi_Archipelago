@@ -51,8 +51,8 @@ class RegionDef:
         self.options = options
         self.excludeLocations = []
         self.moneyPlaces = []
-        self.mananitePlaces = []
-        self.magititePlaces = []
+        self.mananitePlaces:list[Location] = []
+        self.magititePlaces:list[Location] = []
 
         #add location substring for exlusion
         if options.excludeCrafting.value == 1:
@@ -195,8 +195,6 @@ class RegionDef:
                 
             if "I14" == self.locationsItem[location_name] and self.options.randomize_money.value == 0:
                 continue
-                total_locations -= 1
-                ap_location.place_locked_item(self.create_item("500 Zennie Pack"))
 
             regions[region_name].locations.append(ap_location)
             total_locations += 1

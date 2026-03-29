@@ -163,26 +163,32 @@ class TeviWorld(World):
 
         start_items = self.options.start_inventory.value
 
-        if not self.options.randomize_knife.value:
-            if self.item_quantities["Dagger"] > 0:
-                self.item_quantities["Dagger"] -= 1
-            total_locations -=1
 
         self.item_quantities["Astral Gear"] = max(self.options.gear_count.value, self.options.goal_count)
 
-        if not self.options.randomize_orb.value:
-            if self.item_quantities["Orbitars"] > 0:
-                self.item_quantities["Orbitars"] -= 1
+        for item,amount in start_items.items():
+            self.item_quantities[item] = max(0,item_table[item].default_quantity-amount)
+
+        if not self.options.randomize_knife.value and not ("Dagger" in start_items and start_items["Dagger"] >= 3):
+            self.multiworld.get_location("Thanatara Canyon - Dagger",self.player).place_locked_item(self.create_item("Dagger"))
+            self.item_quantities["Dagger"] -= 1
+            total_locations -=1
+
+        if not self.options.randomize_orb.value and not ("Orbitars" in start_items and start_items["Orbitars"] >= 3):
+            self.multiworld.get_location("Thanatara Canyon - Orbitars",self.player).place_locked_item(self.create_item("Orbitars"))
+            self.item_quantities["Orbitars"] -= 1
             total_locations -=1
 
         if not self.options.randomize_item_upgrade.value:
-            for item in upgradeable:
-                amount = 2
-                self.item_quantities[TeviToApNames[item]] = amount
-                total_locations -= amount
-
-        for item,amount in start_items.items():
-            self.item_quantities[item] = max(0,item_table[item].default_quantity-amount)
+            for item in GetAllUpgradeables():
+                if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 2):
+                    total_locations -= 1
+                    self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
+                if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 1):
+                    total_locations -= 1
+                    self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
+                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).progress_type = LocationProgressType.EXCLUDED
+                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).progress_type = LocationProgressType.EXCLUDED
 
         return total_locations
 
@@ -221,28 +227,12 @@ class TeviWorld(World):
             lambda state: state.can_reach_region("Illusion Palace",self.player)
 
     def pre_fill(self) -> None:
-        start_items = self.options.start_inventory.value
-
-        if not self.options.randomize_knife.value and not ("Dagger" in start_items and start_items["Dagger"] >= 3):
-            self.multiworld.get_location("Thanatara Canyon - Dagger",self.player).place_locked_item(self.create_item("Dagger"))
-            self.prefilled_items.append(self.create_item("Dagger"))
-        if not self.options.randomize_orb.value and not ("Orbitars" in start_items and start_items["Orbitars"] >= 3):
-            self.multiworld.get_location("Thanatara Canyon - Orbitars",self.player).place_locked_item(self.create_item("Orbitars"))
-            self.prefilled_items.append(self.create_item("Orbitars"))
-        if not self.options.randomize_item_upgrade.value:
-            for item in GetAllUpgradeables():
-                if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 2):
-                    self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
-                    self.prefilled_items.append(self.create_item(TeviToApNames[item]))
-                if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 1):
-                    self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
-                    self.prefilled_items.append(self.create_item(TeviToApNames[item]))
-                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).progress_type = LocationProgressType.EXCLUDED
-                self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).progress_type = LocationProgressType.EXCLUDED
+        return
 
     def get_pre_fill_items(self) -> List[TeviItem]:
         """"Returns all item placed in pre_fill"""
-        return self.prefilled_items
+        prefilled_items:List[TeviItem] = []
+        return prefilled_items
 
     def get_chaos_item_name(self) -> str:
         fillers = get_potential_new_item(self)
