@@ -122,20 +122,19 @@ class TeviWorld(World):
         for name, data in item_table.items():
             item_pool += [self.create_item(name) for _ in range(0, self.item_quantities[name])]
             
+        total_items_left = total_locations-len(item_pool)
+        traps_amount = int(self.options.traps_percent.value * total_items_left / 100)
+        item_list = self.get_traps(traps_amount,self.options.excludeTraps.value)
+        item_pool += [self.create_item(name) for name in item_list]
+
         if self.options.chaos_mode.value:
             while len(item_pool) < total_locations:
                 item_pool.append(self.create_item(self.get_chaos_item_name()))
         else:
-            total_items_left = total_locations-len(item_pool)
-            traps_amount = int(self.options.traps_percent.value * total_items_left / 100)
 
             #all useful and filler items
             item_list = self.get_filler_items(total_items_left-traps_amount)
-
-            # Add traps to list
-            item_list+= self.get_traps(traps_amount,self.options.excludeTraps.value)
             item_pool += [self.create_item(name) for name in item_list]
-            
         self.multiworld.itempool += item_pool
 
     def itempool_options(self) -> int:
@@ -164,9 +163,6 @@ class TeviWorld(World):
 
         start_items = self.options.start_inventory.value
 
-        for item,amount in start_items.items():
-            self.item_quantities[item] = max(0,item_table[item].default_quantity-amount)
-   
         if not self.options.randomize_knife.value:
             if self.item_quantities["Dagger"] > 0:
                 self.item_quantities["Dagger"] -= 1
@@ -181,9 +177,12 @@ class TeviWorld(World):
 
         if not self.options.randomize_item_upgrade.value:
             for item in upgradeable:
-                amount = max(0,self.item_quantities[TeviToApNames[item]]-2)
+                amount = 2
                 self.item_quantities[TeviToApNames[item]] = amount
                 total_locations -= amount
+
+        for item,amount in start_items.items():
+            self.item_quantities[item] = max(0,item_table[item].default_quantity-amount)
 
         return total_locations
 
