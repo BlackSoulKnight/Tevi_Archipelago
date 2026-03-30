@@ -184,9 +184,11 @@ class TeviWorld(World):
                 if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 2):
                     total_locations -= 1
                     self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
+                    self.item_quantities[TeviToApNames[item]] -= 1
                 if not (TeviToApNames[item] in start_items and start_items[TeviToApNames[item]] >= 1):
                     total_locations -= 1
                     self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).place_locked_item(self.create_item(TeviToApNames[item]))
+                    self.item_quantities[TeviToApNames[item]] -= 1
                 self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #1",self.player).progress_type = LocationProgressType.EXCLUDED
                 self.multiworld.get_location(f"Item Upgrade - {TeviToApNames[item]} #2",self.player).progress_type = LocationProgressType.EXCLUDED
 
