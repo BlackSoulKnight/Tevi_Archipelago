@@ -118,7 +118,7 @@ class TeviWorld(World):
                 self.item_quantities[name] = data.default_quantity
 
         total_locations = self.itempool_options()
-
+        self.itempool_potions()
         for name, data in item_table.items():
             item_pool += [self.create_item(name) for _ in range(0, self.item_quantities[name])]
             
@@ -136,6 +136,13 @@ class TeviWorld(World):
             item_list = self.get_filler_items(total_items_left-traps_amount)
             item_pool += [self.create_item(name) for name in item_list]
         self.multiworld.itempool += item_pool
+
+    def itempool_potions(self):
+        self.item_quantities["Kiwi Bunny Potion"] = 16
+        self.item_quantities["Blueberry Bunny Potion"] = 16
+        self.item_quantities["Lemon Bunny Potion"] = 16
+        self.item_quantities["Cherry Bunny Potion"] = 16
+        self.item_quantities["Grape Bunny Potion"] = 16
 
     def itempool_options(self) -> int:
         """

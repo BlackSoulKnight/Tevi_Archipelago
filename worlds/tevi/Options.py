@@ -60,6 +60,7 @@ class CeliaSableUnlocked(Toggle):
 class TrapPercent(Range):
     """
     Sets the percent amount of filler / useful items that are replaced by Traps.
+    When played without randomized money a value around 25% is recommended.
     """
     range_start = 0
     range_end = 100
