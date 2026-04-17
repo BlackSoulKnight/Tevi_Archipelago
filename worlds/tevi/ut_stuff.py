@@ -827,7 +827,7 @@ poptracker_data: dict[str, int] = {
 "Unique Enemy Magitite - Cragmiester/Magitite Shard":736,
 "Unique Enemy Magitite - Hermitcrab_Gold/Magitite Shard":737,
 "Unique Enemy Magitite - V_Guard/Magitite Shard":738,
-"Valhalla Breath West - Money Room X: 9 Y: 1/Magitite Shard":739,
+"Unique Enemy Magitite - V_Chariot/Magitite Shard":739,
 "ItemStack #5/Magitite Shard":740,
 "Unique Enemy Magitite - T_Clown/Magitite Shard":741,
 "Unique Enemy Magitite - Crawler_Fire/Magitite Shard":742,
