@@ -455,7 +455,7 @@ poptracker_data: dict[str, int] = {
 "Snowveil - Grape Bunny Potion/Grape Bunny Potion":395,
 "Snowveil - Air/EVENT_Air":0,
 "Snowveil - EP Booster: Melee Menace/EP Booster: Melee Menace":396,
-"Snowveil - Jethro fight/Astral Gear":397,
+"Verglas Village - Jethro fight/Astral Gear":397,
 "Snowveil - Boss/EVENT_BOSS":0,
 "Snowveil - Life Steal/Life Steal":398,
 "Snowveil - Vortex Gloves/Vortex Gloves":399,
