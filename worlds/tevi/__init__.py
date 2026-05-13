@@ -68,6 +68,8 @@ class TeviWorld(World):
         if (hasattr(self.multiworld, "re_gen_passthrough") and "Tevi" in getattr(self.multiworld, "re_gen_passthrough")):
             self.options.traverse_Mode.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["traverse_mode"]
             self.options.goal_type.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["goal_type"]
+            self.options.gear_count.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["gear_count"]
+            self.options.goal_count.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["goal_count"]
             self.options.cKick.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["cKick"]
             self.options.hiddenP.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["hiddenP"]
             self.options.earlydream.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["earlydream"]
