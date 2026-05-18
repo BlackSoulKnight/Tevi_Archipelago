@@ -7,8 +7,8 @@ This module serves as an entrypoint into the Tevi AP world.
 import json,pkgutil
 
 from typing import ClassVar, Dict, Set,List,Union,Any
-
-from BaseClasses import ItemClassification,LocationProgressType
+from Options import Option
+from BaseClasses import ItemClassification,LocationProgressType,Optional
 from worlds.AutoWorld import World, WebWorld
 from .items import TeviItem, event_item_table, get_traps,get_fillers,get_potential_new_item,get_item_groups,get_items_by_category,all_item_table,teleporter_table,item_table,StartIDTeleporter,StartIDTrap,TeviToApNames,ApNamesToTevi
 from .Regions import RegionDef, get_all_possible_locations,get_location_group_names
@@ -29,6 +29,7 @@ class TeviWorld(World):
     """
     Description of TEVI
     """
+    ut_can_gen_without_yaml = True
     game: str = "Tevi"
     options_dataclass = TeviOptions
     options: TeviOptions
@@ -65,19 +66,19 @@ class TeviWorld(World):
         if self.options.gear_count.value < self.options.goal_count.value:
             self.options.gear_count.value = self.options.goal_count.value
 
-        if (hasattr(self.multiworld, "re_gen_passthrough") and "Tevi" in getattr(self.multiworld, "re_gen_passthrough")):
-            self.options.traverse_Mode.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["traverse_mode"]
-            self.options.goal_type.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["goal_type"]
-            self.options.gear_count.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["gear_count"]
-            self.options.goal_count.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["goal_count"]
-            self.options.cKick.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["cKick"]
-            self.options.hiddenP.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["hiddenP"]
-            self.options.earlydream.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["earlydream"]
-            self.options.barrierSkip.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["barrierSkip"]
-            self.options.adcKick.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["adcKick"]
-            self.options.superBosses.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["superBosses"]
-            self.options.open_morose.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["open_morose"]
-            self.options.randomize_item_upgrade.value = self.multiworld.re_gen_passthrough["Tevi"]["options"]["randomize_item_upgrade"]
+        re_gen_passthrough = getattr(self.multiworld, "re_gen_passthrough", {})
+        if re_gen_passthrough and self.game in re_gen_passthrough:
+            # Get the passed through slot data from the real generation
+            slot_data: dict[str, Any] = re_gen_passthrough[self.game]
+
+            slot_options: dict[str, Any] = slot_data.get("options", {})
+            # Set all your options here instead of getting them from the yaml
+            for key, value in slot_options.items():
+                opt: Optional[Option] = getattr(self.options, key, None)
+                if opt is not None:
+                    # You can also set .value directly but that won't work if you have OptionSets
+                    setattr(self.options, key, opt.from_any(value))
+
 
 
 

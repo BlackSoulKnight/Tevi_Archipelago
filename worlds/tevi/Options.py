@@ -281,8 +281,11 @@ class TeviOptions(PerGameCommonOptions):
             "randomize_orb":self.randomize_orb.value,
             "randomize_item_upgrade":self.randomize_item_upgrade.value,
             "randomize_money":self.randomize_money.value,
+            "randomize_mananite":self.randomize_mananite.value,
+            "randomize_magitite":self.randomize_magitite.value,
             "chaos_mode":self.chaos_mode.value,
             "celia_sable":self.celia_sable.value,
+            "traps_percent":self.traps_percent.value,
             "goal_type": self.goal_type.value,
             "gear_count":self.gear_count.value,
             "goal_count":self.goal_count.value,
@@ -294,7 +297,14 @@ class TeviOptions(PerGameCommonOptions):
             "barrierSkip":self.barrierSkip.value,
             "adcKick":self.adcKick.value,
             "superBosses":self.superBosses.value,
+            "excludeMemine":self.excludeMemine.value,
+            "excludeCrafting":self.excludeCrafting.value,
+            "excludeShop":self.excludeShop.value,
+            "excludeUpgradeCraft":self.excludeUpgradeCraft.value,
+            "excludeArcade":self.excludeArcade.value,
+            "excludeTraps":self.excludeTraps.value,
             "popupAll":self.popupAll.value,
             "popupProgression":self.popupProgression.value,
-            "popupBadge":self.popupBadge.value
+            "popupBadge":self.popupBadge.value,
+            "alphaFeature1":self.alphaFeature1.value
         }
