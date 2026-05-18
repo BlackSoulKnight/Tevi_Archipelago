@@ -198,8 +198,14 @@ class ExcludeArcade(Toggle):
 class ExcludeTraps(ItemSet):
     """
     Removes traps from pool
+    The currently available traps are:
+    - "Reverse Camera","Double Time","Debuff","Yeet",
+    - "Taunt","Reduce Jump Height","Translucent Bunny Potion"
     """
     display_name = "Exclude Traps"
+    valid_keys = ["Reverse Camera","Double Time","Debuff","Yeet","Taunt","Reduce Jump Height","Translucent Bunny Potion"]
+    valid_keys_casefold = True
+
 
 class ExcludeUpgradeCraft(Toggle):
     """
