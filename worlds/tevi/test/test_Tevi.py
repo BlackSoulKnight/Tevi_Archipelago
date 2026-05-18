@@ -1,5 +1,7 @@
+import unittest
 from . import TeviTestBase
-from ..items import all_item_table
+from ..items import all_item_table,trap_table
+from ..Options import ExcludeTraps
 class TestLocationCheck(TeviTestBase):
     def test_Linebomb(self) -> None:
         location = ["North Thanatara Canyon - Blueberry Bunny Potion"]
@@ -86,3 +88,7 @@ class TestGalleryOfSouls(TeviTestBase):
         self.collect(items)
         self.assertFalse(self.can_reach_location(locations))
 
+class TestTraps(unittest.TestCase):
+    def test_traps_in_options(self) -> None:
+        for trap in trap_table.keys():
+            self.assertTrue(trap in ExcludeTraps.valid_keys,f"\"{trap}\" is missing in the trap list. ")
