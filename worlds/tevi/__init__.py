@@ -60,12 +60,6 @@ class TeviWorld(World):
 
     def generate_early(self) -> None:
         """Set world specific generation properties"""
-        #Set up the number of find able Gears
-        self.item_quantities["Astral Gear"] = self.options.gear_count.value
-        # Increase gear count to match goal count
-        if self.options.gear_count.value < self.options.goal_count.value:
-            self.options.gear_count.value = self.options.goal_count.value
-
         re_gen_passthrough = getattr(self.multiworld, "re_gen_passthrough", {})
         if re_gen_passthrough and self.game in re_gen_passthrough:
             # Get the passed through slot data from the real generation
@@ -78,6 +72,12 @@ class TeviWorld(World):
                 if opt is not None:
                     # You can also set .value directly but that won't work if you have OptionSets
                     setattr(self.options, key, opt.from_any(value))
+
+        #Set up the number of find able Gears
+        self.item_quantities["Astral Gear"] = self.options.gear_count.value
+        # Increase gear count to match goal count
+        if self.options.gear_count.value < self.options.goal_count.value:
+            self.options.gear_count.value = self.options.goal_count.value
 
 
 
