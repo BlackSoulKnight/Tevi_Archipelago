@@ -306,5 +306,6 @@ class TeviOptions(PerGameCommonOptions):
             "popupAll":self.popupAll.value,
             "popupProgression":self.popupProgression.value,
             "popupBadge":self.popupBadge.value,
-            "alphaFeature1":self.alphaFeature1.value
+            "alphaFeature1":self.alphaFeature1.value,
+            "start_inventory":self.start_inventory.value,
         }
