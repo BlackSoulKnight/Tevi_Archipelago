@@ -1,7 +1,7 @@
 """This module represents option defintions for Tevi"""
 from dataclasses import dataclass
 
-from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink,ItemSet
+from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink,ItemSet,OptionSet
 
 
 class OpenMorose(Toggle):
@@ -195,7 +195,7 @@ class ExcludeArcade(Toggle):
     """
     display_name = "Exclude Arcade"
 
-class ExcludeTraps(ItemSet):
+class ExcludeTraps(OptionSet):
     """
     Removes traps from pool
     The currently available traps are:
