@@ -136,7 +136,7 @@ class TeviWorld(World):
         else:
 
             #all useful and filler items
-            item_list = self.get_filler_items(total_items_left-traps_amount)
+            item_list = self.get_filler_items(total_locations-len(item_pool))
             item_pool += [self.create_item(name) for name in item_list]
         self.multiworld.itempool += item_pool
 
@@ -259,10 +259,13 @@ class TeviWorld(World):
             return []
         if ignoreList == None:
             ignoreList = []
+        else:
+            ignoreList = [x.lower() for x in ignoreList]
         traps = get_traps(self,ignoreList)
+        if(len(traps) == 0):
+            return []
         weights = [data.weight for data in traps.values()]
         choice_list = self.random.choices([filler for filler in traps.keys()], weights, k=amount)
-        self.random.choice
         for choice in choice_list:
             self.item_quantities[choice] += 1
         return choice_list

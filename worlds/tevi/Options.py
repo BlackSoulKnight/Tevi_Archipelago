@@ -204,7 +204,6 @@ class ExcludeTraps(OptionSet):
     """
     display_name = "Exclude Traps"
     valid_keys = ["Reverse Camera","Double Time","Debuff","Yeet","Taunt","Reduce Jump Height","Translucent Bunny Potion"]
-    valid_keys_casefold = True
 
 
 class ExcludeUpgradeCraft(Toggle):

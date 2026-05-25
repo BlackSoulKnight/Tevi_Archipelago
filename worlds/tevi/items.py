@@ -71,7 +71,7 @@ def get_items_by_category(category: str) -> Dict[str, TeviItemData]:
 def get_traps(world: "TeviWorld",ignore:set) -> Dict[str,TeviItemData]:
     item_dict: Dict[str, TeviItemData] = {}
     for name, data in trap_table.items():
-        if name not in ignore and world.item_quantities[name] < data.max_quantity:
+        if name.lower() not in ignore and world.item_quantities[name] < data.max_quantity:
             item_dict.setdefault(name, data)
     return item_dict
 
