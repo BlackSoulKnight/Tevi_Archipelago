@@ -233,7 +233,7 @@ class pre_release_option_1(Toggle):
 @dataclass
 class TeviOptions(PerGameCommonOptions):
     """Tevi Options Definition"""
-    traverse_Mode: TraveseMode
+    traverse_mode: TraveseMode
     open_morose: OpenMorose
     randomize_knife: RandomizeKnife
     randomize_orb: RandomizeOrb
