@@ -111,7 +111,7 @@ class TeviWorld(World):
     def create_items(self) -> None:
         item_pool: List[TeviItem] = list()
 
-        if self.options.traverse_Mode.value ==2:
+        if self.options.traverse_mode.value ==2:
             for name, data in teleporter_table.items():
                 item_pool += [self.create_teleporter(name) for _ in range(0, data.default_quantity)]
 
@@ -210,7 +210,7 @@ class TeviWorld(World):
         backup_version = file["world_version"]
         transitionData = []
         options = self.options.getOptions()
-        if self.options.traverse_Mode.value == 2:
+        if self.options.traverse_mode.value == 2:
             for connection in self.region_def.randomizedEntrances:
                 transitionData.append({
                     "from":connection[0],

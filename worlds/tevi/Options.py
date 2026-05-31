@@ -274,7 +274,7 @@ class TeviOptions(PerGameCommonOptions):
 
     def getOptions(self):
         return {
-            "traverse_mode":self.traverse_Mode.value,
+            "traverse_mode":self.traverse_mode.value,
             "open_morose":self.open_morose.value,
             "randomize_knife":self.randomize_knife.value,
             "randomize_orb":self.randomize_orb.value,

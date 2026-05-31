@@ -102,7 +102,7 @@ class RegionDef:
             
         regions = self.multiworld.regions.region_cache[self.player]
         regions["Menu"].connect(regions["Thanatara Canyon"])
-        if self.options.traverse_Mode.value == 2:
+        if self.options.traverse_mode.value == 2:
             regions["Menu"].connect(regions["TeleportHub"])
         
 
@@ -118,10 +118,10 @@ class RegionDef:
                 ap_rule = evaluate_rule(ap_rule,self.player,regions,self.options,True)
                 #entrance = regions[from_location].add_exits([to_loaction],{to_loaction:ap_rule})
                 if from_location.isdigit() and to_loaction.isdigit():
-                    if self.options.traverse_Mode.value == 2:
+                    if self.options.traverse_mode.value == 2:
                         transitionData.append((from_location,from_location))
                         continue
-                    if self.options.traverse_Mode.value == 1: 
+                    if self.options.traverse_mode.value == 1: 
                         if using_ut:
                             entrance = regions[from_location].add_exits([ut_transition_data[from_location]],{to_loaction:ap_rule})
                             continue
@@ -139,7 +139,7 @@ class RegionDef:
             disconnect_entrance_for_randomization(b)
         self.randomizedEntrances = randomize_entrances(self.multiworld.worlds[self.player],True,{0:[0]}).pairings
         # this look awfull 
-        if self.options.traverse_Mode.value == 2:
+        if self.options.traverse_mode.value == 2:
             self.randomizedEntrances = transitionData
 
 
