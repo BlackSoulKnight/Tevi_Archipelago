@@ -202,10 +202,6 @@ class RegionDef:
 
     def set_events(self):
         regions = self.multiworld.regions.region_cache[self.player]
-        if self.options.open_morose.value:
-            openMorose = TeviLocation(self.player,"OpenMorose",None,regions["Thanatara Canyon"])
-            openMorose.place_locked_item(TeviItem("OpenMorose",ItemClassification.progression,None,self.player))
-            regions["Thanatara Canyon"].locations.append(openMorose)
         eventNumber = 0
         for event in self.event_list:
             eventNumber+=1

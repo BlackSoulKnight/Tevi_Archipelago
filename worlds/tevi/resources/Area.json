@@ -118,10 +118,6 @@
                     "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB)"
                 },
                 {
-                    "Exit": "Teleporter Morose",
-                    "Method": "OpenMorose"
-                },
-                {
                     "Exit": "Crafting",
                     "Method": ""
                 },
@@ -148,7 +144,7 @@
                 },
                 {
                     "Exit": "Gurun Desert",
-                    "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB) || OpenMorose"
+                    "Method": ""
                 },
                 {
                     "Exit": "0100",
@@ -194,11 +190,7 @@
                 },
                 {
                     "Exit": "Thanatara Canyon",
-                    "Method": "ITEM_LINEBOMB"
-                },
-                {
-                    "Exit": "Thanatara Canyon",
-                    "Method": "OpenMorose"
+                    "Method": ""
                 }
             ]
         }
@@ -411,7 +403,7 @@
                     "Method": ""
                 },
                 {
-                    "Exit": "Travoll Mines to Forest",
+                    "Exit": "Travoll Mines to Forest Money",
                     "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB)"
                 },
                 {
@@ -433,11 +425,24 @@
             ]
         },
         {
-            "Name": "Travoll Mines to Forest",
+            "Name": "Travoll Mines to Forest Money",
             "Connections": [
                 {
                     "Exit": "Travoll Mines",
-                    "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB) && (ITEM_KNIFE || EVENT_FreeStrongAttack)"
+                    "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB)"
+                },
+                {
+                    "Exit": "Travoll Mines to Forest",
+                    "Method": ""
+                }
+            ]
+        },
+        {
+            "Name": "Travoll Mines to Forest",
+            "Connections": [
+                {
+                    "Exit": "Travoll Mines to Forest Money",
+                    "Method": "(ITEM_KNIFE || EVENT_FreeStrongAttack)"
                 },
                 {
                     "Exit": "0509",
@@ -1988,7 +1993,11 @@
                 },
                 {
                     "Exit": "Catacombs Inner",
-                    "Method": "ITEM_JETPACK && ITEM_WALLJUMP && ITEM_AirDash && ITEM_LINEBOMB && ITEM_SLIDE"
+                    "Method": "ITEM_JETPACK && ITEM_WALLJUMP && ITEM_LINEBOMB && ITEM_SLIDE"
+                },
+                {
+                    "Exit": "Catacombs Inner",
+                    "Method": "ITEM_JETPACK && ITEM_AirDash && ITEM_LINEBOMB && ITEM_SLIDE"
                 },
                 {
                     "Exit": "Pre Lab",
@@ -3520,7 +3529,7 @@
             "Connections": [
                 {
                     "Exit": "Morose City",
-                    "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB || OpenMorose)"
+                    "Method": "(ITEM_LINEBOMB || ITEM_AREABOMB)"
                 }
             ]
         },

@@ -5,8 +5,8 @@ from Options import PerGameCommonOptions, Choice, Toggle, Range,DeathLink,ItemSe
 
 
 class OpenMorose(Toggle):
-    """Gain access to Morose without Crossbomb or Clusterbomb"""
-    display_name = "Open Morose"
+    """Depricated Option"""
+    display_name = "Open Morose (not in use)"
 
 class SuperBosses(Toggle):
     """Consider Tevi's Hidden Bosses in Library for the Logic"""

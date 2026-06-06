@@ -57,12 +57,10 @@ class TestItems(TeviTestBase):
 class TestMemine(TeviTestBase):
     run_default_tests = None
     options = {
-        "open_morose": "1",
     }
     
     def test_Memine_Ticket(self) -> None:
         items =[self.get_item_by_name("Tartarus VIP Pass"),self.get_item_by_name("Valhalla VIP Pass")]
-        
         locations = "Valhalla City - Memine Race From Tartarus"
         self.collect(items)
         self.assertFalse(self.can_reach_location(locations))

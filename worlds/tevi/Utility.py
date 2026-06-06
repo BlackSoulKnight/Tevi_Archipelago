@@ -61,7 +61,7 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
         if "Upgrade" in literal:
             return lambda state: TeviLogic.has_all_Mananite(state,player)
         if "OpenMorose" == literal:
-            return lambda _: (options.open_morose.value > 0)
+            return lambda _: False
         if "VenaBomb" == literal:
             return lambda state: TeviLogic.can_use_VenaBomb(state,player)
         if isEntrance:
