@@ -555,6 +555,10 @@
                     "Method": ""
                 },
                 {
+                    "Exit": "CopperWood Industry to Travoll Industrie",
+                    "Method": "ITEM_SLIDE"
+                },
+                {
                     "Exit": "CopperWood EP Pot",
                     "Method": "ITEM_DOUBLEJUMP || ITEM_JETPACK"
                 },
@@ -583,7 +587,7 @@
                 },
                 {
                     "Exit": "Vena Shop",
-                    "Method": "EVENT_MoroseVisited"
+                    "Method": "EVENT_MoroseVisited && QUEST_Flute"
                 },
                 {
                     "Exit": "Ana Thema Shop",
@@ -934,7 +938,7 @@
             "Connections": [
                 {
                     "Exit": "Snowveil",
-                    "Method": "ITEM_AREABOMB"
+                    "Method": "ITEM_AREABOMB || ITEM_SLIDE"
                 },
                 {
                     "Exit": "Snowveil Enemies",
@@ -1230,7 +1234,7 @@
             "Connections": [
                 {
                     "Exit": "Vena Shop",
-                    "Method": "EVENT_MoroseVisited"
+                    "Method": "EVENT_MoroseVisited && ITEM_RailPass"
                 },
                 {
                     "Exit": "Teleporter Tartarus",
@@ -1720,7 +1724,7 @@
                 },
                 {
                     "Exit": "Vena Shop",
-                    "Method": "EVENT_MoroseVisited"
+                    "Method": "EVENT_MoroseVisited && ITEM_AirshipPass"
                 }
             ]
         },
@@ -3720,19 +3724,19 @@
             "Connections": [
                 {
                     "Exit": "Dreamless Depths 2",
-                    "Method": "ITEM_HIJUMP && ITEM_KNIFE && ITEM_SLIDE"
+                    "Method": "ITEM_HIJUMP && ITEM_KNIFE && ITEM_SLIDE && (ITEM_LINEBOMB || ITEM_AREABOMB)"
                 },
                 {
                     "Exit": "Dreamless Depths 2",
-                    "Method": "ITEM_WALLJUMP && ITEM_SLIDE"
+                    "Method": "ITEM_WALLJUMP && ITEM_SLIDE && (ITEM_LINEBOMB || ITEM_AREABOMB)"
                 },
                 {
                     "Exit": "Dreamless Depths 2",
-                    "Method": "ITEM_JETPACK && ITEM_KNIFE && ITEM_SLIDE"
+                    "Method": "ITEM_JETPACK && ITEM_KNIFE && ITEM_SLIDE && (ITEM_LINEBOMB || ITEM_AREABOMB)"
                 },
                 {
                     "Exit": "Dreamless Depths 2",
-                    "Method": "ITEM_DOUBLEJUMP && ITEM_KNIFE && ITEM_SLIDE"
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_KNIFE && ITEM_SLIDE && (ITEM_LINEBOMB || ITEM_AREABOMB)"
                 }
             ]
         },
