@@ -52,8 +52,7 @@ class RandomizedItemUpgrades(Toggle):
     display_name = "Randomized Item Upgrades"
 
 class CeliaSableUnlocked(Toggle):
-    """If this flag is true, Celia and Sable are already unlocked
-    Also enables ChargeShot with only level 1 Orbitar
+    """Unlocks Celia and Sable mode
     """
     display_name = "Unlock Celia and Sable "
 
