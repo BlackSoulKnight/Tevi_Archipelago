@@ -25,6 +25,10 @@ class TestLocationCheck(TeviTestBase):
         self.assertTrue(self.can_reach_location("Ulskan Village Area - Grape Bunny Potion"))
         self.assertTrue(self.can_reach_location("Cloister Main - C. Rank Frenzy: Focus MAX"))
 
+    def test_Teleporter(self)->None:
+        item = self.collect_all_but(["Hydrodynamo"])
+        self.assertFalse(self.can_reach_location("Forgotten City - Pogo Drop"))
+
 
 class TestItems(TeviTestBase):
     run_default_tests = None
@@ -52,6 +56,7 @@ class TestItems(TeviTestBase):
                 continue
             default_quantity = all_item_table[k.name].default_quantity
             self.assertFalse(v>default_quantity,f"{k}: {v}>{default_quantity}")
+
 
 
 class TestMemine(TeviTestBase):
