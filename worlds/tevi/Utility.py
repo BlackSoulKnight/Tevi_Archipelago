@@ -97,8 +97,6 @@ def evaluate_rule(existing_rule: str, player: int, regions: Dict[int, Dict[str, 
         if literal == "I19" or literal == "I20":
             return lambda state: state.has(TeviToApNames[literal],player)
         if "Teleporter" in literal:
-            if options.traverse_mode.value != options.traverse_mode.option_random_teleporter:
-                return lambda _: True
             return lambda state: TeviLogic.unlocked_Teleporter(state,player,literal)
         if literal in literal_eval_map:
             return literal_eval_map[literal]
