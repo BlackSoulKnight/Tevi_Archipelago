@@ -157,6 +157,9 @@ class RegionDef:
         regions = self.multiworld.regions.region_cache[self.player]
         for location in locations:
 
+            if location["DLC"] != 0:
+                continue
+
             location_name = location["LocationName"]
             region_name = location["Location"]
 

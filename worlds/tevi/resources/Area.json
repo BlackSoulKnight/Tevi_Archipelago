@@ -1760,7 +1760,7 @@
                 },
                 {
                     "Exit": "Valhalla Breath West Extended",
-                    "Method": "ITEM_DOUBLEJUMP"
+                    "Method": "ITEM_DOUBLEJUMP && ITEM_SPEEDUP"
                 },
                 {
                     "Exit": "Valhalla Breath West Extended",
